@@ -1,10 +1,10 @@
-# GHPN Community Impact Partners
+# GHP Community Impact Partners
 
-Cannabis licensees read about GHPN, commit funding, and download a ready-to-edit
+Cannabis licensees read about GHP, commit funding, and download a ready-to-edit
 OCM Community Impact Plan (.docx). You see every pledge in `/admin`.
 
 ## Pages
-- `/` — about GHPN + Beyond GED, the opportunity
+- `/` — about GHP + Beyond GED, the opportunity
 - `/pledge` — sign-up form
 - `/thanks?id=…` — download the generated plan
 - `/admin` — password-protected dashboard (totals, status, CSV export, re-download any plan)

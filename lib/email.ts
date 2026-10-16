@@ -11,7 +11,7 @@ export async function notifyNewPledge(p: Pledge) {
 
   const name = displayName(p);
   const html = `
-    <p><strong>${name}</strong> just committed to a Community Impact Plan partnership with GHPN.</p>
+    <p><strong>${name}</strong> just committed to a Community Impact Plan partnership with GHP.</p>
     <ul>
       <li>Commitment: ${money(p.amount_per_payment)} ${FREQUENCIES[p.frequency].label.toLowerCase()} for ${p.term_years} year(s) — <strong>${money(p.total_commitment)} total</strong></li>
       <li>License: ${p.license_type} · ${p.license_number}</li>
@@ -27,7 +27,7 @@ export async function notifyNewPledge(p: Pledge) {
         from,
         to: to.split(",").map((s) => s.trim()),
         reply_to: p.contact_email,
-        subject: `New GHPN partner: ${name} (${money(p.total_commitment)})`,
+        subject: `New GHP partner: ${name} (${money(p.total_commitment)})`,
         html,
       }),
     });

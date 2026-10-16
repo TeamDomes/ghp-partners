@@ -5,8 +5,8 @@
 // ─────────────────────────────────────────────────────────────
 
 export const ORG = {
-  name: "Greater Hudson Promise Neighborhood",
-  short: "GHPN",
+  name: "Greater Hudson Promise",
+  short: "GHP",
   program: "Beyond GED",
   contactEmail: "info@ghpn.org", // TODO: confirm with Jeff
   website: "https://www.ghpn.org", // TODO: confirm
@@ -54,17 +54,17 @@ export const ENGAGEMENTS = [
   {
     id: "awareness",
     label: "Share Beyond GED information with customers and staff",
-    plan: "{{company}} will display Beyond GED program information and refer eligible young adults and families to GHPN.",
+    plan: "{{company}} will display Beyond GED program information and refer eligible young adults and families to GHP.",
   },
   {
     id: "roundup",
-    label: "In-store round-up / donation prompt for GHPN",
-    plan: "{{company}} will offer customers an optional round-up or donation prompt at checkout, with all proceeds directed to GHPN's Beyond GED program.",
+    label: "In-store round-up / donation prompt for GHP",
+    plan: "{{company}} will offer customers an optional round-up or donation prompt at checkout, with all proceeds directed to GHP's Beyond GED program.",
   },
   {
     id: "volunteer",
     label: "Staff volunteer hours (tutoring, mock interviews, events)",
-    plan: "{{company}} staff will contribute volunteer hours to GHPN, including mock interviews, résumé support, and event assistance.",
+    plan: "{{company}} staff will contribute volunteer hours to GHP, including mock interviews, résumé support, and event assistance.",
   },
   {
     id: "career",
@@ -89,11 +89,11 @@ export const ENGAGEMENTS = [
 export const LANDING = {
   eyebrow: "For New York cannabis licensees",
   headline: "Your Community Impact Plan, done right.",
-  sub: "New York's Office of Cannabis Management asks every licensee to show a Community Impact Plan at renewal. Partner with Greater Hudson Promise Neighborhood and put your plan to work for young people in Hudson and Columbia County who were hurt most by the War on Drugs.",
-  aboutTitle: "About GHPN",
+  sub: "New York's Office of Cannabis Management asks every licensee to show a Community Impact Plan at renewal. Partner with Greater Hudson Promise and put your plan to work for young people in Hudson and Columbia County who were hurt most by the War on Drugs.",
+  aboutTitle: "About GHP",
   about: [
-    "Greater Hudson Promise Neighborhood is a cradle-to-career organization serving young people ages 0 to 24 and beyond. Its mission is to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures.",
-    "Across all GHPN programs, 79 percent of participants are BIPOC.",
+    "Greater Hudson Promise is a cradle-to-career organization serving young people ages 0 to 24 and beyond. Its mission is to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures.",
+    "Across all GHP programs, 79 percent of participants are BIPOC.",
   ],
   programTitle: "Beyond GED",
   program: [
@@ -107,10 +107,10 @@ export const LANDING = {
   ],
   howTitle: "How it works",
   how: [
-    { step: "Read", body: "Learn about GHPN and Beyond GED on this page." },
+    { step: "Read", body: "Learn about GHP and Beyond GED on this page." },
     { step: "Commit", body: "Choose a contribution level and any optional ways your team wants to get involved." },
     { step: "Download", body: "Get a complete, ready-to-edit Community Impact Plan in Word, built around your business and your commitment." },
-    { step: "Report", body: "GHPN sends you an annual impact summary you can use for your next renewal." },
+    { step: "Report", body: "GHP sends you an annual impact summary you can use for your next renewal." },
   ],
   disclaimer:
     "This tool produces a draft. Each licensee is responsible for reviewing its plan and confirming it meets current OCM requirements. Nothing here is legal advice.",
@@ -122,15 +122,15 @@ export const LANDING = {
 export const PLAN = {
   needQ: "What problem or need does your community impact plan seek to address? Please include any relevant data.",
   need: [
-    "The {{company}}/Greater Hudson Promise Neighborhood (GHPN) partnership addresses the urgent challenge facing Opportunity Youth in the city of Hudson, NY and Columbia County. Many of the families served have been disproportionately affected by the War on Drugs and its long-term economic and social consequences, contributing to school disengagement, economic instability, and higher rates of justice system involvement among young people of color.",
-    "The partnership centers on GHPN's Education and Professional Development work, specifically the Beyond GED program. Beyond GED was created in 2021 in direct response to young adults in Hudson who were increasingly interacting with the justice system and facing incarceration after dropping out of school. Through interviews with the program's first cohort, young people identified poverty as the primary driver of school withdrawal, often leaving school to work and support themselves or their families. Their feedback shaped the program to address real barriers with wraparound support.",
+    "The {{company}}/Greater Hudson Promise (GHP) partnership addresses the urgent challenge facing Opportunity Youth in the city of Hudson, NY and Columbia County. Many of the families served have been disproportionately affected by the War on Drugs and its long-term economic and social consequences, contributing to school disengagement, economic instability, and higher rates of justice system involvement among young people of color.",
+    "The partnership centers on GHP's Education and Professional Development work, specifically the Beyond GED program. Beyond GED was created in 2021 in direct response to young adults in Hudson who were increasingly interacting with the justice system and facing incarceration after dropping out of school. Through interviews with the program's first cohort, young people identified poverty as the primary driver of school withdrawal, often leaving school to work and support themselves or their families. Their feedback shaped the program to address real barriers with wraparound support.",
     "The need is clear. Young people without a high school credential face reduced lifetime earnings, higher unemployment rates, and greater risk of justice system involvement. Beyond GED fills a critical gap for youth who have already left the traditional school system and require an alternative, supportive route to completion.",
     "Many participants facing serious felony charges were able to avoid prison and instead transition into higher education or employment. Since participation, none have re-entered the justice system. These outcomes demonstrate the power of combining academic instruction with financial assistance, professional development, vocational exploration, college support, and practical resources.",
-    "Since launching in 2021, Beyond GED has served over 23 young people. Within six weeks of the first cohort enrolling, 100 percent completed their GEDs. The {{company}}–GHPN partnership is uniquely positioned to deepen and expand this impact by increasing enrollment of Opportunity Youth across Columbia County, providing a safe learning and workforce development environment, expanding career-connected training opportunities, reducing justice system involvement, and strengthening long-term economic mobility for young adults living in poverty. At its core, this partnership addresses educational and economic disconnection among Opportunity Youth who have been failed by traditional systems. By providing a structured pathway to high school equivalency, career development, and ongoing support, {{company}} and GHPN can interrupt cycles of poverty and justice involvement while building a stronger, more equitable workforce pipeline for Columbia County.",
+    "Since launching in 2021, Beyond GED has served over 23 young people. Within six weeks of the first cohort enrolling, 100 percent completed their GEDs. The {{company}}–GHP partnership is uniquely positioned to deepen and expand this impact by increasing enrollment of Opportunity Youth across Columbia County, providing a safe learning and workforce development environment, expanding career-connected training opportunities, reducing justice system involvement, and strengthening long-term economic mobility for young adults living in poverty. At its core, this partnership addresses educational and economic disconnection among Opportunity Youth who have been failed by traditional systems. By providing a structured pathway to high school equivalency, career development, and ongoing support, {{company}} and GHP can interrupt cycles of poverty and justice involvement while building a stronger, more equitable workforce pipeline for Columbia County.",
   ],
   whoQ: "Who are the communities and individuals disproportionately impacted you intend to target?",
   who: [
-    "The targeted population are young people ages 16 to 24 who are not enrolled in school and not working, many of whom have been disproportionately impacted by poverty, systemic oppression, and justice system involvement. GHPN is a cradle-to-career organization serving young people ages 0 to 24 and beyond, with a mission to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures. Beyond GED serves Opportunity Youth within the Hudson City School District and, with expanded support, throughout Columbia County. Across all GHPN programs, 79 percent of participants are BIPOC. In Beyond GED, 100 percent of enrolled students are students of color and all are living below the poverty line, reflecting the disproportionate impact of educational and economic inequities locally.",
+    "The targeted population are young people ages 16 to 24 who are not enrolled in school and not working, many of whom have been disproportionately impacted by poverty, systemic oppression, and justice system involvement. GHP is a cradle-to-career organization serving young people ages 0 to 24 and beyond, with a mission to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures. Beyond GED serves Opportunity Youth within the Hudson City School District and, with expanded support, throughout Columbia County. Across all GHP programs, 79 percent of participants are BIPOC. In Beyond GED, 100 percent of enrolled students are students of color and all are living below the poverty line, reflecting the disproportionate impact of educational and economic inequities locally.",
   ],
   goals: [
     {
@@ -219,7 +219,7 @@ export const PLAN = {
     },
   ],
   reporting:
-    "GHPN will provide {{company}} with an annual impact summary covering the metrics above, along with acknowledgment of contributions received. {{company}} will retain these records, together with proof of each contribution, to document plan implementation at license renewal.",
+    "GHP will provide {{company}} with an annual impact summary covering the metrics above, along with acknowledgment of contributions received. {{company}} will retain these records, together with proof of each contribution, to document plan implementation at license renewal.",
 };
 
 export function fill(text: string, company: string) {

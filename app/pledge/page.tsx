@@ -61,11 +61,11 @@ export default function Pledge() {
   return (
     <main className="wrap narrow" style={{ paddingBottom: 72 }}>
       <nav className="nav">
-        <Link className="brand" href="/">← GHPN · Community Impact Partners</Link>
+        <Link className="brand" href="/">← GHP · Community Impact Partners</Link>
       </nav>
 
       <span className="eyebrow">Build your plan</span>
-      <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Partner with GHPN</h1>
+      <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Partner with GHP</h1>
       <p style={{ color: "var(--ink-2)", marginBottom: 32 }}>
         Fill this out once. We&apos;ll generate your Community Impact Plan as a Word document you can review and submit.
       </p>
@@ -118,7 +118,7 @@ export default function Pledge() {
 
         <div className="form-card">
           <h2>Your commitment</h2>
-          <p className="hint">Annual contribution to GHPN&apos;s Beyond GED program.</p>
+          <p className="hint">Annual contribution to GHP&apos;s Beyond GED program.</p>
           <div className="choice-grid">
             {TIERS.map((t) => (
               <label key={t.amount} className={`choice ${tier === t.amount ? "on" : ""}`}>
@@ -193,7 +193,7 @@ export default function Pledge() {
           <label className="check">
             <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
             <span>
-              I&apos;m authorized to make this commitment on behalf of the business, and I understand GHPN will follow up to
+              I&apos;m authorized to make this commitment on behalf of the business, and I understand GHP will follow up to
               arrange contributions. {LANDING.disclaimer}
             </span>
           </label>

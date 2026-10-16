@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <div className="wrap">
         <nav className="nav">
-          <span className="brand">GHPN · Community Impact Partners</span>
+          <span className="brand">GHP · Community Impact Partners</span>
           <Link className="btn small" href="/pledge">Build my plan</Link>
         </nav>
 
@@ -16,7 +16,7 @@ export default function Home() {
           <h1>{LANDING.headline}</h1>
           <p className="lede">{LANDING.sub}</p>
           <div className="actions">
-            <Link className="btn" href="/pledge">Partner with GHPN</Link>
+            <Link className="btn" href="/pledge">Partner with GHP</Link>
             <a className="btn ghost" href="#program">Read about the program</a>
           </div>
         </header>
@@ -74,7 +74,7 @@ export default function Home() {
               </p>
               <p>
                 You get a complete plan, in Word, written around your business: the need, the population, three goals,
-                qualitative and quantitative measures, your financial commitment, and how GHPN will report back.
+                qualitative and quantitative measures, your financial commitment, and how GHP will report back.
               </p>
             </div>
           </div>

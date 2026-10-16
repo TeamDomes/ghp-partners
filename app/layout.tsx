@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Partner with GHPN — Community Impact Plans for NY Cannabis Licensees",
+  title: "Partner with GHP — Community Impact Plans for NY Cannabis Licensees",
   description:
-    "Build your OCM Community Impact Plan around Greater Hudson Promise Neighborhood's Beyond GED program.",
+    "Build your OCM Community Impact Plan around Greater Hudson Promise's Beyond GED program.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
