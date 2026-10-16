@@ -12,6 +12,6 @@ export async function GET() {
   };
   const csv = [cols.join(","), ...rows.map((r) => cols.map((c) => esc((r as Record<string, unknown>)[c])).join(","))].join("\n");
   return new Response(csv, {
-    headers: { "Content-Type": "text/csv", "Content-Disposition": 'attachment; filename="ghpn_pledges.csv"' },
+    headers: { "Content-Type": "text/csv", "Content-Disposition": 'attachment; filename="ghp_pledges.csv"' },
   });
 }
