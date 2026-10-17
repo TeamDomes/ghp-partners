@@ -127,22 +127,25 @@ export const ENGAGEMENTS = [
 // ─────────────────────────────────────────────────────────────
 // "The problem" section. Every figure is sourced; update when new ACS data lands.
 export const PROBLEM = {
-  eyebrow: "The problem",
-  title: "Hudson\u2019s revival hasn\u2019t reached everyone",
+  eyebrow: "Why Hudson",
+  title: "One small city carries New York\u2019s story",
   stats: [
     { value: "28.2%", label: "of Hudson residents live below the poverty line \u2014 more than double Columbia County\u2019s 12.1%", src: 1 },
-    { value: "$54,139", label: "median household income in Hudson, versus $81,528 in Columbia County and $85,974 statewide", src: 1 },
+    { value: "1 in 10", label: "Hudson residents were displaced when urban renewal demolished 286 buildings north of Warren Street", src: 3 },
     { value: "80%+", label: "of people arrested for marijuana possession in New York were Black or Latino", src: 2 },
   ],
   body: [
-    "Warren Street has galleries, restaurants and, now, dispensaries. A few blocks away, more than one in four Hudson residents lives in poverty.",
-    "For decades, cannabis prohibition was enforced hardest on Black and Latino New Yorkers. An arrest could mean a record, a lost job, or a lost place in school, and the effects passed down to the next generation. In Hudson, that legacy shows up in young people who leave school to work and support their families, and who are pulled into the justice system as a result.",
-    "New York\u2019s Community Impact Plan requirement exists to send the legal industry\u2019s resources back to the communities prohibition harmed most.",
+    "Hudson\u2019s Black community has absorbed one policy blow after another. In the late 1960s and early \u201970s, urban renewal cleared about 50 acres of a working-class neighborhood near the waterfront, north of Warren Street, and displaced more than 200 families \u2014 nearly 850 people. Many of the Black families pushed out were rehoused in public housing and were far less likely than others to go on to own homes or build wealth.",
+    "Then came the War on Drugs. New York\u2019s drug laws and cannabis prohibition were enforced hardest on Black and Latino New Yorkers. An arrest could cost a job, an apartment, or a place in school, and the damage carried into the next generation.",
+    "Today Warren Street is a destination for galleries, restaurants, and now dispensaries. But the divide renewal drew is still there: Hudson\u2019s median household income is $54,139, against $81,528 for Columbia County and $85,974 statewide, and more than one in four residents lives in poverty. Young people leave school to work and support their families, and too many are pulled into the justice system.",
+    "You don\u2019t have to be in Hudson for this to be your community\u2019s story. The same state and federal policies hit Black neighborhoods across New York. Hudson is where a proven program is already turning that history around, and where your Community Impact Plan can show measurable results.",
   ],
   solutionEyebrow: "The solution",
   sources: [
-    { n: 1, text: "U.S. Census Bureau, American Community Survey 2020\u20132024 5-year estimates (via Census QuickFacts and Census Reporter)", url: "https://censusreporter.org/profiles/16000US3635969-hudson-ny" },
+    { n: 1, text: "U.S. Census Bureau, American Community Survey 2020\u20132024 5-year estimates (via Census Reporter)", url: "https://censusreporter.org/profiles/16000US3635969-hudson-ny" },
     { n: 2, text: "NYCLU, legislative memo on the Marihuana Regulation and Taxation Act, 2021", url: "https://www.nyclu.org/uploads/2021/03/2021-legislativememo-mrta.pdf" },
+    { n: 3, text: "Caitie Hilverman, \u201cBliss Towers, Then,\u201d citing City of Hudson records, 2026", url: "https://deadandlivingthings.substack.com/p/bliss-towers-then" },
+    { n: 4, text: "Abigail Bliss, \u201cFault Lines: The Legacy of Urban Renewal in Hudson, NY,\u201d MIT, 2020", url: "https://dspace.mit.edu/entities/publication/cc53b0b4-ab8f-4f31-9116-867012ec1d00" },
   ],
   furtherReading: {
     text: "Andrea Elliott, \u201cWhen the Weed Wars Came to Warren Street,\u201d The New York Times, Sept. 26, 2026",
