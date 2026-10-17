@@ -25,6 +25,7 @@ export type Pledge = {
   signer_name: string;
   signer_title: string | null;
   status: string;
+  list_publicly?: boolean;
 };
 
 export const money = (n: number) =>

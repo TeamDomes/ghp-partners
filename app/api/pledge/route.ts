@@ -46,6 +46,7 @@ export async function POST(req: Request) {
     partner_statement: str(b.partner_statement, 3000) || null,
     signer_name: str(b.signer_name),
     signer_title: str(b.signer_title) || null,
+    list_publicly: b.list_publicly !== false,
   };
 
   const missing = (["legal_name", "license_type", "license_number", "city", "county", "contact_name", "contact_email", "signer_name"] as const)
@@ -61,7 +62,12 @@ export async function POST(req: Request) {
 
   row.total_commitment = Math.round(annual * term * 100) / 100;
 
-  const { data, error } = await db().from("pledges").insert(row).select().single();
+  let { data, error } = await db().from("pledges").insert(row).select().single();
+  if (error && /list_publicly/.test(error.message || "")) {
+    // Column not added yet (see supabase/002_partner_listing.sql) — save without it.
+    const { list_publicly: _omit, ...rest } = row;
+    ({ data, error } = await db().from("pledges").insert(rest).select().single());
+  }
   if (error) {
     console.error(error);
     return NextResponse.json({ error: "Something went wrong saving your plan. Please try again." }, { status: 500 });

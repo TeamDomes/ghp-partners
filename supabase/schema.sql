@@ -33,7 +33,8 @@ create table if not exists public.pledges (
   -- signoff
   signer_name text not null,
   signer_title text,
-  status text not null default 'pledged'   -- pledged | invoiced | paid | cancelled
+  status text not null default 'pledged',  -- pledged | invoiced | deposit | paid | cancelled
+  list_publicly boolean not null default true
 );
 
 -- Lock the table down: only the server (service role key) can read/write.

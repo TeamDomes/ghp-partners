@@ -1,13 +1,18 @@
 import Link from "next/link";
-import { LANDING, ORG, STATS, TIERS } from "@/lib/content";
+import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, RECOMMENDED, STATS, TIERS } from "@/lib/content";
+import { getPartners } from "@/lib/partners";
 import { money } from "@/lib/types";
 
-export default function Home() {
+export const revalidate = 300;
+
+export default async function Home() {
+  const partners = await getPartners();
   return (
     <main>
       <div className="wrap">
         <nav className="nav">
           <span className="brand">GHP · Community Impact Partners</span>
+          <a href="#partners" className="brand" style={{ marginLeft: "auto", marginRight: 16 }}>Partners</a>
           <Link className="btn small" href="/pledge">Build my plan</Link>
         </nav>
 
@@ -80,6 +85,9 @@ export default function Home() {
                 You also get a renewal application guide: suggested responses to each Community Impact question on the
                 OCM renewal portal, from target zip codes to your two-year budget, ready to review and paste in.
               </p>
+              <p>
+                <a href={OCM_GUIDANCE.url} target="_blank" rel="noreferrer">Read {OCM_GUIDANCE.label}</a>
+              </p>
             </div>
           </div>
         </section>
@@ -101,16 +109,32 @@ export default function Home() {
           <span className="eyebrow">Suggested annual levels</span>
           <div className="tiers">
             {TIERS.map((t) => (
-              <div className="tier" key={t.amount}>
-                <span className="mono" style={{ fontSize: ".8rem", color: "var(--ink-2)" }}>{t.name}</span>
+              <div className={`tier ${t.recommended ? "rec" : ""}`} key={t.amount}>
+                <span className="mono" style={{ fontSize: ".8rem", color: t.recommended ? "var(--accent)" : "var(--ink-2)" }}>{t.recommended ? "Recommended" : t.name}</span>
                 <b>{money(t.amount)}</b>
                 <span style={{ fontSize: ".88rem", color: "var(--ink-2)" }}>per year</span>
               </div>
             ))}
           </div>
           <p style={{ marginTop: 14, color: "var(--ink-2)", fontSize: ".93rem" }}>
-            Or choose your own amount. Pay annually, quarterly, or monthly.
+            {RECOMMENDED.line} Or choose your own amount, paid annually, quarterly, or monthly.
           </p>
+        </section>
+
+        <section className="section" id="partners">
+          <span className="eyebrow">{PARTNERS_PAGE.eyebrow}</span>
+          <h2>{PARTNERS_PAGE.title}</h2>
+          <p style={{ color: "var(--ink-2)", maxWidth: 640 }}>{PARTNERS_PAGE.sub}</p>
+          {partners.length ? (
+            <ul className="partner-list">
+              {partners.map((p) => (
+                <li key={p.name + p.city}><b>{p.name}</b><span>{p.city}</span></li>
+              ))}
+            </ul>
+          ) : (
+            <p className="partner-empty">{PARTNERS_PAGE.empty}</p>
+          )}
+          <Link className="btn ghost" href="/pledge" style={{ marginTop: 18 }}>{PARTNERS_PAGE.cta}</Link>
         </section>
 
         <div className="cta">

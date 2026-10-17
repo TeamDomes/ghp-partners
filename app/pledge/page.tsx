@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { ENGAGEMENTS, FREQUENCIES, LANDING, LICENSE_TYPES, TIERS, type Frequency } from "@/lib/content";
+import { ENGAGEMENTS, FREQUENCIES, LANDING, LICENSE_TYPES, RECOMMENDED, TIERS, type Frequency } from "@/lib/content";
 import { money } from "@/lib/types";
 
 type Form = Record<string, string>;
@@ -11,9 +11,10 @@ type Form = Record<string, string>;
 export default function Pledge() {
   const router = useRouter();
   const [f, setF] = useState<Form>({ frequency: "annual", term_years: "2", county: "Columbia" });
-  const [tier, setTier] = useState<number | "custom">(TIERS[1].amount);
+  const [tier, setTier] = useState<number | "custom">(RECOMMENDED.annual);
   const [eng, setEng] = useState<string[]>([]);
   const [agree, setAgree] = useState(false);
+  const [listMe, setListMe] = useState(true);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
@@ -45,7 +46,7 @@ export default function Pledge() {
       const res = await fetch("/api/pledge", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...f, annual_amount: perYear, engagements: eng, agree, social_equity: f.social_equity === "yes" }),
+        body: JSON.stringify({ ...f, annual_amount: perYear, engagements: eng, agree, list_publicly: listMe, social_equity: f.social_equity === "yes" }),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Something went wrong.");
@@ -118,12 +119,12 @@ export default function Pledge() {
 
         <div className="form-card">
           <h2>Your commitment</h2>
-          <p className="hint">Annual contribution to GHP&apos;s Beyond GED program.</p>
+          <p className="hint">Annual contribution to GHP&apos;s Beyond GED program. {RECOMMENDED.line}</p>
           <div className="choice-grid">
             {TIERS.map((t) => (
               <label key={t.amount} className={`choice ${tier === t.amount ? "on" : ""}`}>
                 <input type="radio" name="tier" checked={tier === t.amount} onChange={() => setTier(t.amount)} />
-                <small className="mono">{t.name}</small>
+                <small className="mono">{t.recommended ? "Recommended" : t.name}</small>
                 <b>{money(t.amount)}</b>
                 <small>per year</small>
               </label>
@@ -193,6 +194,10 @@ export default function Pledge() {
             <label className="field"><span>Your name {req}</span><input type="text" value={f.signer_name || ""} onChange={set("signer_name")} /></label>
             <label className="field"><span>Title</span><input type="text" value={f.signer_title || ""} onChange={set("signer_title")} /></label>
           </div>
+          <label className="check">
+            <input type="checkbox" checked={listMe} onChange={(e) => setListMe(e.target.checked)} />
+            <span>List our business on GHP&apos;s Community Partners page once our deposit is received.</span>
+          </label>
           <label className="check">
             <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
             <span>

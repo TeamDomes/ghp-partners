@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DEPOSIT, GUIDE, ORG } from "@/lib/content";
+import { DEPOSIT, GUIDE, OCM_GUIDANCE, ORG } from "@/lib/content";
 import { buildGuide } from "@/lib/guide";
 import { db } from "@/lib/supabase";
 import type { Pledge } from "@/lib/types";
@@ -71,6 +71,7 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", margin: "24px 0 8px" }}>
             <a className="btn" href={`/api/plan/${pledge.id}`}>Download plan + guide (.docx)</a>
             <a className="btn ghost" href={GUIDE.deckPath} download>GHP overview (PDF)</a>
+            <a className="btn ghost" href={OCM_GUIDANCE.url} target="_blank" rel="noreferrer">OCM guidance (PDF)</a>
           </div>
           <p style={{ color: "var(--ink-2)", fontSize: ".9rem" }}>Bookmark this page — you can come back to it anytime.</p>
 

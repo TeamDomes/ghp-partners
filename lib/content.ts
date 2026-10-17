@@ -31,11 +31,30 @@ export const STATS = [
 
 // Preset annual contribution levels (dollars per year).
 export const TIERS = [
-  { amount: 2500, name: "Supporter" },
-  { amount: 5000, name: "Partner" },
-  { amount: 10000, name: "Champion" },
-  { amount: 25000, name: "Cornerstone" },
+  { amount: 2500, name: "Supporter", recommended: false },
+  { amount: 5000, name: "Partner", recommended: true },
+  { amount: 10000, name: "Champion", recommended: false },
+  { amount: 25000, name: "Cornerstone", recommended: false },
 ];
+
+export const RECOMMENDED = {
+  annual: 5000,
+  years: 2,
+  line: "We recommend $5,000 a year for two years \u2014 $10,000 across your two-year renewal period.",
+};
+
+export const OCM_GUIDANCE = {
+  label: "OCM Community Impact Plan guidance (PDF)",
+  url: "https://cannabis.ny.gov/system/files/documents/2026/03/3.27.26-community-impact-plan-guidance.pdf",
+};
+
+export const PARTNERS_PAGE = {
+  eyebrow: "Community Partners",
+  title: "The licensees behind Beyond GED",
+  sub: "These New York cannabis businesses are investing in Opportunity Youth in Hudson and Columbia County through their Community Impact Plans.",
+  empty: "Our first Community Partners are signing on now. Yours could be the first name here.",
+  cta: "Join them",
+};
 
 export const FREQUENCIES = {
   annual: { label: "Once a year", perYear: 1 },

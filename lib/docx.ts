@@ -11,7 +11,7 @@ import {
   TextRun,
   WidthType,
 } from "docx";
-import { ENGAGEMENTS, FREQUENCIES, GUIDE, ORG, PLAN, fill } from "./content";
+import { ENGAGEMENTS, FREQUENCIES, GUIDE, OCM_GUIDANCE, ORG, PLAN, fill } from "./content";
 import { buildGuide } from "./guide";
 import type { Pledge } from "./types";
 import { displayName, money } from "./types";
@@ -173,7 +173,8 @@ export async function buildPlanDocx(pl: Pledge): Promise<Buffer> {
       spacing: { after: 240 },
       children: [new TextRun({ text: `Community Impact Plan section  \u00b7  ${company}`, font: BODY_FONT, size: 22, color: "6B5F55" })],
     }),
-    p(GUIDE.intro, { italic: true })
+    p(GUIDE.intro, { italic: true }),
+    p(`${OCM_GUIDANCE.label}: ${OCM_GUIDANCE.url}`, { italic: true })
   );
   buildGuide(pl).forEach((item, i) => {
     children.push(

@@ -125,3 +125,11 @@ table.list td { border-bottom: 1px solid var(--line); padding: 10px; vertical-al
 .guide-note::before { content: "Note \2014 "; font-family: var(--font-mono), monospace; color: var(--accent); }
 .budget-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 @media (max-width: 600px) { .budget-grid { grid-template-columns: 1fr; } .answer { padding-right: 16px; padding-top: 44px; } }
+
+/* partners + recommended */
+.tier.rec { border-color: var(--accent); background: #fbefe8; }
+.partner-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.partner-list li { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+.partner-list b { display: block; font-family: var(--font-display), serif; font-weight: 500; font-size: 1.2rem; }
+.partner-list span { font-family: var(--font-mono), monospace; font-size: .8rem; color: var(--ink-2); }
+.partner-empty { font-family: var(--font-display), serif; font-size: 1.3rem; margin-top: 18px; }
