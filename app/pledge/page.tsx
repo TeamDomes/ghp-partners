@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { ENGAGEMENTS, FREQUENCIES, LICENSE_TYPES, RECOMMENDED, TAX, TIERS, type Frequency } from "@/lib/content";
+import { ENGAGEMENTS, FREQUENCIES, RECOMMENDED, TAX, TIERS, type Frequency } from "@/lib/content";
 import { money } from "@/lib/types";
+import LicensePicker from "@/components/LicensePicker";
+import type { OcmLicense } from "@/lib/ocm";
 import { PROGRAMS, PROGRAM_ORDER, type ProgramId } from "@/lib/programs";
 
 type Form = Record<string, string>;
@@ -17,6 +19,8 @@ export default function Pledge() {
   const [agree, setAgree] = useState(false);
   const [listMe, setListMe] = useState(true);
   const [reviewAck, setReviewAck] = useState(false);
+  const [lic, setLic] = useState<OcmLicense | null>(null);
+  const [manual, setManual] = useState(false);
   const [program, setProgram] = useState<ProgramId>("general");
   const engOptions = ENGAGEMENTS.filter((e) => e.programs.includes(program));
   useEffect(() => {
@@ -36,7 +40,7 @@ export default function Pledge() {
 
   const valid = useMemo(
     () =>
-      ["legal_name", "license_type", "license_number", "city", "county", "contact_name", "contact_email", "signer_name"].every(
+      ["legal_name", "license_number", "city", "county", "contact_name", "contact_email", "signer_name"].every(
         (k) => (f[k] || "").trim()
       ) && perYear >= 500 && agree && reviewAck,
     [f, perYear, agree, reviewAck]
@@ -84,25 +88,42 @@ export default function Pledge() {
 
         <div className="form-card">
           <h2>Your business</h2>
-          <div className="grid2">
-            <label className="field"><span>Legal business name {req}</span><input type="text" value={f.legal_name || ""} onChange={set("legal_name")} /></label>
-            <label className="field"><span>DBA / store name</span><input type="text" value={f.dba || ""} onChange={set("dba")} /></label>
-          </div>
-          <div className="grid2">
-            <label className="field">
-              <span>License type {req}</span>
-              <select value={f.license_type || ""} onChange={set("license_type")}>
-                <option value="">Choose…</option>
-                {LICENSE_TYPES.map((t) => <option key={t}>{t}</option>)}
-              </select>
-            </label>
-            <label className="field"><span>OCM license number {req}</span><input type="text" value={f.license_number || ""} onChange={set("license_number")} /></label>
-          </div>
-          <label className="field"><span>Street address</span><input type="text" value={f.street || ""} onChange={set("street")} /></label>
-          <div className="grid2">
-            <label className="field"><span>City {req}</span><input type="text" value={f.city || ""} onChange={set("city")} /></label>
-            <label className="field"><span>County {req}</span><input type="text" value={f.county || ""} onChange={set("county")} /></label>
-          </div>
+          {!manual ? (
+            <LicensePicker
+              value={lic}
+              onSelect={(l) => {
+                setLic(l);
+                setF((s) => ({
+                  ...s,
+                  legal_name: l?.entity_name || "",
+                  dba: l?.dba || "",
+                  license_type: l?.license_type || "",
+                  license_number: l?.license_number || "",
+                  street: l?.street || "",
+                  city: l?.city || "",
+                  county: l?.county || "",
+                }));
+              }}
+              onUnavailable={() => setManual(true)}
+            />
+          ) : (
+            <>
+              <p className="hint">The OCM license lookup is temporarily unavailable. Enter your details below and GHP will verify your license.</p>
+              <div className="grid2">
+                <label className="field"><span>Legal business name {req}</span><input type="text" value={f.legal_name || ""} onChange={set("legal_name")} /></label>
+                <label className="field"><span>OCM license number {req}</span><input type="text" value={f.license_number || ""} onChange={set("license_number")} /></label>
+              </div>
+            </>
+          )}
+          {(lic || manual) && (
+            <>
+              <label className="field" style={{ marginTop: 14 }}><span>DBA / store name (if different)</span><input type="text" value={f.dba || ""} onChange={set("dba")} /></label>
+              <div className="grid2">
+                <label className="field"><span>City {req}</span><input type="text" value={f.city || ""} onChange={set("city")} /></label>
+                <label className="field"><span>County {req}</span><input type="text" value={f.county || ""} onChange={set("county")} /></label>
+              </div>
+            </>
+          )}
           <label className="field">
             <span>Social &amp; economic equity (SEE) applicant?</span>
             <select value={f.social_equity || ""} onChange={set("social_equity")}>

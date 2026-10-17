@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/supabase";
-import { ENGAGEMENTS, FREQUENCIES, LICENSE_TYPES } from "@/lib/content";
+import { ENGAGEMENTS, FREQUENCIES } from "@/lib/content";
+import { getLicense } from "@/lib/ocm";
 import { notifyNewPledge, notifyPledgeReceived } from "@/lib/email";
 import type { Pledge } from "@/lib/types";
 
@@ -25,8 +26,8 @@ export async function POST(req: Request) {
   const row = {
     legal_name: str(b.legal_name),
     dba: str(b.dba) || null,
-    license_type: str(b.license_type),
-    license_number: str(b.license_number, 60),
+    license_type: str(b.license_type) || "Not yet verified",
+    license_number: str(b.license_number, 60).toUpperCase(),
     street: str(b.street) || null,
     city: str(b.city, 100),
     county: str(b.county, 100),
@@ -48,15 +49,30 @@ export async function POST(req: Request) {
     signer_title: str(b.signer_title) || null,
     list_publicly: b.list_publicly !== false,
     program: ["general", "beyond_ged", "justice"].includes(str(b.program)) ? str(b.program) : "general",
+    license_verified: false,
   };
 
-  const missing = (["legal_name", "license_type", "license_number", "city", "county", "contact_name", "contact_email", "signer_name"] as const)
+  const missing = (["legal_name", "license_number", "city", "county", "contact_name", "contact_email", "signer_name"] as const)
     .filter((k) => !row[k]);
   if (missing.length) return NextResponse.json({ error: "Please complete all required fields." }, { status: 400 });
-  if (!LICENSE_TYPES.includes(row.license_type)) return NextResponse.json({ error: "Invalid license type." }, { status: 400 });
+  // Verify against NY's public list of active OCM licenses; use the registered name and type.
+  try {
+    const lic = await getLicense(row.license_number);
+    if (!lic) return NextResponse.json({ error: "We couldn't find an active OCM license with that number. Please search for your license again." }, { status: 400 });
+    row.license_number = lic.license_number;
+    row.legal_name = lic.entity_name;
+    row.license_type = lic.license_type;
+    if (!row.street && lic.street) row.street = lic.street;
+    if (!row.city && lic.city) row.city = lic.city;
+    if (!row.county && lic.county) row.county = lic.county;
+    row.license_verified = true;
+  } catch (e) {
+    // OCM data temporarily unreachable: accept, flagged for manual verification in /admin.
+    console.error("License verification unavailable", e);
+  }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(row.contact_email)) return NextResponse.json({ error: "Please enter a valid email." }, { status: 400 });
   if (!FREQUENCIES[frequency]) return NextResponse.json({ error: "Choose a payment schedule." }, { status: 400 });
-  if (!(annual * term >= 1000 && annual <= 1_000_000)) return NextResponse.json({ error: "The minimum pledge is $1,000 total." }, { status: 400 });
+  if (!(annual >= 500 && annual <= 1_000_000)) return NextResponse.json({ error: "The minimum contribution is $500 a year." }, { status: 400 });
   if (!(term >= 1 && term <= 2)) return NextResponse.json({ error: "Choose a term of 1 or 2 years." }, { status: 400 });
   if (row.start_date && !/^\d{4}-\d{2}-\d{2}$/.test(row.start_date)) row.start_date = null;
   if (!b.agree || !b.review_ack) return NextResponse.json({ error: "Please check both acknowledgments." }, { status: 400 });
@@ -64,9 +80,9 @@ export async function POST(req: Request) {
   row.total_commitment = Math.round(annual * term * 100) / 100;
 
   let { data, error } = await db().from("pledges").insert(row).select().single();
-  if (error && /list_publicly|program/.test(error.message || "")) {
-    // Columns not added yet (see supabase/002 and 003 .sql) — save without them.
-    const { list_publicly: _a, program: _b, ...rest } = row;
+  if (error && /list_publicly|program|license_verified/.test(error.message || "")) {
+    // Columns not added yet (see supabase/002–004 .sql) — save without them.
+    const { list_publicly: _a, program: _b, license_verified: _c, ...rest } = row;
     ({ data, error } = await db().from("pledges").insert(rest).select().single());
   }
   if (error) {

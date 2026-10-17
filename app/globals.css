@@ -184,3 +184,11 @@ ol.steps { list-style: none; padding: 0; margin: 0; }
 
 .tiers { grid-template-columns: repeat(5, 1fr); }
 @media (max-width: 860px) { .tiers { grid-template-columns: 1fr 1fr; } }
+
+.lic-card { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; border: 1.5px solid var(--accent); background: #fbefe8; border-radius: 12px; padding: 14px 16px; }
+.lic-ok { font-size: .85rem; color: var(--ok); margin-top: 6px; font-family: var(--font-body), sans-serif; }
+.lic-results { list-style: none; padding: 0; margin: 4px 0 0; border: 1.5px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+.lic-results li + li { border-top: 1px solid var(--line); }
+.lic-results button { width: 100%; text-align: left; background: none; border: 0; padding: 10px 14px; font: inherit; cursor: pointer; color: var(--ink); }
+.lic-results button:hover { background: var(--paper-2); }
+.lic-results small { display: block; color: var(--ink-2); font-size: .78rem; margin-top: 2px; }
