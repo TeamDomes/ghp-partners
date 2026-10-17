@@ -9,12 +9,14 @@ export async function getPartners(): Promise<{ name: string; city: string }[]> {
       .in("status", ["deposit", "paid"])
       .eq("list_publicly", true)
       .order("created_at", { ascending: true });
+    if (error) console.error("getPartners:", error.message);
     if (error || !data) return [];
     const seen = new Set<string>();
     return data
       .map((r) => ({ name: (r.dba as string)?.trim() || (r.legal_name as string), city: (r.city as string) || "" }))
       .filter((p) => (seen.has(p.name) ? false : (seen.add(p.name), true)));
-  } catch {
+  } catch (e) {
+    console.error("getPartners failed:", e);
     return [];
   }
 }

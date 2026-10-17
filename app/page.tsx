@@ -3,7 +3,7 @@ import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, RECOMMENDED, STATS, TIERS } 
 import { getPartners } from "@/lib/partners";
 import { money } from "@/lib/types";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const partners = await getPartners();
