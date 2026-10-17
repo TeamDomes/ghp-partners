@@ -154,6 +154,34 @@ export async function renderPdf(blocks: Block[], title: string, footer: string):
         y -= h + 12;
         break;
       }
+      case "stats": {
+        const cols = b.items.length === 4 ? 2 : Math.min(3, b.items.length) || 1, gap = 10, cw = (CW - gap * (cols - 1)) / cols;
+        for (let r = 0; r < b.items.length; r += cols) {
+          const row = b.items.slice(r, r + cols);
+          const wrapped = row.map((it) => wrap(it.label, F.body, 8.5, cw - 20));
+          const h = 40 + Math.max(...wrapped.map((w) => w.length)) * 11 + 10;
+          need(h + 8);
+          row.forEach((it, i) => {
+            const x = M + i * (cw + gap);
+            page.drawRectangle({ x, y: y - h, width: cw, height: h, color: TINT });
+            page.drawText(safe(it.value), { x: x + 10, y: y - 30, size: 20, font: F.serif, color: ACCENT });
+            wrapped[i].forEach((ln, j) => page.drawText(ln, { x: x + 10, y: y - 46 - j * 11, size: 8.5, font: F.body, color: INK }));
+          });
+          y -= h + gap;
+        }
+        y -= 6;
+        break;
+      }
+      case "quote": {
+        const lines = wrap(`\u201C${b.text}\u201D`, F.serif, 12, CW - 24);
+        need(lines.length * 16 + 26);
+        const top = y;
+        text(`\u201C${b.text}\u201D`, { font: F.serif, size: 12, lh: 16, x: M + 16, width: CW - 24, after: 2 });
+        text(`\u2014 ${b.who}`, { size: 9, color: MUTED, x: M + 16, width: CW - 24, after: 4 });
+        page.drawRectangle({ x: M, y, width: 2.5, height: top - y, color: ACCENT });
+        y -= 8;
+        break;
+      }
       case "space":
         y -= b.h;
         break;

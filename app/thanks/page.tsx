@@ -72,7 +72,10 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", margin: "24px 0 8px" }}>
             <a className="btn" href={`/api/plan/${pledge.id}?doc=plan`}>Community Impact Plan (PDF)</a>
             <a className="btn" href={`/api/plan/${pledge.id}?doc=renewal`}>OCM Renewal Instructions (PDF)</a>
-            <a className="btn ghost" href={GUIDE.deckPath} download>GHP overview (PDF)</a>
+            <a className="btn ghost" href={`/api/plan/${pledge.id}?doc=overview`}>GHP program overview (PDF)</a>
+            {pledge.program === "beyond_ged" && (
+              <a className="btn ghost" href={GUIDE.deckPath} download>Beyond GED deck (PDF)</a>
+            )}
             <a className="btn ghost" href={OCM_GUIDANCE.url} target="_blank" rel="noreferrer">OCM guidance (PDF)</a>
           </div>
           <p style={{ color: "var(--ink-2)", fontSize: ".9rem" }}>

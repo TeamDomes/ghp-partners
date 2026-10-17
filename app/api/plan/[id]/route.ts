@@ -1,6 +1,7 @@
 import { db } from "@/lib/supabase";
 import { buildPlanDocx } from "@/lib/docx";
-import { guideBlocks, planBlocks } from "@/lib/blocks";
+import { guideBlocks, overviewBlocks, planBlocks } from "@/lib/blocks";
+import { getProgram } from "@/lib/programs";
 import { renderPdf } from "@/lib/pdf";
 import type { Pledge } from "@/lib/types";
 import { displayName, isUnlocked } from "@/lib/types";
@@ -15,10 +16,21 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   const { data, error } = await db().from("pledges").select("*").eq("id", params.id).single();
   if (error || !data) return new Response("Not found", { status: 404 });
   const pl = data as Pledge;
+  const kind = new URL(req.url).searchParams.get("doc") || "plan";
+
+  // Program overview isn't private, so it's available before payment too.
+  if (kind === "overview") {
+    const prog = getProgram(pl.program);
+    const bytes = await renderPdf(overviewBlocks(pl.program), `${ORG.name} — ${prog.label}`, `${ORG.name} · ${prog.label} · ${ORG.website}`);
+    const file = `GHP_Overview_${prog.label.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "")}.pdf`;
+    return new Response(Buffer.from(bytes), {
+      headers: { "Content-Type": "application/pdf", "Content-Disposition": `attachment; filename="${file}"`, "Cache-Control": "no-store" },
+    });
+  }
+
   if (!isUnlocked(pl) && !isAdmin())
     return new Response("This plan unlocks once Greater Hudson Promise confirms your Year 1 contribution.", { status: 403 });
 
-  const kind = new URL(req.url).searchParams.get("doc") || "plan";
   const safe = displayName(pl).replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "");
   const headers = (type: string, name: string) => ({
     "Content-Type": type,

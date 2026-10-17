@@ -1,5 +1,5 @@
 // Shared content for the two partner documents, as simple layout blocks.
-import { ENGAGEMENTS, GUIDE, OCM_GUIDANCE, ORG, PLAN as BASE, REVIEW_DISCLAIMER, fill } from "./content";
+import { ENGAGEMENTS, GUIDE, OCM_GUIDANCE, ORG, PLAN as BASE, PROBLEM, REVIEW_DISCLAIMER, SOLUTION, TAX, fill } from "./content";
 import { buildGuide } from "./guide";
 import { getProgram } from "./programs";
 import type { Pledge } from "./types";
@@ -17,6 +17,8 @@ export type Block =
   | { t: "label"; label: string; text: string }
   | { t: "note"; text: string }
   | { t: "box"; text: string }
+  | { t: "stats"; items: { value: string; label: string }[] }
+  | { t: "quote"; text: string; who: string }
   | { t: "space"; h: number };
 
 function fmtDate(d: string | null) {
@@ -105,5 +107,40 @@ export function guideBlocks(pl: Pledge): Block[] {
     item.sub?.forEach((s) => B.push({ t: "label", label: s.label, text: s.answer }));
     if (item.note) B.push({ t: "note", text: item.note });
   });
+  return B;
+}
+
+// Program overview: GHP background (same for everyone) + the option the licensee chose.
+export function overviewBlocks(programId?: string | null): Block[] {
+  const prog = getProgram(programId);
+  const B: Block[] = [
+    { t: "title", text: ORG.name },
+    { t: "subtitle", text: `Program overview  ·  ${prog.label}  ·  ${ORG.website.replace(/^https?:\/\/|\/$/g, "")}` },
+    { t: "h", text: "Why Hudson" },
+    { t: "stats", items: PROBLEM.stats },
+    ...PROBLEM.body.map((x) => ({ t: "p", text: x }) as Block),
+    { t: "h", text: "About Greater Hudson Promise" },
+    ...SOLUTION.paras.map((x) => ({ t: "p", text: x }) as Block),
+    { t: "stats", items: SOLUTION.stats },
+    { t: "sub", text: "Milestones" },
+    { t: "kv", rows: SOLUTION.timeline.map((m) => [m.year, m.text] as [string, string]) },
+    { t: "h", text: `Your focus: ${prog.label}` },
+    { t: "p", text: prog.tagline, italic: true },
+    ...prog.closer.paras.map((x) => ({ t: "p", text: x }) as Block),
+    { t: "stats", items: prog.closer.stats },
+    ...prog.closer.quotes.map((q) => ({ t: "quote", text: q.text, who: q.who }) as Block),
+    { t: "h", text: "Learn more" },
+    {
+      t: "kv",
+      rows: [
+        ["Website", ORG.website],
+        ["Email", ORG.contactEmail],
+        ["Address", ORG.mailingAddress],
+        ["Tax status", `${TAX.line}${TAX.ein ? ` EIN ${TAX.ein}.` : ""}`],
+      ],
+    },
+    { t: "sub", text: "Sources" },
+    ...[...PROBLEM.sources.map((x) => x.text), ...SOLUTION.sources.map((x) => x.text)].map((x) => ({ t: "bullet", text: x }) as Block),
+  ];
   return B;
 }
