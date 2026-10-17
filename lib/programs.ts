@@ -72,7 +72,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
           title: "Strengthen Early Learning and School Success.",
           body: "Provide free, play-based early learning for children ages 0–5 and free after-school programming with homework help, daily reading, hot meals, and transportation, so children enter and stay in school ready to learn.",
           measure:
-            "Measured by the number of children served in early learning and after-school programs (2022: 20+ children daily in the Early Learning Program and 143+ children through the Traveling Early Learning Program; 2025: up to 31 youth served at a time in after-school).",
+            "Measured by the number of children served in early learning and after-school programs (2025: 31 children from 30 families enrolled in Promise Early Learning and up to 31 youth served at a time in after-school; 2022: 143+ children reached through the Traveling Early Learning Program).",
         },
         {
           title: "Expand Pathways to Education and Employment.",
@@ -90,6 +90,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
       qualitative: [
         "Qualitative success will be measured through participant and family feedback, interviews, and stories that show growth in stability, confidence, and connection. GHP staff, several with lived experience of the systems families are navigating, build trusted, individualized relationships with participants across programs.",
         "Participants describe the difference this makes. A Beyond GED student called the program “one of the best decisions I’ve made for my future,” and a parent said, “It’s been heaven sent for my child, and without this program I am not sure where my son would be.” Families in GHP’s enhanced jail visiting program reported improved parent behavior and reduced anxiety among children in surveys.",
+        "A parent of a Promise Early Learner wrote in 2025: \u201cIt\u2019s been wonderful to see how much confidence and independence he has gained\u2026 I\u2019ve especially noticed growth in his social skills and willingness to try new things.\u201d",
         "These qualitative measures, gathered through surveys, interviews, and ongoing staff contact, show not only whether programs are reaching families, but whether families feel more stable, supported, and hopeful about their future.",
       ],
       quantIntro:
@@ -99,17 +100,17 @@ export const PROGRAMS: Record<ProgramId, Program> = {
           heading: "Early Childhood and Youth",
           paras: [],
           bullets: [
-            "20+ children attended the Early Learning Program daily (2022)",
+            "31 children from 30 families enrolled in free Promise Early Learning, now in its fourth year (2025)",
             "143+ children were reached through the Traveling Early Learning Program at 10+ sites countywide (2022)",
             "Up to 31 youth served at a time in free after-school programming (2025)",
             "Up to 123 youth and families transported in a single day to after-school and summer programs (2025)",
           ],
-          after: "Tracking includes enrollment, daily attendance, and reading time, as every after-school scholar reads a minimum of twenty minutes per day.",
+          after: "GHP also convenes CO-HOST, a network of 24 youth-serving partner organizations that met monthly in 2025 and provided free professional development to 36 youth workers. Tracking includes enrollment, daily attendance, and reading time, as every after-school scholar reads a minimum of twenty minutes per day.",
         },
         {
           heading: "Young Adults (Beyond GED)",
           paras: ["In 2025:"],
-          bullets: ["34 GED tests were taken", "6 participants earned their GED (11 since program inception)", "16 participants gained employment", "20 participants received DMV identification cards", "4 participants opened bank accounts"],
+          bullets: ["20 Opportunity Youth enrolled", "34 GED tests were taken", "6 participants earned their GED (11 since program inception)", "16 participants gained employment", "20 participants received DMV identification cards", "4 participants opened bank accounts"],
         },
         {
           heading: "Family Stability",

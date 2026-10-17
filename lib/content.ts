@@ -26,7 +26,7 @@ export const STATS = [
   { value: "11", label: "students have earned their GED since launch" },
   { value: "16", label: "participants gained employment in 2025" },
   { value: "0", label: "completers have re-entered the justice system" },
-  { value: "31", label: "professional driving lessons given" },
+  { value: "20", label: "Opportunity Youth enrolled in 2025" },
 ];
 
 // Preset annual contribution levels (dollars per year).
@@ -283,6 +283,7 @@ export const PLAN = {
       heading: "Educational Outcomes",
       paras: ["Educational attainment is a primary success metric. In 2025:"],
       bullets: [
+        "20 Opportunity Youth were enrolled",
         "34 GED tests were taken",
         "6 participants earned their GED in 2025",
         "11 participants have earned their GED since program inception",
