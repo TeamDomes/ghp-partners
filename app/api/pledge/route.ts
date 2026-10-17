@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/supabase";
 import { ENGAGEMENTS, FREQUENCIES, LICENSE_TYPES } from "@/lib/content";
-import { notifyNewPledge } from "@/lib/email";
+import { notifyNewPledge, notifyPledgeReceived } from "@/lib/email";
 import type { Pledge } from "@/lib/types";
 
 const str = (v: unknown, max = 300) => (typeof v === "string" ? v.trim().slice(0, max) : "");
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
   if (!LICENSE_TYPES.includes(row.license_type)) return NextResponse.json({ error: "Invalid license type." }, { status: 400 });
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(row.contact_email)) return NextResponse.json({ error: "Please enter a valid email." }, { status: 400 });
   if (!FREQUENCIES[frequency]) return NextResponse.json({ error: "Choose a payment schedule." }, { status: 400 });
-  if (!(annual >= 500 && annual <= 1_000_000)) return NextResponse.json({ error: "The minimum contribution is $500 a year." }, { status: 400 });
+  if (!(annual * term >= 1000 && annual <= 1_000_000)) return NextResponse.json({ error: "The minimum pledge is $1,000 total." }, { status: 400 });
   if (!(term >= 1 && term <= 2)) return NextResponse.json({ error: "Choose a term of 1 or 2 years." }, { status: 400 });
   if (row.start_date && !/^\d{4}-\d{2}-\d{2}$/.test(row.start_date)) row.start_date = null;
   if (!b.agree || !b.review_ack) return NextResponse.json({ error: "Please check both acknowledgments." }, { status: 400 });
@@ -74,6 +74,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Something went wrong saving your plan. Please try again." }, { status: 500 });
   }
 
-  await notifyNewPledge(data as Pledge);
+  await Promise.all([notifyNewPledge(data as Pledge), notifyPledgeReceived(data as Pledge, new URL(req.url).origin)]);
   return NextResponse.json({ id: data.id });
 }
