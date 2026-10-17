@@ -4,7 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Partner with GHP — Community Impact Plans for NY Cannabis Licensees",
   description:
-    "Build your OCM Community Impact Plan around Greater Hudson Promise's Beyond GED program.",
+    "Build your OCM Community Impact Plan in partnership with Greater Hudson Promise in Hudson, NY.",
+  // Keep the site out of search engines while outreach is direct. Delete this line to allow indexing.
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
