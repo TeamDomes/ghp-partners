@@ -34,7 +34,8 @@ create table if not exists public.pledges (
   signer_name text not null,
   signer_title text,
   status text not null default 'pledged',  -- pledged | invoiced | deposit | paid | cancelled
-  list_publicly boolean not null default true
+  list_publicly boolean not null default true,
+  program text not null default 'general'  -- general | beyond_ged | justice
 );
 
 -- Lock the table down: only the server (service role key) can read/write.

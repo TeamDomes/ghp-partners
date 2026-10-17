@@ -1,4 +1,5 @@
-import { ENGAGEMENTS, FREQUENCIES, GUIDE, ORG, PLAN, fill } from "./content";
+import { ENGAGEMENTS, FREQUENCIES, GUIDE, ORG, fill } from "./content";
+import { getProgram } from "./programs";
 import type { Pledge } from "./types";
 import { displayName, money } from "./types";
 
@@ -19,6 +20,8 @@ export function buildGuide(p: Pledge): GuideItem[] {
   const budgetYears = Math.min(p.term_years, 2);
   const budget = annual * budgetYears;
   const engagements = ENGAGEMENTS.filter((e) => p.engagements?.includes(e.id));
+  const prog = getProgram(p.program);
+  const PLAN = prog.plan;
 
   let window = "Beginning upon renewal approval and continuing throughout the renewal period.";
   if (p.start_date) {
@@ -29,7 +32,7 @@ export function buildGuide(p: Pledge): GuideItem[] {
   }
 
   const partnership = [
-    `${ORG.name}. ${p.legal_name} will provide financial support of ${money(p.amount_per_payment)} ${freq.label.toLowerCase()} (${money(annual)} per year, ${money(Number(p.total_commitment))} over ${p.term_years} year${p.term_years > 1 ? "s" : ""}) to fund the ${ORG.program} program, which serves Opportunity Youth ages 16 to 24 in Hudson and Columbia County.`,
+    `${ORG.name}. ${p.legal_name} will provide financial support of ${money(p.amount_per_payment)} ${freq.label.toLowerCase()} (${money(annual)} per year, ${money(Number(p.total_commitment))} over ${p.term_years} year${p.term_years > 1 ? "s" : ""}) to ${prog.purpose}.`,
     ...engagements.map((e) => f(e.plan)),
     ORG.website,
   ].join(" ");
@@ -52,12 +55,12 @@ export function buildGuide(p: Pledge): GuideItem[] {
     },
     { q: "Who are the communities and individuals disproportionately impacted you intend to target?", answer: PLAN.who.map(f).join("\n\n") },
     { q: "In what region is the target population based?", answer: GUIDE.region },
-    { q: "What zip codes do you intend to target?", answer: GUIDE.zips },
-    { q: "Estimated number of individuals within target population you intend to impact.", answer: GUIDE.reach },
+    { q: "What zip codes do you intend to target?", answer: prog.guide.zips },
+    { q: "Estimated number of individuals within target population you intend to impact.", answer: prog.guide.reach, note: prog.guide.reachNote },
     {
       q: "What research have you done to understand the needs of your target population? Select all that apply.",
       answer: GUIDE.research,
-      note: GUIDE.researchNote,
+      note: prog.guide.researchNote ?? GUIDE.researchNote,
     },
     {
       q: "Are you partnering or collaborating with any community-based organizations, local institutions, and/or subject matter experts?",
@@ -71,8 +74,8 @@ export function buildGuide(p: Pledge): GuideItem[] {
     },
     {
       q: "What types of activities do you plan to implement in order to address the needs of the target population?",
-      answer: GUIDE.activities.join("\n"),
-      note: "Select each of these in the portal.",
+      answer: prog.guide.activities.join("\n"),
+      note: prog.guide.activitiesNote,
     },
     {
       q: "What is the anticipated benefit you will provide to the target population? Please provide at least 3 goals. Goals must be measurable.",

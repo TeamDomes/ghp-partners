@@ -47,6 +47,7 @@ export async function POST(req: Request) {
     signer_name: str(b.signer_name),
     signer_title: str(b.signer_title) || null,
     list_publicly: b.list_publicly !== false,
+    program: ["general", "beyond_ged", "justice"].includes(str(b.program)) ? str(b.program) : "general",
   };
 
   const missing = (["legal_name", "license_type", "license_number", "city", "county", "contact_name", "contact_email", "signer_name"] as const)
@@ -63,9 +64,9 @@ export async function POST(req: Request) {
   row.total_commitment = Math.round(annual * term * 100) / 100;
 
   let { data, error } = await db().from("pledges").insert(row).select().single();
-  if (error && /list_publicly/.test(error.message || "")) {
-    // Column not added yet (see supabase/002_partner_listing.sql) — save without it.
-    const { list_publicly: _omit, ...rest } = row;
+  if (error && /list_publicly|program/.test(error.message || "")) {
+    // Columns not added yet (see supabase/002 and 003 .sql) — save without them.
+    const { list_publicly: _a, program: _b, ...rest } = row;
     ({ data, error } = await db().from("pledges").insert(rest).select().single());
   }
   if (error) {

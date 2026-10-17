@@ -1,6 +1,7 @@
 import type { Pledge } from "./types";
 import { money, displayName } from "./types";
 import { FREQUENCIES, ORG } from "./content";
+import { getProgram } from "./programs";
 
 // Optional. Sends a notification via Resend if RESEND_API_KEY is set.
 export async function notifyNewPledge(p: Pledge) {
@@ -14,6 +15,7 @@ export async function notifyNewPledge(p: Pledge) {
     <p><strong>${name}</strong> just committed to a Community Impact Plan partnership with GHP.</p>
     <ul>
       <li>Commitment: ${money(p.amount_per_payment)} ${FREQUENCIES[p.frequency].label.toLowerCase()} for ${p.term_years} year(s) — <strong>${money(p.total_commitment)} total</strong></li>
+      <li>Directed to: ${getProgram(p.program).label}</li>
       <li>License: ${p.license_type} · ${p.license_number}</li>
       <li>Location: ${p.city}, ${p.county} County</li>
       <li>Contact: ${p.contact_name}${p.contact_title ? ", " + p.contact_title : ""} · ${p.contact_email}${p.contact_phone ? " · " + p.contact_phone : ""}</li>

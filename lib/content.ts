@@ -8,11 +8,11 @@ export const ORG = {
   name: "Greater Hudson Promise",
   short: "GHP",
   program: "Beyond GED",
-  contactEmail: "info@ghpn.org", // TODO: confirm with Jeff
+  contactEmail: "info@greaterhudsonpromise.org",
   website: "https://greaterhudsonpromise.org/",
-  donateUrl: "https://greaterhudsonpromise.org/", // TODO: GHP's exact donate page URL
-  checkPayable: "Greater Hudson Promise", // TODO: confirm payee + mailing address with Jeff
-  mailingAddress: "", // TODO
+  donateUrl: "https://greaterhudsonpromise.networkforgood.com/projects/207361-greater-hudson-promise-neighborhood",
+  checkPayable: "Greater Hudson Promise Neighborhood, Inc.", // legal name per IRS; confirm with Jeff
+  mailingAddress: "369 Warren Street, Hudson, NY 12534", // confirm checks go here
 };
 
 // Plan + guide unlock once GHP confirms a deposit of this share of the total pledge.
@@ -40,7 +40,7 @@ export const TIERS = [
 // Tax language. Contributions are deductible "to the extent allowed by law" — the standard
 // phrasing; confirm with GHP's accountant. Add the EIN once Jeff confirms it.
 export const TAX = {
-  ein: "", // TODO: GHP's EIN, e.g. "12-3456789"
+  ein: "85-0949720", // per IRS/ProPublica
   line: "Greater Hudson Promise is a registered 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent allowed by law, and GHP will send a written acknowledgment of each contribution for your tax records.",
   advisor: "Please consult your tax advisor about how deductibility applies to your business.",
 };
@@ -92,33 +92,39 @@ export const LICENSE_TYPES = [
 export const ENGAGEMENTS = [
   {
     id: "awareness",
-    label: "Share Beyond GED information with customers and staff",
-    plan: "{{company}} will display Beyond GED program information and refer eligible young adults and families to GHP.",
+    label: "Share GHP program information with customers and staff",
+    plan: "{{company}} will display information about GHP's programs and refer eligible young adults and families to GHP.",
+    programs: ["general", "beyond_ged", "justice"],
   },
   {
     id: "roundup",
     label: "In-store round-up / donation prompt for GHP",
-    plan: "{{company}} will offer customers an optional round-up or donation prompt at checkout, with all proceeds directed to GHP's Beyond GED program.",
+    plan: "{{company}} will offer customers an optional round-up or donation prompt at checkout, with all proceeds directed to GHP.",
+    programs: ["general", "beyond_ged", "justice"],
   },
   {
     id: "volunteer",
     label: "Staff volunteer hours (tutoring, mock interviews, events)",
     plan: "{{company}} staff will contribute volunteer hours to GHP, including mock interviews, résumé support, and event assistance.",
+    programs: ["general", "beyond_ged", "justice"],
   },
   {
     id: "career",
     label: "Career talks / business skills workshops (participants 21+ for on-site)",
     plan: "{{company}} will host or deliver career-readiness and small-business workshops for Beyond GED participants, with any on-premises activity limited to participants aged 21 and over in compliance with OCM rules.",
+    programs: ["general", "beyond_ged"],
   },
   {
     id: "driving",
     label: "Sponsor driving lessons or ID/DMV costs",
     plan: "{{company}} will designate a portion of its contribution to driving lessons and identification costs, removing transportation and documentation barriers to employment.",
+    programs: ["general", "beyond_ged"],
   },
   {
     id: "stipends",
     label: "Sponsor student stipends and hot meals",
     plan: "{{company}} will designate a portion of its contribution to participant stipends and hot meals on study days.",
+    programs: ["beyond_ged"],
   },
 ];
 
@@ -151,6 +157,44 @@ export const PROBLEM = {
     text: "Andrea Elliott, \u201cWhen the Weed Wars Came to Warren Street,\u201d The New York Times, Sept. 26, 2026",
     url: "https://www.nytimes.com/interactive/2026/09/26/nyregion/hudson-weed-wars.html",
   },
+};
+
+export const SOLUTION = {
+  eyebrow: "The solution",
+  title: "Greater Hudson Promise",
+  paras: [
+    "Greater Hudson Promise has been part of Hudson since 2011. That year it was one of fifteen communities in the country selected for a U.S. Department of Education Promise Neighborhood planning grant, the Obama Administration\u2019s initiative modeled on the Harlem Children\u2019s Zone. Catholic Charities led the original application in partnership with the Hudson City School District.",
+    "Today GHP is an independent 501(c)(3), led from the start by Executive Director Joan Hunt, with a team that includes advocates who have lived experience of the systems families are navigating.",
+    "Its home is 369 Warren Street, a renovated historic church in the heart of the city, where kids come after school for free homework help, hot meals, and enrichment, with transportation provided, and where young adults study for their GED.",
+    "GHP works cradle to career: early learning for babies and toddlers, after-school for school-age kids, Beyond GED for young adults, and emergency aid, guaranteed-income support, and court advocacy for families. Its annual budget has grown from about $138,000 in 2020 to $2.3 million in 2024.",
+  ],
+  timeline: [
+    { year: "2011", text: "Selected for a federal Promise Neighborhood planning grant" },
+    { year: "2015", text: "After-school program opens" },
+    { year: "2016", text: "Child-friendly visiting begins at the Columbia County Jail" },
+    { year: "2020", text: "HudsonUP guaranteed income pilot launches" },
+    { year: "2021", text: "Becomes an independent 501(c)(3)" },
+    { year: "2025", text: "$58,970 in emergency groceries during the SNAP lapse" },
+    { year: "2026", text: "Childcare Works launches to train new early educators" },
+  ],
+  stats: [
+    { value: "Since 2011", label: "serving Hudson families" },
+    { value: "$2.3M", label: "annual budget (2024)" },
+    { value: "760+", label: "residents received emergency grocery support, Nov. 2025" },
+    { value: "750+", label: "child-friendly jail visits for 90+ families since 2016" },
+    { value: "33% \u2192 85.7%", label: "employment among HudsonUP\u2019s first cohort (independent research)" },
+    { value: "189", label: "air conditioners delivered to Hudson families, 2021\u201324" },
+  ],
+  optionsEyebrow: "Choose where your contribution goes",
+  optionsTitle: "Three ways to partner",
+  optionsSub: "Your Community Impact Plan and portal responses are written around the option you choose.",
+  sources: [
+    { text: "U.S. Department of Education, Promise Neighborhoods grant awards (FY2011)", url: "https://www.ed.gov/grants-and-programs/grants-birth-grade-12/school-and-community-improvement-grants/promise-neighborhoods-pn/grant-awards-promise-neighborhoods-84215n" },
+    { text: "IRS Form 990 data via ProPublica Nonprofit Explorer", url: "https://projects.propublica.org/nonprofits/organizations/850949720" },
+    { text: "Jain Family Institute, HudsonUP Year 4 report (2025)", url: "https://jfiresearch.org/wp-content/uploads/2025/04/HudsonUP-Basic-Income-Pilot-Year-4-2025.pdf" },
+    { text: "NYS DCJS, Enhanced Child Visiting profile (2025)", url: "https://knowledgebank.criminaljustice.ny.gov/system/files/documents/2025/09/enhanced-child-visiting-printable-090825_0.pdf" },
+    { text: "Greater Hudson Promise program pages and 2022 Annual Report", url: "https://greaterhudsonpromise.org/" },
+  ],
 };
 
 export const LANDING = {

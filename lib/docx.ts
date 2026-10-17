@@ -11,7 +11,8 @@ import {
   TextRun,
   WidthType,
 } from "docx";
-import { ENGAGEMENTS, FREQUENCIES, GUIDE, OCM_GUIDANCE, ORG, PLAN, REVIEW_DISCLAIMER, fill } from "./content";
+import { ENGAGEMENTS, FREQUENCIES, GUIDE, OCM_GUIDANCE, ORG, PLAN as BASE, REVIEW_DISCLAIMER, fill } from "./content";
+import { getProgram } from "./programs";
 import { buildGuide } from "./guide";
 import type { Pledge } from "./types";
 import { displayName, money } from "./types";
@@ -96,6 +97,8 @@ export async function buildPlanDocx(pl: Pledge): Promise<Buffer> {
   const freq = FREQUENCIES[pl.frequency];
   const perYear = pl.total_commitment / pl.term_years;
   const engagements = ENGAGEMENTS.filter((e) => pl.engagements?.includes(e.id));
+  const prog = getProgram(pl.program);
+  const PLAN = { ...prog.plan, needQ: BASE.needQ, whoQ: BASE.whoQ, measureQ: BASE.measureQ, reporting: BASE.reporting };
 
   const children: (Paragraph | Table)[] = [
     new Paragraph({
@@ -110,7 +113,7 @@ export async function buildPlanDocx(pl: Pledge): Promise<Buffer> {
       ["Licensee", pl.legal_name + (pl.dba ? ` (d/b/a ${pl.dba})` : "")],
       ["License", `${pl.license_type} · ${pl.license_number}`],
       ["Location", [pl.street, pl.city].filter(Boolean).join(", ") + `, ${pl.county} County, NY`],
-      ["Community partner", `${ORG.name} (${ORG.short}) — ${ORG.program} program`],
+      ["Community partner", `${ORG.name} (${ORG.short}) — ${prog.label}`],
       ["Contact", `${pl.contact_name}${pl.contact_title ? ", " + pl.contact_title : ""} · ${pl.contact_email}${pl.contact_phone ? " · " + pl.contact_phone : ""}`],
     ]),
 
@@ -125,10 +128,10 @@ export async function buildPlanDocx(pl: Pledge): Promise<Buffer> {
 
     question("Partnership Commitment"),
     p(
-      `${company} commits ${money(pl.amount_per_payment)} ${freq.label.toLowerCase()} (${money(perYear)} per year) to ${ORG.name} in support of the ${ORG.program} program, for a term of ${pl.term_years} year${pl.term_years > 1 ? "s" : ""}, beginning ${fmtDate(pl.start_date)}. Total commitment over the term: ${money(pl.total_commitment)}.`
+      `${company} commits ${money(pl.amount_per_payment)} ${freq.label.toLowerCase()} (${money(perYear)} per year) to ${ORG.name} to ${prog.purpose}, for a term of ${pl.term_years} year${pl.term_years > 1 ? "s" : ""}, beginning ${fmtDate(pl.start_date)}. Total commitment over the term: ${money(pl.total_commitment)}.`
     ),
     p(
-      `Funds support participant stipends, hot meals on study days, GED instruction and testing, internship and job placement, and wraparound services including identification, transportation, court support, and housing stability.`
+      prog.uses
     ),
     ...(engagements.length
       ? [sub("Additional engagement"), ...engagements.map((e) => bullet(f(e.plan)))]

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, PROBLEM, RECOMMENDED, STATS, TAX, TIERS } from "@/lib/content";
+import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, PROBLEM, RECOMMENDED, SOLUTION, STATS, TAX, TIERS } from "@/lib/content";
+import { PROGRAMS, PROGRAM_ORDER } from "@/lib/programs";
 import { getPartners } from "@/lib/partners";
 import { money } from "@/lib/types";
 
@@ -49,17 +50,50 @@ export default async function Home() {
         <section className="section">
           <div className="cols">
             <div>
-              <span className="eyebrow">{PROBLEM.solutionEyebrow}</span>
-              <h2>{LANDING.aboutTitle}</h2>
+              <span className="eyebrow">{SOLUTION.eyebrow}</span>
+              <h2>{SOLUTION.title}</h2>
+              <ul className="timeline">
+                {SOLUTION.timeline.map((t) => (
+                  <li key={t.year + t.text}><b>{t.year}</b>{t.text}</li>
+                ))}
+              </ul>
             </div>
-            <div>{LANDING.about.map((t) => <p key={t}>{t}</p>)}</div>
+            <div>{SOLUTION.paras.map((t) => <p key={t}>{t}</p>)}</div>
           </div>
+          <div className="stats three" style={{ marginTop: 28 }}>
+            {SOLUTION.stats.map((s) => (
+              <div className="stat" key={s.label}>
+                <b style={{ fontSize: "1.9rem" }}>{s.value}</b>
+                <span>{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="section" id="options">
+          <span className="eyebrow">{SOLUTION.optionsEyebrow}</span>
+          <h2>{SOLUTION.optionsTitle}</h2>
+          <p style={{ color: "var(--ink-2)", maxWidth: 640 }}>{SOLUTION.optionsSub}</p>
+          <div className="options">
+            {PROGRAM_ORDER.map((id) => {
+              const pr = PROGRAMS[id];
+              return (
+                <div className="option" key={id}>
+                  <span className="tag">{pr.tagline}</span>
+                  <h3>{pr.label}</h3>
+                  <p>{pr.cardBody}</p>
+                  <div className="ostat"><b>{pr.cardStat.value}</b><span>{pr.cardStat.label}</span></div>
+                </div>
+              );
+            })}
+          </div>
+          <Link className="btn" href="/pledge" style={{ marginTop: 22 }}>Partner with GHP</Link>
         </section>
 
         <section className="section" id="program">
           <div className="cols">
             <div>
-              <span className="eyebrow">The program you&apos;d fund</span>
+              <span className="eyebrow">A closer look</span>
               <h2>{LANDING.programTitle}</h2>
             </div>
             <div>{LANDING.program.map((t) => <p key={t}>{t}</p>)}</div>
@@ -177,6 +211,11 @@ export default async function Home() {
             {PROBLEM.sources.map((s) => (
               <span key={s.n}>
                 [{s.n}] <a href={s.url} target="_blank" rel="noreferrer">{s.text}</a>.{" "}
+              </span>
+            ))}
+            {SOLUTION.sources.map((s) => (
+              <span key={s.url}>
+                <a href={s.url} target="_blank" rel="noreferrer">{s.text}</a>.{" "}
               </span>
             ))}
             Further reading: <a href={PROBLEM.furtherReading.url} target="_blank" rel="noreferrer">{PROBLEM.furtherReading.text}</a>.

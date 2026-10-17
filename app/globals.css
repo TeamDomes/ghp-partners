@@ -147,3 +147,21 @@ table.list td { border-bottom: 1px solid var(--line); padding: 10px; vertical-al
 .problem .stat b { font-size: 2.2rem; }
 .stat sup { font-size: .7em; color: var(--accent); margin-left: 2px; }
 .sources { font-size: .8rem; }
+
+.program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 700px) { .program-grid { grid-template-columns: 1fr; } }
+.choice.program b { font-size: 1.15rem; margin-bottom: 4px; }
+.choice.program small { display: block; line-height: 1.35; }
+.options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+@media (max-width: 860px) { .options { grid-template-columns: 1fr; } }
+.option { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; }
+.option h3 { margin-bottom: .3em; }
+.option .tag { font-family: var(--font-mono), monospace; font-size: .8rem; color: var(--accent); margin-bottom: 10px; }
+.option p { font-size: .95rem; color: var(--ink-2); }
+.option .ostat { margin-top: auto; border-top: 1px solid var(--line); padding-top: 12px; }
+.option .ostat b { font-family: var(--font-display), serif; font-weight: 500; font-size: 1.8rem; color: var(--accent); display: block; line-height: 1.1; }
+.option .ostat span { font-size: .85rem; color: var(--ink-2); }
+.timeline { list-style: none; padding: 0; margin: 8px 0 0; border-left: 2px solid var(--line); }
+.timeline li { padding: 0 0 14px 16px; position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -6px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.timeline li b { font-family: var(--font-mono), monospace; font-size: .85rem; color: var(--accent); margin-right: 8px; }

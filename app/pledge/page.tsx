@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { ENGAGEMENTS, FREQUENCIES, LICENSE_TYPES, RECOMMENDED, TAX, TIERS, type Frequency } from "@/lib/content";
 import { money } from "@/lib/types";
+import { PROGRAMS, PROGRAM_ORDER, type ProgramId } from "@/lib/programs";
 
 type Form = Record<string, string>;
 
@@ -16,6 +17,8 @@ export default function Pledge() {
   const [agree, setAgree] = useState(false);
   const [listMe, setListMe] = useState(true);
   const [reviewAck, setReviewAck] = useState(false);
+  const [program, setProgram] = useState<ProgramId>("general");
+  const engOptions = ENGAGEMENTS.filter((e) => e.programs.includes(program));
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
@@ -47,7 +50,7 @@ export default function Pledge() {
       const res = await fetch("/api/pledge", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...f, annual_amount: perYear, engagements: eng, agree, review_ack: reviewAck, list_publicly: listMe, social_equity: f.social_equity === "yes" }),
+        body: JSON.stringify({ ...f, annual_amount: perYear, engagements: eng.filter((id) => engOptions.some((e) => e.id === id)), program, agree, review_ack: reviewAck, list_publicly: listMe, social_equity: f.social_equity === "yes" }),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Something went wrong.");
@@ -119,6 +122,24 @@ export default function Pledge() {
         </div>
 
         <div className="form-card">
+          <h2>Where your contribution goes</h2>
+          <p className="hint">Your Community Impact Plan and portal responses are written around the option you choose.</p>
+          <div className="program-grid">
+            {PROGRAM_ORDER.map((id) => {
+              const pr = PROGRAMS[id];
+              return (
+                <label key={id} className={`choice program ${program === id ? "on" : ""}`}>
+                  <input type="radio" name="program" checked={program === id} onChange={() => setProgram(id)} />
+                  <b>{pr.label}</b>
+                  <small>{pr.tagline}</small>
+                </label>
+              );
+            })}
+          </div>
+          <p className="hint" style={{ marginTop: 10 }}>{PROGRAMS[program].cardBody}</p>
+        </div>
+
+        <div className="form-card">
           <h2>Your commitment</h2>
           <p className="hint">Annual contribution to GHP&apos;s Beyond GED program. {RECOMMENDED.line}</p>
           <div className="choice-grid">
@@ -174,7 +195,7 @@ export default function Pledge() {
         <div className="form-card">
           <h2>Other ways to show up <span style={{ fontSize: "1rem", color: "var(--ink-2)" }}>(optional)</span></h2>
           <p className="hint">Anything you check is written into your plan.</p>
-          {ENGAGEMENTS.map((e) => (
+          {engOptions.map((e) => (
             <label key={e.id} className="check">
               <input
                 type="checkbox"
