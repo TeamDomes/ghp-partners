@@ -38,7 +38,7 @@ export default function Pledge() {
     () =>
       ["legal_name", "license_type", "license_number", "city", "county", "contact_name", "contact_email", "signer_name"].every(
         (k) => (f[k] || "").trim()
-      ) && perYear >= 100 && agree && reviewAck,
+      ) && perYear >= 250 && agree && reviewAck,
     [f, perYear, agree, reviewAck]
   );
 
@@ -46,7 +46,7 @@ export default function Pledge() {
     e.preventDefault();
     setErr("");
     if (!valid) {
-      setErr("Please complete the required fields (marked *) and check both acknowledgments.");
+      setErr(perYear < 250 ? "The minimum contribution is $250 a year." : "Please complete the required fields (marked *) and check both acknowledgments.");
       return;
     }
     setBusy(true);
@@ -158,13 +158,13 @@ export default function Pledge() {
             <label className={`choice ${tier === "custom" ? "on" : ""}`}>
               <input type="radio" name="tier" checked={tier === "custom"} onChange={() => setTier("custom")} />
               <small className="mono">Other</small>
-              <b>Custom</b>
-              <small>your amount</small>
+              <b>Your amount</b>
+              <small>from $250 a year</small>
             </label>
           </div>
           {tier === "custom" && (
-            <label className="field"><span>Annual amount ($) {req}</span>
-              <input type="number" min={100} step={50} value={f.custom_annual || ""} onChange={set("custom_annual")} />
+            <label className="field"><span>Annual amount ($250 minimum) {req}</span>
+              <input type="number" min={250} step={50} value={f.custom_annual || ""} onChange={set("custom_annual")} />
             </label>
           )}
           <div className="grid2">
