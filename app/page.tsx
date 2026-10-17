@@ -57,7 +57,16 @@ export default async function Home() {
             ))}
           </div>
           <div className="narrow" style={{ marginTop: 28 }}>
-            {PROBLEM.body.map((t) => <p key={t}>{t}</p>)}
+            {PROBLEM.body.map((t) =>
+              typeof t === "string" ? (
+                <p key={t}>{t}</p>
+              ) : (
+                <blockquote key={t.who} style={{ margin: "28px 0", paddingLeft: 18, borderLeft: "3px solid var(--accent)" }}>
+                  <p className="quote">&ldquo;{t.quote}&rdquo;</p>
+                  <span className="quote-who">{t.who}</span>
+                </blockquote>
+              )
+            )}
           </div>
         </section>
 

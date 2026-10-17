@@ -137,21 +137,29 @@ export const PROBLEM = {
   title: "One small city carries New York\u2019s story",
   stats: [
     { value: "28.2%", label: "of Hudson residents live below the poverty line \u2014 more than double Columbia County\u2019s 12.1%", src: 1 },
-    { value: "1 in 10", label: "Hudson residents were displaced when urban renewal demolished 286 buildings north of Warren Street", src: 3 },
+    { value: "1 in 10", label: "Hudson residents were displaced by urban renewal north of Warren Street", src: 3 },
     { value: "80%+", label: "of people arrested for marijuana possession in New York were Black or Latino", src: 2 },
   ],
   body: [
-    "Hudson\u2019s Black community has absorbed one policy blow after another. In the late 1960s and early \u201970s, urban renewal cleared about 50 acres of a working-class neighborhood near the waterfront, north of Warren Street, and displaced more than 200 families \u2014 nearly 850 people. Many of the Black families pushed out were rehoused in public housing and were far less likely than others to go on to own homes or build wealth.",
+    "Hudson\u2019s Black community has absorbed one policy blow after another. In the late 1960s and early \u201970s, urban renewal cleared more than 50 acres of the North Bay, a working-class neighborhood by the waterfront, north of Warren Street, and the most racially diverse in the city. More than 200 families, nearly 850 people, were displaced.",
+    "The same project drew the line that still divides Hudson. North of Warren, homes were bulldozed and Bliss Towers, the city\u2019s only public housing, went up in their place. On Warren Street, the historic houses were saved: the city restored them with federal urban renewal money, and in 1973 Hudson became the first city in the country to receive federal funds for historic rehabilitation through facade easements. Those restored blocks are the Warren Street visitors know today.",
+    "Displacement didn\u2019t land equally. Families who could get a mortgage could buy elsewhere and build equity over generations. For Black families, that door was largely shut: for decades the Federal Housing Administration refused to insure mortgages in or around Black neighborhoods. In New York today, 67% of white households own their homes, compared with 32% of Black households.",
     "Then came the War on Drugs. New York\u2019s drug laws and cannabis prohibition were enforced hardest on Black and Latino New Yorkers. An arrest could cost a job, an apartment, or a place in school, and the damage carried into the next generation.",
-    "Today Warren Street is a destination for galleries, restaurants, and now dispensaries. But the divide renewal drew is still there: Hudson\u2019s median household income is $54,139, against $81,528 for Columbia County and $85,974 statewide, and more than one in four residents lives in poverty. Young people leave school to work and support their families, and too many are pulled into the justice system.",
+    "Today Warren Street is a destination for galleries, restaurants, and now dispensaries, and it is still a dividing line. North of Warren is home to nearly all of the city\u2019s subsidized housing and most of its Black residents; in 2018, 28.8% of residents there were Black, compared with 13.3% south of Warren. Hudson\u2019s median household income is $54,139, against $81,528 for Columbia County and $85,974 statewide, and more than one in four residents lives in poverty. Young people leave school to work and support their families, and too many are pulled into the justice system.",
+    {
+      quote:
+        "There was probably about 90 percent of the stores on Warren Street I had never, ever stepped inside\u2026 There wasn\u2019t anybody that worked there that you recognized or looked like you. It was just like Warren Street was a separate city from the rest of Hudson.",
+      who: "Kamal Johnson, Hudson\u2019s first Black mayor, 2020",
+    },
     "You don\u2019t have to be in Hudson for this to be your community\u2019s story. The same state and federal policies hit Black neighborhoods across New York. Hudson is where a proven program is already turning that history around, and where your Community Impact Plan can show measurable results.",
-  ],
+  ] as (string | { quote: string; who: string })[],
   solutionEyebrow: "The solution",
   sources: [
     { n: 1, text: "U.S. Census Bureau, American Community Survey 2020\u20132024 5-year estimates (via Census Reporter)", url: "https://censusreporter.org/profiles/16000US3635969-hudson-ny" },
     { n: 2, text: "NYCLU, legislative memo on the Marihuana Regulation and Taxation Act, 2021", url: "https://www.nyclu.org/uploads/2021/03/2021-legislativememo-mrta.pdf" },
     { n: 3, text: "Caitie Hilverman, \u201cBliss Towers, Then,\u201d citing City of Hudson records, 2026", url: "https://deadandlivingthings.substack.com/p/bliss-towers-then" },
     { n: 4, text: "Abigail Bliss, \u201cFault Lines: The Legacy of Urban Renewal in Hudson, NY,\u201d MIT, 2020", url: "https://dspace.mit.edu/entities/publication/cc53b0b4-ab8f-4f31-9116-867012ec1d00" },
+    { n: 5, text: "New York State Attorney General, \u201cRacial Disparities in Homeownership,\u201d 2023", url: "https://ag.ny.gov/sites/default/files/reports/oag-report-racial-disparities-in-homeownership.pdf" },
   ],
   furtherReading: [
     {

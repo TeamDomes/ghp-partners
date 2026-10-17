@@ -118,7 +118,7 @@ export function overviewBlocks(programId?: string | null): Block[] {
     { t: "subtitle", text: `Program overview  ·  ${prog.label}  ·  ${ORG.website.replace(/^https?:\/\/|\/$/g, "")}` },
     { t: "h", text: "Why Hudson" },
     { t: "stats", items: PROBLEM.stats },
-    ...PROBLEM.body.map((x) => ({ t: "p", text: x }) as Block),
+    ...PROBLEM.body.map((x) => (typeof x === "string" ? { t: "p", text: x } : { t: "quote", text: x.quote, who: x.who }) as Block),
     { t: "h", text: "About Greater Hudson Promise" },
     ...SOLUTION.paras.map((x) => ({ t: "p", text: x }) as Block),
     { t: "stats", items: SOLUTION.stats },
