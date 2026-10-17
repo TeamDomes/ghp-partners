@@ -219,13 +219,14 @@ export const LANDING = {
     { text: "One of the best decisions I've made for my future.", who: "Beyond GED student" },
     { text: "It's been heaven sent for my child, and without this program I am not sure where my son would be.", who: "Beyond GED parent" },
   ],
-  howTitle: "How it works",
+  howTitle: "Four steps to your plan",
   how: [
-    { step: "Read", body: "Learn about GHP and Beyond GED on this page." },
-    { step: "Commit", body: "Choose a contribution level and any optional ways your team wants to get involved, then sign your pledge." },
-    { step: "Unlock", body: "Pay a 50% deposit on your total pledge. Once GHP confirms it, you get your Community Impact Plan in Word plus suggested responses to every Community Impact question on the OCM renewal portal." },
-    { step: "Report", body: "GHP sends you an annual impact summary you can use for your next renewal." },
+    { step: "Choose your focus", body: "General support for GHP, Beyond GED, or Families Impacted by Incarceration.", href: "#options" },
+    { step: "Sign your pledge", body: "We recommend $5,000 a year for two years. The form takes about ten minutes.", href: "/pledge" },
+    { step: "Make your deposit", body: "Pay 50% of your total pledge online or by check.", href: "" },
+    { step: "Receive your plan", body: "A complete Community Impact Plan, plus suggested responses to every Community Impact question on the OCM renewal application, ready for your review.", href: "" },
   ],
+  reportNote: "Each year, GHP sends partners an impact summary to support their next renewal.",
   disclaimer:
     "The plan and portal responses are a suggested draft. Each licensee is solely responsible for reviewing, editing, and approving its own submission to OCM. Nothing here is legal or tax advice.",
 };

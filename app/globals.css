@@ -174,3 +174,10 @@ a.option:hover { border-color: var(--accent); transform: translateY(-2px); box-s
 .back-link:hover { color: var(--accent); }
 html { scroll-behavior: smooth; }
 section[id] { scroll-margin-top: 16px; }
+
+.hero-steps { margin-top: 36px; }
+ol.steps { list-style: none; padding: 0; margin: 0; }
+.hero-steps .step p { color: var(--ink-2); font-size: .95rem; margin: 0; }
+.hero-steps .step h3 { margin: 4px 0 6px; }
+.hero-steps .step h3 a { color: inherit; text-decoration: none; border-bottom: 1.5px solid var(--accent); }
+.steps-note { font-size: .88rem; color: var(--ink-2); margin-top: 14px; }

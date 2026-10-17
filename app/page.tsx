@@ -25,6 +25,19 @@ export default async function Home() {
             {LANDING.headline2}
           </h1>
           <p className="lede">{LANDING.sub}</p>
+          <div className="hero-steps">
+            <span className="eyebrow" style={{ marginBottom: 12 }}>{LANDING.howTitle}</span>
+            <ol className="steps">
+              {LANDING.how.map((s, i) => (
+                <li className="step" key={s.step}>
+                  <span className="mono">0{i + 1}</span>
+                  <h3>{s.href ? <a href={s.href}>{s.step}</a> : s.step}</h3>
+                  <p>{s.body}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="steps-note">{LANDING.reportNote}</p>
+          </div>
           <div className="actions">
             <Link className="btn" href="/pledge">Partner with GHP</Link>
             <a className="btn ghost" href="#options">See the options</a>
@@ -151,19 +164,6 @@ export default async function Home() {
                 <a href={OCM_GUIDANCE.url} target="_blank" rel="noreferrer">Read {OCM_GUIDANCE.label}</a>
               </p>
             </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <span className="eyebrow">{LANDING.howTitle}</span>
-          <div className="steps">
-            {LANDING.how.map((s, i) => (
-              <div className="step" key={s.step}>
-                <span className="mono">0{i + 1}</span>
-                <h3>{s.step}</h3>
-                <p style={{ color: "var(--ink-2)", fontSize: ".95rem" }}>{s.body}</p>
-              </div>
-            ))}
           </div>
         </section>
 
