@@ -17,8 +17,12 @@ export default async function Home() {
         </nav>
 
         <header className="hero">
-          <span className="eyebrow">{LANDING.eyebrow}</span>
-          <h1>{LANDING.headline}</h1>
+          <span className="hero-eyebrow">{LANDING.eyebrow}</span>
+          <h1>
+            {LANDING.headline}
+            <br />
+            {LANDING.headline2}
+          </h1>
           <p className="lede">{LANDING.sub}</p>
           <div className="actions">
             <Link className="btn" href="/pledge">Partner with GHP</Link>

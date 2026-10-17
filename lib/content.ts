@@ -127,7 +127,8 @@ export const ENGAGEMENTS = [
 // ─────────────────────────────────────────────────────────────
 export const LANDING = {
   eyebrow: "For New York cannabis licensees",
-  headline: "Your Community Impact Plan, done right.",
+  headline: "Need a Community Impact Plan?",
+  headline2: "We've Got You Covered",
   sub: "New York's Office of Cannabis Management asks every licensee to show a Community Impact Plan at renewal. Partner with Greater Hudson Promise and put your plan to work for young people in Hudson and Columbia County who were hurt most by the War on Drugs.",
   aboutTitle: "About GHP",
   about: [
