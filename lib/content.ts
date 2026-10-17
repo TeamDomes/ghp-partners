@@ -174,6 +174,7 @@ export const SOLUTION = {
     { year: "2016", text: "Child-friendly visiting begins at the Columbia County Jail" },
     { year: "2020", text: "HudsonUP guaranteed income pilot launches" },
     { year: "2021", text: "Becomes an independent 501(c)(3)" },
+    { year: "2022", text: "Beyond GED launches for Opportunity Youth" },
     { year: "2025", text: "$350,170 in emergency aid, including groceries for 760+ residents during the SNAP lapse" },
     { year: "2026", text: "Childcare Works launches to train new early educators" },
   ],
@@ -236,10 +237,10 @@ export const PLAN = {
   needQ: "What problem or need does your community impact plan seek to address? Please include any relevant data.",
   need: [
     "The {{company}}/Greater Hudson Promise (GHP) partnership addresses the urgent challenge facing Opportunity Youth in the city of Hudson, NY and Columbia County. Many of the families served have been disproportionately affected by the War on Drugs and its long-term economic and social consequences, contributing to school disengagement, economic instability, and higher rates of justice system involvement among young people of color.",
-    "The partnership centers on GHP's Education and Professional Development work, specifically the Beyond GED program. Beyond GED was created in 2021 in direct response to young adults in Hudson who were increasingly interacting with the justice system and facing incarceration after dropping out of school. Through interviews with the program's first cohort, young people identified poverty as the primary driver of school withdrawal, often leaving school to work and support themselves or their families. Their feedback shaped the program to address real barriers with wraparound support.",
+    "The partnership centers on GHP's Education and Professional Development work, specifically the Beyond GED program. Beyond GED was created in 2022 in direct response to young adults in Hudson who were increasingly interacting with the justice system and facing incarceration after dropping out of school. Through interviews with the program's first cohort, young people identified poverty as the primary driver of school withdrawal, often leaving school to work and support themselves or their families. Their feedback shaped the program to address real barriers with wraparound support.",
     "The need is clear. Young people without a high school credential face reduced lifetime earnings, higher unemployment rates, and greater risk of justice system involvement. Beyond GED fills a critical gap for youth who have already left the traditional school system and require an alternative, supportive route to completion.",
     "Many participants facing serious felony charges were able to avoid prison and instead transition into higher education or employment. Since participation, none have re-entered the justice system. These outcomes demonstrate the power of combining academic instruction with financial assistance, professional development, vocational exploration, college support, and practical resources.",
-    "Since launching in 2021, Beyond GED has served over 23 young people. Within six weeks of the first cohort enrolling, 100 percent completed their GEDs. The {{company}}–GHP partnership is uniquely positioned to deepen and expand this impact by increasing enrollment of Opportunity Youth across Columbia County, providing a safe learning and workforce development environment, expanding career-connected training opportunities, reducing justice system involvement, and strengthening long-term economic mobility for young adults living in poverty. At its core, this partnership addresses educational and economic disconnection among Opportunity Youth who have been failed by traditional systems. By providing a structured pathway to high school equivalency, career development, and ongoing support, {{company}} and GHP can interrupt cycles of poverty and justice involvement while building a stronger, more equitable workforce pipeline for Columbia County.",
+    "Since launching in 2022, Beyond GED has served over 23 young people. Within six weeks of the first cohort enrolling, 100 percent completed their GEDs. The {{company}}–GHP partnership is uniquely positioned to deepen and expand this impact by increasing enrollment of Opportunity Youth across Columbia County, providing a safe learning and workforce development environment, expanding career-connected training opportunities, reducing justice system involvement, and strengthening long-term economic mobility for young adults living in poverty. At its core, this partnership addresses educational and economic disconnection among Opportunity Youth who have been failed by traditional systems. By providing a structured pathway to high school equivalency, career development, and ongoing support, {{company}} and GHP can interrupt cycles of poverty and justice involvement while building a stronger, more equitable workforce pipeline for Columbia County.",
   ],
   whoQ: "Who are the communities and individuals disproportionately impacted you intend to target?",
   who: [
@@ -317,7 +318,7 @@ export const PLAN = {
     {
       heading: "Justice System Diversion and Recidivism",
       paras: [
-        "A key long term metric is reduced justice system involvement. Since launching in 2021, none of the participants who completed the program have re-entered the justice system. We track court involvement, compliance with legal requirements, and post program outcomes.",
+        "A key long term metric is reduced justice system involvement. Since launching in 2022, none of the participants who completed the program have re-entered the justice system. We track court involvement, compliance with legal requirements, and post program outcomes.",
       ],
       bullets: [],
     },
