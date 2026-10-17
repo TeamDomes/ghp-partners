@@ -192,3 +192,5 @@ ol.steps { list-style: none; padding: 0; margin: 0; }
 .lic-results button { width: 100%; text-align: left; background: none; border: 0; padding: 10px 14px; font: inherit; cursor: pointer; color: var(--ink); }
 .lic-results button:hover { background: var(--paper-2); }
 .lic-results small { display: block; color: var(--ink-2); font-size: .78rem; margin-top: 2px; }
+
+@media (max-width: 600px) { .nav a.nav-ghp { display: none; } }

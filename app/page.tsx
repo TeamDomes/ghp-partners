@@ -13,7 +13,8 @@ export default async function Home() {
       <div className="wrap">
         <nav className="nav">
           <span className="brand">GHP · Community Impact Partners</span>
-          <a href="#partners" className="brand" style={{ marginLeft: "auto", marginRight: 16 }}>Partners</a>
+          <a href={ORG.website} target="_blank" rel="noreferrer" className="brand nav-ghp" style={{ marginLeft: "auto", marginRight: 16 }}>Visit GHP ↗</a>
+          <a href="#partners" className="brand" style={{ marginRight: 16 }}>Partners</a>
           <Link className="btn small" href="/pledge">Build my plan</Link>
         </nav>
 
@@ -71,7 +72,10 @@ export default async function Home() {
                 ))}
               </ul>
             </div>
-            <div>{SOLUTION.paras.map((t) => <p key={t}>{t}</p>)}</div>
+            <div>
+              {SOLUTION.paras.map((t) => <p key={t}>{t}</p>)}
+              <a className="btn ghost" href={ORG.website} target="_blank" rel="noreferrer">Visit greaterhudsonpromise.org ↗</a>
+            </div>
           </div>
           <div className="stats three" style={{ marginTop: 28 }}>
             {SOLUTION.stats.map((s) => (
@@ -212,7 +216,7 @@ export default async function Home() {
         </div>
 
         <footer className="footer">
-          <p>{ORG.name} · Hudson, NY · <a href={`mailto:${ORG.contactEmail}`}>{ORG.contactEmail}</a></p>
+          <p><a href={ORG.website} target="_blank" rel="noreferrer">{ORG.name}</a> · Hudson, NY · <a href={`mailto:${ORG.contactEmail}`}>{ORG.contactEmail}</a></p>
           <p>{TAX.line}{TAX.ein ? ` EIN ${TAX.ein}.` : ""} {TAX.advisor}</p>
           <p>{LANDING.disclaimer}</p>
           <p className="sources">

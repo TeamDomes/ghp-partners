@@ -61,8 +61,8 @@ export const OCM_GUIDANCE = {
 
 export const PARTNERS_PAGE = {
   eyebrow: "Community Partners",
-  title: "The licensees behind Beyond GED",
-  sub: "These New York cannabis businesses are investing in Opportunity Youth in Hudson and Columbia County through their Community Impact Plans.",
+  title: "Pledged Licensees",
+  sub: "These New York cannabis businesses are investing in Hudson and Columbia County families through their Community Impact Plans with Greater Hudson Promise.",
   empty: "Our first Community Partners are signing on now. Yours could be the first name here.",
   cta: "Join them",
 };
