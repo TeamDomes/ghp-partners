@@ -76,6 +76,10 @@ export default function Home() {
                 You get a complete plan, in Word, written around your business: the need, the population, three goals,
                 qualitative and quantitative measures, your financial commitment, and how GHP will report back.
               </p>
+              <p>
+                You also get a renewal application guide: suggested responses to each Community Impact question on the
+                OCM renewal portal, from target zip codes to your two-year budget, ready to review and paste in.
+              </p>
             </div>
           </div>
         </section>
@@ -111,7 +115,7 @@ export default function Home() {
 
         <div className="cta">
           <h2>Ready to put your plan to work?</h2>
-          <p>About ten minutes. You&apos;ll download your Community Impact Plan as soon as you finish.</p>
+          <p>About ten minutes to sign up. Your plan and renewal guide unlock once GHP receives your 50% deposit.</p>
           <Link className="btn" href="/pledge">Build my Community Impact Plan</Link>
         </div>
 

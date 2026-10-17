@@ -11,7 +11,8 @@ import {
   TextRun,
   WidthType,
 } from "docx";
-import { ENGAGEMENTS, FREQUENCIES, ORG, PLAN, fill } from "./content";
+import { ENGAGEMENTS, FREQUENCIES, GUIDE, ORG, PLAN, fill } from "./content";
+import { buildGuide } from "./guide";
 import type { Pledge } from "./types";
 import { displayName, money } from "./types";
 
@@ -120,7 +121,7 @@ export async function buildPlanDocx(pl: Pledge): Promise<Buffer> {
     ...PLAN.who.map((t) => p(f(t))),
 
     question("Goals"),
-    ...PLAN.goals.map((g) => numbered(g.title, g.body)),
+    ...PLAN.goals.map((g) => numbered(g.title, `${g.body} ${g.measure}`)),
 
     question("Partnership Commitment"),
     p(
@@ -160,6 +161,38 @@ export async function buildPlanDocx(pl: Pledge): Promise<Buffer> {
       ["Date", new Date(pl.created_at).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })],
     ])
   );
+
+  // ── Part 2: Renewal Application Guide ──
+  children.push(
+    new Paragraph({
+      pageBreakBefore: true,
+      spacing: { after: 80 },
+      children: [new TextRun({ text: GUIDE.title, font: HEAD_FONT, size: 40, color: INK })],
+    }),
+    new Paragraph({
+      spacing: { after: 240 },
+      children: [new TextRun({ text: `Community Impact Plan section  \u00b7  ${company}`, font: BODY_FONT, size: 22, color: "6B5F55" })],
+    }),
+    p(GUIDE.intro, { italic: true })
+  );
+  buildGuide(pl).forEach((item, i) => {
+    children.push(
+      new Paragraph({
+        spacing: { before: 320, after: 120 },
+        keepNext: true,
+        children: [
+          new TextRun({ text: `${i + 1}.  `, bold: true, font: HEAD_FONT, size: 22, color: ACCENT }),
+          new TextRun({ text: item.q, bold: true, font: BODY_FONT, size: 22, color: INK }),
+        ],
+      })
+    );
+    if (item.answer) item.answer.split(/\n/).filter((l) => l.trim()).forEach((line) => children.push(p(line, { after: 100 })));
+    if (item.sub) item.sub.forEach((s) => children.push(new Paragraph({ spacing: { after: 100, line: 288 }, children: [
+      new TextRun({ text: s.label + ":  ", bold: true, font: BODY_FONT, size: 22, color: INK }),
+      new TextRun({ text: s.answer, font: BODY_FONT, size: 22, color: INK }),
+    ] })));
+    if (item.note) children.push(p("Note: " + item.note, { italic: true }));
+  });
 
   const doc = new Document({
     creator: "GHP Community Impact Partners",

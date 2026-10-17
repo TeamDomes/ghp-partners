@@ -112,3 +112,16 @@ table.list th { text-align: left; font-family: var(--font-mono), monospace; font
 table.list td { border-bottom: 1px solid var(--line); padding: 10px; vertical-align: top; }
 .table-scroll { overflow-x: auto; }
 .pill { font-family: var(--font-mono), monospace; font-size: .75rem; border-radius: 999px; padding: 2px 8px; background: var(--paper-2); }
+
+/* renewal guide */
+.guide-item { border-top: 1px solid var(--line); padding: 22px 0; }
+.guide-q { font-weight: 600; margin-bottom: 10px; }
+.guide-num { font-family: var(--font-mono), monospace; color: var(--accent); font-size: .82rem; display: block; margin-bottom: 4px; }
+.answer { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 76px 14px 16px; white-space: pre-wrap; font-size: .95rem; margin-bottom: 8px; max-height: 260px; overflow: auto; }
+.answer .label { display: block; font-family: var(--font-mono), monospace; font-size: .76rem; color: var(--ink-2); margin-bottom: 4px; }
+.copy { position: absolute; top: 10px; right: 10px; font: inherit; font-size: .8rem; font-weight: 600; border: 1.5px solid var(--ink); background: var(--card); color: var(--ink); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:hover { background: var(--ink); color: var(--paper); }
+.guide-note { font-size: .88rem; color: var(--ink-2); }
+.guide-note::before { content: "Note \2014 "; font-family: var(--font-mono), monospace; color: var(--accent); }
+.budget-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 600px) { .budget-grid { grid-template-columns: 1fr; } .answer { padding-right: 16px; padding-top: 44px; } }

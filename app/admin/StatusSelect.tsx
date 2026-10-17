@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { STATUSES } from "@/lib/types";
 
 export default function StatusSelect({ id, value }: { id: string; value: string }) {
   const [v, setV] = useState(value);
@@ -14,7 +15,7 @@ export default function StatusSelect({ id, value }: { id: string; value: string 
         if (!r.ok) { alert("Couldn't update status"); setV(value); }
       }}
     >
-      {["pledged", "invoiced", "paid", "cancelled"].map((s) => <option key={s}>{s}</option>)}
+      {STATUSES.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
     </select>
   );
 }

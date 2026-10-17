@@ -2,7 +2,7 @@ import { isAdmin } from "@/lib/auth";
 import { db } from "@/lib/supabase";
 import { FREQUENCIES } from "@/lib/content";
 import type { Pledge } from "@/lib/types";
-import { displayName, money } from "@/lib/types";
+import { depositAmount, displayName, isUnlocked, money } from "@/lib/types";
 import StatusSelect from "./StatusSelect";
 
 export const dynamic = "force-dynamic";
@@ -27,7 +27,8 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
   const live = rows.filter((r) => r.status !== "cancelled");
   const total = live.reduce((s, r) => s + Number(r.total_commitment), 0);
   const annual = live.reduce((s, r) => s + Number(r.total_commitment) / r.term_years, 0);
-  const paid = rows.filter((r) => r.status === "paid").length;
+  const unlocked = rows.filter((r) => isUnlocked(r)).length;
+  const waiting = rows.filter((r) => r.status === "pledged" || r.status === "invoiced").length;
 
   return (
     <main className="wrap" style={{ paddingTop: 40, paddingBottom: 72 }}>
@@ -43,7 +44,7 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
         <div className="stat"><b>{live.length}</b><span>active partners</span></div>
         <div className="stat"><b>{money(annual)}</b><span>committed per year</span></div>
         <div className="stat"><b>{money(total)}</b><span>total over all terms</span></div>
-        <div className="stat"><b>{paid}</b><span>marked paid</span></div>
+        <div className="stat"><b>{unlocked}</b><span>unlocked · {waiting} awaiting deposit</span></div>
       </div>
 
       <div className="table-scroll">
@@ -57,10 +58,10 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
                 <td>{new Date(r.created_at).toLocaleDateString()}</td>
                 <td><strong>{displayName(r)}</strong><br /><span style={{ color: "var(--ink-2)" }}>{r.city}, {r.county}</span></td>
                 <td>{r.license_type}<br /><span className="mono" style={{ fontSize: ".8rem" }}>{r.license_number}</span></td>
-                <td><strong>{money(r.total_commitment)}</strong><br /><span style={{ color: "var(--ink-2)" }}>{money(r.amount_per_payment)} {FREQUENCIES[r.frequency]?.label.toLowerCase()} · {r.term_years}y</span></td>
+                <td><strong>{money(r.total_commitment)}</strong><br /><span style={{ color: "var(--ink-2)" }}>{money(r.amount_per_payment)} {FREQUENCIES[r.frequency]?.label.toLowerCase()} · {r.term_years}y</span><br /><span className="mono" style={{ fontSize: ".8rem" }}>Deposit due: {money(depositAmount(r))}</span></td>
                 <td>{r.contact_name}<br /><a href={`mailto:${r.contact_email}`}>{r.contact_email}</a>{r.contact_phone ? <><br />{r.contact_phone}</> : null}</td>
                 <td><StatusSelect id={r.id} value={r.status} /></td>
-                <td><a href={`/api/plan/${r.id}`}>.docx</a></td>
+                <td><a href={`/api/plan/${r.id}`}>.docx</a><br /><a href={`/thanks?id=${r.id}`}>page</a></td>
               </tr>
             ))}
             {!rows.length && <tr><td colSpan={7} style={{ color: "var(--ink-2)", padding: 24 }}>No partners yet.</td></tr>}

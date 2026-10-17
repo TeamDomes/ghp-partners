@@ -9,7 +9,16 @@ export const ORG = {
   short: "GHP",
   program: "Beyond GED",
   contactEmail: "info@ghpn.org", // TODO: confirm with Jeff
-  website: "https://www.ghpn.org", // TODO: confirm
+  website: "https://greaterhudsonpromise.org/",
+  donateUrl: "https://greaterhudsonpromise.org/", // TODO: GHP's exact donate page URL
+  checkPayable: "Greater Hudson Promise", // TODO: confirm payee + mailing address with Jeff
+  mailingAddress: "", // TODO
+};
+
+// Plan + guide unlock once GHP confirms a deposit of this share of the total pledge.
+export const DEPOSIT = {
+  share: 0.5,
+  turnaround: "within 2 business days", // how fast GHP confirms and unlocks — TODO confirm with Jeff
 };
 
 // Headline stats shown on the landing page.
@@ -108,8 +117,8 @@ export const LANDING = {
   howTitle: "How it works",
   how: [
     { step: "Read", body: "Learn about GHP and Beyond GED on this page." },
-    { step: "Commit", body: "Choose a contribution level and any optional ways your team wants to get involved." },
-    { step: "Download", body: "Get a complete, ready-to-edit Community Impact Plan in Word, built around your business and your commitment." },
+    { step: "Commit", body: "Choose a contribution level and any optional ways your team wants to get involved, then sign your pledge." },
+    { step: "Unlock", body: "Pay a 50% deposit on your total pledge. Once GHP confirms it, you get your Community Impact Plan in Word plus suggested responses to every Community Impact question on the OCM renewal portal." },
     { step: "Report", body: "GHP sends you an annual impact summary you can use for your next renewal." },
   ],
   disclaimer:
@@ -136,14 +145,17 @@ export const PLAN = {
     {
       title: "Increase Educational Attainment.",
       body: "Support Opportunity Youth in earning their high school equivalency credential (GED), providing a critical foundation for long-term success. The program aims to improve graduation outcomes for youth who have disengaged from traditional school systems.",
+      measure: "Measured by GED tests taken and GED credentials earned annually and cumulatively (2025: 34 GED tests taken, 6 GEDs earned; 11 GEDs earned since program inception).",
     },
     {
       title: "Strengthen Workforce and Career Pathways.",
       body: "Provide professional development, vocational training opportunities, and career-connected support so participants can access stable employment, job training programs, or post-secondary education. This goal ensures youth are prepared for sustainable careers and economic mobility.",
+      measure: "Measured by the number of participants obtaining part-time or full-time employment, job retention, and enrollment in vocational training or postsecondary education (2025: 16 participants gained employment).",
     },
     {
       title: "Reduce Justice System Involvement and Promote Stability.",
       body: "Through wraparound services, mentorship, and academic and financial support, Beyond GED helps youth avoid further involvement with the justice system and build personal stability. Early program outcomes show participants have successfully avoided incarceration and re-entry into the justice system.",
+      measure: "Measured by justice system re-entry among program completers (zero since launch) and stability supports provided (2025: 20 DMV identification cards, 6 court supports, 4 eviction prevention supports, 3 mental health connections).",
     },
   ],
   measureQ: "How will you measure your program's success? Please describe both the qualitative and quantitative metrics you plan to use and how you'll gather this information.",
@@ -225,3 +237,28 @@ export const PLAN = {
 export function fill(text: string, company: string) {
   return text.split("{{company}}").join(company);
 }
+
+// ─────────────────────────────────────────────────────────────
+// Renewal application guide — suggested responses for the
+// Community Impact Plan section of the OCM renewal portal.
+// ─────────────────────────────────────────────────────────────
+export const GUIDE = {
+  title: "Renewal Application Guide",
+  intro:
+    "Your OCM renewal application includes a Community Impact Plan section with the questions below. We\u2019ve drafted suggested responses based on your partnership with Greater Hudson Promise. Review each one, adjust anything that doesn\u2019t reflect your business, and paste it into the portal yourself.",
+  region: "Capital",
+  zips: "Primarily 12534 (City of Hudson), expanding throughout Columbia County.",
+  reach: "25-50",
+  research: "Community conversations",
+  researchNote:
+    "Select the options that are true for your business. Beyond GED was designed from interviews with its first cohort of participants, and GHP can walk you through that research.",
+  activities: [
+    "job placement",
+    "job skills services",
+    "adult education",
+    "system navigation services",
+    "legal services to address barriers to reentry",
+  ],
+  metricsFrequency: "monthly",
+  deckPath: "/ghp-overview.pdf",
+};

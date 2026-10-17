@@ -1,6 +1,6 @@
 import type { Pledge } from "./types";
 import { money, displayName } from "./types";
-import { FREQUENCIES } from "./content";
+import { FREQUENCIES, ORG } from "./content";
 
 // Optional. Sends a notification via Resend if RESEND_API_KEY is set.
 export async function notifyNewPledge(p: Pledge) {
@@ -33,5 +33,27 @@ export async function notifyNewPledge(p: Pledge) {
     });
   } catch (e) {
     console.error("Email notify failed", e);
+  }
+}
+
+// Sent to the partner when their plan unlocks.
+export async function notifyUnlocked(p: Pledge, origin: string) {
+  const key = process.env.RESEND_API_KEY;
+  const from = process.env.NOTIFY_EMAIL_FROM;
+  if (!key || !from) return;
+  const link = `${origin}/thanks?id=${p.id}`;
+  try {
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from,
+        to: [p.contact_email],
+        subject: "Your Community Impact Plan is ready",
+        html: `<p>Hi ${p.contact_name},</p><p>Thank you \u2014 ${ORG.name} has received your deposit. Your Community Impact Plan and renewal application guide are ready:</p><p><a href="${link}">${link}</a></p><p>With gratitude,<br/>${ORG.name}</p>`,
+      }),
+    });
+  } catch (e) {
+    console.error("Unlock email failed", e);
   }
 }

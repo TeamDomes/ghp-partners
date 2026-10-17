@@ -67,7 +67,7 @@ export default function Pledge() {
       <span className="eyebrow">Build your plan</span>
       <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Partner with GHP</h1>
       <p style={{ color: "var(--ink-2)", marginBottom: 32 }}>
-        Fill this out once. We&apos;ll generate your Community Impact Plan as a Word document you can review and submit.
+        Fill this out once. Sign your pledge, pay a 50% deposit, and your Community Impact Plan and renewal portal guide unlock.
       </p>
 
       <form onSubmit={submit} noValidate>
@@ -162,6 +162,9 @@ export default function Pledge() {
             <div style={{ fontSize: ".93rem", color: "var(--ink-2)" }}>
               {money(perPayment || 0)} {FREQUENCIES[freq].label.toLowerCase()} · {f.term_years} year{f.term_years !== "1" ? "s" : ""}
             </div>
+            <div style={{ fontSize: ".93rem", marginTop: 8 }}>
+              <strong>Deposit to unlock your plan: {money((total || 0) / 2)}</strong> (50% of your total pledge)
+            </div>
           </div>
         </div>
 
@@ -194,13 +197,13 @@ export default function Pledge() {
             <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
             <span>
               I&apos;m authorized to make this commitment on behalf of the business, and I understand GHP will follow up to
-              arrange contributions. {LANDING.disclaimer}
+              arrange contributions. My Community Impact Plan and renewal guide will be released once GHP receives a deposit of 50% of my total pledge. {LANDING.disclaimer}
             </span>
           </label>
         </div>
 
         {err && <div className="error">{err}</div>}
-        <button className="btn" type="submit" disabled={busy}>{busy ? "Building your plan…" : "Generate my Community Impact Plan"}</button>
+        <button className="btn" type="submit" disabled={busy}>{busy ? "Submitting…" : "Sign my pledge"}</button>
       </form>
     </main>
   );
