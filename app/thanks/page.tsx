@@ -26,16 +26,16 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
         <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Thank you, {displayName(pledge)}.</h1>
         <p style={{ fontSize: "1.1rem", color: "var(--ink-2)" }}>
           Your signed pledge of {money(Number(pledge.total_commitment))} to {ORG.name} is on file. Your Community Impact
-          Plan and renewal application guide unlock as soon as GHP receives your deposit.
+          Plan and renewal application guide unlock as soon as GHP receives your Year 1 contribution.
         </p>
 
         <div className="form-card" style={{ marginTop: 28 }}>
-          <div className="mono" style={{ fontSize: ".8rem", color: "var(--ink-2)" }}>DEPOSIT DUE (50% OF YOUR PLEDGE)</div>
+          <div className="mono" style={{ fontSize: ".8rem", color: "var(--ink-2)" }}>YEAR 1 CONTRIBUTION DUE</div>
           <div style={{ fontFamily: "var(--font-display), serif", fontSize: "2.4rem", color: "var(--accent)", lineHeight: 1.1, margin: "6px 0 16px" }}>{money(dep)}</div>
-          <a className="btn" href={ORG.donateUrl} target="_blank" rel="noreferrer">Pay deposit online</a>
+          <a className="btn" href={ORG.donateUrl} target="_blank" rel="noreferrer">Pay online</a>
           <p style={{ marginTop: 16, fontSize: ".93rem", color: "var(--ink-2)" }}>
             Paying by check? Make it payable to {ORG.checkPayable}{ORG.mailingAddress ? `, ${ORG.mailingAddress}` : ""}, with &ldquo;{displayName(pledge)} – Community Impact Plan&rdquo; in the memo.
-            GHP confirms deposits {DEPOSIT.turnaround}. Come back to this page — bookmark it — and your plan will be here.
+            GHP confirms payments {DEPOSIT.turnaround}.{pledge.term_years > 1 ? ` Your Year 2 contribution of ${money(dep)} is due on the one-year anniversary.` : ""} Come back to this page — bookmark it — and your plan will be here.
           </p>
           <p style={{ fontSize: ".85rem", color: "var(--ink-2)" }}>{TAX.line}{TAX.ein ? ` EIN ${TAX.ein}.` : ""} {TAX.advisor}</p>
         </div>
@@ -63,7 +63,7 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
       <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Your plan is ready.</h1>
       <p style={{ fontSize: "1.1rem", color: "var(--ink-2)" }}>
         Below are two things for your renewal: your Community Impact Plan as a Word document, and a guide to the
-        Community Impact Plan questions on the OCM renewal portal. Thank you for your deposit and your partnership with{" "}
+        Community Impact Plan questions on the OCM renewal portal. Thank you for your contribution and your partnership with{" "}
         {ORG.name}.
       </p>
 

@@ -42,6 +42,6 @@ export const STATUSES = [
 
 export const isUnlocked = (p: Pick<Pledge, "status">) => p.status === "deposit" || p.status === "paid";
 
-export const depositAmount = (p: Pick<Pledge, "total_commitment">) => Math.round(Number(p.total_commitment) * 50) / 100;
+export const depositAmount = (p: Pick<Pledge, "total_commitment" | "term_years">) => Math.round((Number(p.total_commitment) / (p.term_years || 1)) * 100) / 100;
 
 export const displayName = (p: Pick<Pledge, "legal_name" | "dba">) => p.dba?.trim() || p.legal_name;

@@ -59,7 +59,7 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
                 <td>{new Date(r.created_at).toLocaleDateString()}</td>
                 <td><strong>{displayName(r)}</strong><br /><span style={{ color: "var(--ink-2)" }}>{r.city}, {r.county}</span>{r.list_publicly === false ? <><br /><span className="pill">not listed publicly</span></> : null}</td>
                 <td>{r.license_type}<br /><span className="mono" style={{ fontSize: ".8rem" }}>{r.license_number}</span></td>
-                <td><strong>{money(r.total_commitment)}</strong><br /><span style={{ color: "var(--ink-2)" }}>{money(r.amount_per_payment)} {FREQUENCIES[r.frequency]?.label.toLowerCase()} · {r.term_years}y</span><br /><span className="mono" style={{ fontSize: ".8rem" }}>Deposit due: {money(depositAmount(r))}</span><br /><span className="pill">{getProgram(r.program).label}</span></td>
+                <td><strong>{money(r.total_commitment)}</strong><br /><span style={{ color: "var(--ink-2)" }}>{money(r.amount_per_payment)} {FREQUENCIES[r.frequency]?.label.toLowerCase()} · {r.term_years}y</span><br /><span className="mono" style={{ fontSize: ".8rem" }}>Year 1 due: {money(depositAmount(r))}</span><br /><span className="pill">{getProgram(r.program).label}</span></td>
                 <td>{r.contact_name}<br /><a href={`mailto:${r.contact_email}`}>{r.contact_email}</a>{r.contact_phone ? <><br />{r.contact_phone}</> : null}</td>
                 <td><StatusSelect id={r.id} value={r.status} /></td>
                 <td><a href={`/api/plan/${r.id}`}>.docx</a><br /><a href={`/thanks?id=${r.id}`}>page</a></td>

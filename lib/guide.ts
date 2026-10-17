@@ -32,7 +32,7 @@ export function buildGuide(p: Pledge): GuideItem[] {
   }
 
   const partnership = [
-    `${ORG.name}. ${p.legal_name} will provide financial support of ${money(p.amount_per_payment)} ${freq.label.toLowerCase()} (${money(annual)} per year, ${money(Number(p.total_commitment))} over ${p.term_years} year${p.term_years > 1 ? "s" : ""}) to ${prog.purpose}.`,
+    `${ORG.name}. ${p.legal_name} will provide financial support of ${money(annual)} per year (${money(Number(p.total_commitment))} over ${p.term_years} year${p.term_years > 1 ? "s" : ""}) to ${prog.purpose}.`,
     ...engagements.map((e) => f(e.plan)),
     ORG.website,
   ].join(" ");
@@ -84,8 +84,8 @@ export function buildGuide(p: Pledge): GuideItem[] {
     },
     {
       q: "How often do you plan to host activities and engage with the target population?",
-      answer: { annual: "annually", quarterly: "quarterly", monthly: "monthly" }[p.frequency],
-      note: "This matches your contribution schedule. Choose a more frequent option if you’ve committed to volunteer hours or in-store activities.",
+      answer: "annually",
+      note: "This matches your annual contribution. Choose a more frequent option if you’ve committed to volunteer hours or in-store activities.",
     },
     { q: "When do you intend on implementing community impact plan activities during this renewal period?", answer: window },
     {

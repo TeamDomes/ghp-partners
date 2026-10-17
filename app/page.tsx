@@ -207,7 +207,7 @@ export default async function Home() {
 
         <div className="cta">
           <h2>Ready to put your plan to work?</h2>
-          <p>About ten minutes to sign up. Your plan and renewal guide unlock once GHP receives your 50% deposit.</p>
+          <p>About ten minutes to sign up. Your plan and renewal guide unlock once GHP receives your Year 1 contribution.</p>
           <Link className="btn" href="/pledge">Build my Community Impact Plan</Link>
         </div>
 

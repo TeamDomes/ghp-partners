@@ -17,7 +17,7 @@ export async function POST(req: Request) {
   // honeypot
   if (str(b.website)) return NextResponse.json({ id: null }, { status: 200 });
 
-  const frequency = str(b.frequency) as keyof typeof FREQUENCIES;
+  const frequency = "annual" as keyof typeof FREQUENCIES;
   const annual = Math.round(Number(b.annual_amount) * 100) / 100;
   const amount = FREQUENCIES[frequency] ? Math.round((annual / FREQUENCIES[frequency].perYear) * 100) / 100 : 0;
   const term = Math.round(Number(b.term_years));
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(row.contact_email)) return NextResponse.json({ error: "Please enter a valid email." }, { status: 400 });
   if (!FREQUENCIES[frequency]) return NextResponse.json({ error: "Choose a payment schedule." }, { status: 400 });
   if (!(annual >= 250 && annual <= 1_000_000)) return NextResponse.json({ error: "The minimum contribution is $250 a year." }, { status: 400 });
-  if (!(term >= 1 && term <= 5)) return NextResponse.json({ error: "Choose a term of 1–5 years." }, { status: 400 });
+  if (!(term >= 1 && term <= 2)) return NextResponse.json({ error: "Choose a term of 1 or 2 years." }, { status: 400 });
   if (row.start_date && !/^\d{4}-\d{2}-\d{2}$/.test(row.start_date)) row.start_date = null;
   if (!b.agree || !b.review_ack) return NextResponse.json({ error: "Please check both acknowledgments." }, { status: 400 });
 

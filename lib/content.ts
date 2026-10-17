@@ -15,7 +15,7 @@ export const ORG = {
   mailingAddress: "369 Warren Street, Hudson, NY 12534", // confirm checks go here
 };
 
-// Plan + guide unlock once GHP confirms a deposit of this share of the total pledge.
+// Plan + guide unlock once GHP confirms the Year 1 contribution.
 export const DEPOSIT = {
   share: 0.5,
   turnaround: "within 2 business days", // how fast GHP confirms and unlocks — TODO confirm with Jeff
@@ -223,7 +223,7 @@ export const LANDING = {
   how: [
     { step: "Choose your focus", body: "General support for GHP, Beyond GED, or Families Impacted by Incarceration.", href: "#options" },
     { step: "Sign your pledge", body: "We recommend $5,000 a year for two years. The form takes about ten minutes.", href: "/pledge" },
-    { step: "Make your deposit", body: "Pay 50% of your total pledge online or by check.", href: "" },
+    { step: "Pay Year 1", body: "Pay your first year's contribution online or by check. Year 2 is due on the anniversary.", href: "" },
     { step: "Receive your plan", body: "A complete Community Impact Plan, plus suggested responses to every Community Impact question on the OCM renewal application, ready for your review.", href: "" },
   ],
   reportNote: "Each year, GHP sends partners an impact summary to support their next renewal.",

@@ -128,8 +128,9 @@ export async function buildPlanDocx(pl: Pledge): Promise<Buffer> {
 
     question("Partnership Commitment"),
     p(
-      `${company} commits ${money(pl.amount_per_payment)} ${freq.label.toLowerCase()} (${money(perYear)} per year) to ${ORG.name} to ${prog.purpose}, for a term of ${pl.term_years} year${pl.term_years > 1 ? "s" : ""}, beginning ${fmtDate(pl.start_date)}. Total commitment over the term: ${money(pl.total_commitment)}.`
+      `${company} commits ${money(perYear)} per year to ${ORG.name} to ${prog.purpose}, for a term of ${pl.term_years} year${pl.term_years > 1 ? "s" : ""}, beginning ${fmtDate(pl.start_date)}. Total commitment over the term: ${money(pl.total_commitment)}.`
     ),
+    ...(pl.term_years > 1 ? [p("The Year 1 contribution is made upon signing this pledge; the Year 2 contribution is due on the one-year anniversary.")] : []),
     p(
       prog.uses
     ),

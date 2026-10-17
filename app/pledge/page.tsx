@@ -76,7 +76,7 @@ export default function Pledge() {
       <span className="eyebrow">Build your plan</span>
       <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Partner with GHP</h1>
       <p style={{ color: "var(--ink-2)", marginBottom: 32 }}>
-        Fill this out once. Sign your pledge, pay a 50% deposit, and your Community Impact Plan and renewal portal guide unlock.
+        Fill this out once. Sign your pledge, pay your Year 1 contribution, and your Community Impact Plan and renewal portal guide unlock.
       </p>
 
       <form onSubmit={submit} noValidate>
@@ -167,30 +167,24 @@ export default function Pledge() {
               <input type="number" min={250} step={50} value={f.custom_annual || ""} onChange={set("custom_annual")} />
             </label>
           )}
-          <div className="grid2">
-            <label className="field">
-              <span>Payment schedule</span>
-              <select value={f.frequency} onChange={set("frequency")}>
-                {Object.entries(FREQUENCIES).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
-              </select>
-            </label>
-            <label className="field">
-              <span>Term</span>
-              <select value={f.term_years} onChange={set("term_years")}>
-                {[1, 2, 3, 4, 5].map((y) => <option key={y} value={y}>{y} year{y > 1 ? "s" : ""}</option>)}
-              </select>
-            </label>
-          </div>
+          <label className="field">
+            <span>Term</span>
+            <select value={f.term_years} onChange={set("term_years")}>
+              <option value="2">2 years (full renewal period)</option>
+              <option value="1">1 year</option>
+            </select>
+          </label>
           <label className="field"><span>Start date</span><input type="date" value={f.start_date || ""} onChange={set("start_date")} /></label>
 
           <div className="summary">
             <div className="mono" style={{ fontSize: ".8rem", color: "var(--ink-2)" }}>TOTAL COMMITMENT</div>
             <div className="big">{money(total || 0)}</div>
             <div style={{ fontSize: ".93rem", color: "var(--ink-2)" }}>
-              {money(perPayment || 0)} {FREQUENCIES[freq].label.toLowerCase()} · {f.term_years} year{f.term_years !== "1" ? "s" : ""}
+              {money(perYear || 0)} per year · {f.term_years} year{f.term_years !== "1" ? "s" : ""}
             </div>
             <div style={{ fontSize: ".93rem", marginTop: 8 }}>
-              <strong>Deposit to unlock your plan: {money((total || 0) / 2)}</strong> (50% of your total pledge)
+              <strong>Due now to unlock your plan: {money(perYear || 0)}</strong> (your Year 1 contribution)
+              {f.term_years === "2" ? <><br />Year 2: {money(perYear || 0)}, due on the one-year anniversary</> : null}
             </div>
             <div style={{ fontSize: ".85rem", color: "var(--ink-2)", marginTop: 8 }}>{TAX.line}</div>
           </div>
@@ -233,7 +227,7 @@ export default function Pledge() {
             <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
             <span>
               I&apos;m authorized to make this commitment on behalf of the business, and I understand GHP will follow up to
-              arrange contributions. My Community Impact Plan and renewal guide will be released once GHP receives a deposit of 50% of my total pledge.
+              arrange contributions. My Community Impact Plan and renewal guide will be released once GHP receives our Year 1 contribution, and any Year 2 contribution is due on the one-year anniversary.
             </span>
           </label>
         </div>
