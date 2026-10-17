@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ENGAGEMENTS, FREQUENCIES, LICENSE_TYPES, RECOMMENDED, TAX, TIERS, type Frequency } from "@/lib/content";
 import { money } from "@/lib/types";
 import { PROGRAMS, PROGRAM_ORDER, type ProgramId } from "@/lib/programs";
@@ -19,6 +19,10 @@ export default function Pledge() {
   const [reviewAck, setReviewAck] = useState(false);
   const [program, setProgram] = useState<ProgramId>("general");
   const engOptions = ENGAGEMENTS.filter((e) => e.programs.includes(program));
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("program");
+    if (q && q in PROGRAMS) setProgram(q as ProgramId);
+  }, []);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 

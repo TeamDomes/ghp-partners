@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, PROBLEM, RECOMMENDED, SOLUTION, STATS, TAX, TIERS } from "@/lib/content";
+import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, PROBLEM, RECOMMENDED, SOLUTION, TAX, TIERS } from "@/lib/content";
 import { PROGRAMS, PROGRAM_ORDER } from "@/lib/programs";
 import { getPartners } from "@/lib/partners";
 import { money } from "@/lib/types";
@@ -27,7 +27,7 @@ export default async function Home() {
           <p className="lede">{LANDING.sub}</p>
           <div className="actions">
             <Link className="btn" href="/pledge">Partner with GHP</Link>
-            <a className="btn ghost" href="#program">Read about the program</a>
+            <a className="btn ghost" href="#options">See the options</a>
           </div>
         </header>
 
@@ -78,50 +78,54 @@ export default async function Home() {
             {PROGRAM_ORDER.map((id) => {
               const pr = PROGRAMS[id];
               return (
-                <div className="option" key={id}>
+                <a className="option" key={id} href={`#option-${id}`}>
                   <span className="tag">{pr.tagline}</span>
                   <h3>{pr.label}</h3>
                   <p>{pr.cardBody}</p>
                   <div className="ostat"><b>{pr.cardStat.value}</b><span>{pr.cardStat.label}</span></div>
-                </div>
+                  <span className="more">A closer look →</span>
+                </a>
               );
             })}
           </div>
           <Link className="btn" href="/pledge" style={{ marginTop: 22 }}>Partner with GHP</Link>
         </section>
 
-        <section className="section" id="program">
-          <div className="cols">
-            <div>
-              <span className="eyebrow">A closer look</span>
-              <h2>{LANDING.programTitle}</h2>
-            </div>
-            <div>{LANDING.program.map((t) => <p key={t}>{t}</p>)}</div>
-          </div>
-        </section>
-
-        <section className="section">
-          <span className="eyebrow">Beyond GED results</span>
-          <div className="stats">
-            {STATS.map((s) => (
-              <div className="stat" key={s.label}>
-                <b>{s.value}</b>
-                <span>{s.label}</span>
+        {PROGRAM_ORDER.map((id) => {
+          const pr = PROGRAMS[id];
+          return (
+            <section className="section closer" id={`option-${id}`} key={id}>
+              <div className="cols">
+                <div>
+                  <span className="eyebrow">A closer look</span>
+                  <h2>{pr.label}</h2>
+                  <p className="tagline">{pr.tagline}</p>
+                  <Link className="btn small" href={`/pledge?program=${id}`}>Choose this option</Link>
+                </div>
+                <div>{pr.closer.paras.map((t) => <p key={t}>{t}</p>)}</div>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="quotes">
-            {LANDING.quotes.map((q) => (
-              <figure key={q.text} style={{ margin: 0 }}>
-                <p className="quote">&ldquo;{q.text}&rdquo;</p>
-                <figcaption className="quote-who">— {q.who}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
+              <div className="stats" style={{ marginTop: 24 }}>
+                {pr.closer.stats.map((s) => (
+                  <div className="stat" key={s.label}>
+                    <b>{s.value}</b>
+                    <span>{s.label}</span>
+                  </div>
+                ))}
+              </div>
+              {pr.closer.quotes.length ? (
+                <div className="quotes" style={{ marginTop: 28 }}>
+                  {pr.closer.quotes.map((q) => (
+                    <figure key={q.text} style={{ margin: 0 }}>
+                      <p className="quote">&ldquo;{q.text}&rdquo;</p>
+                      <figcaption className="quote-who">— {q.who}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              ) : null}
+              <a href="#options" className="back-link">↑ Back to all options</a>
+            </section>
+          );
+        })}
 
         <section className="section">
           <div className="cols">
@@ -133,7 +137,7 @@ export default async function Home() {
               <p>
                 OCM&apos;s Community Impact Plan asks what need you&apos;re addressing, who you&apos;re serving among
                 communities disproportionately impacted by cannabis prohibition, your goals, and how you&apos;ll measure
-                success. Beyond GED answers each of those with a real program and real numbers.
+                success. Each of the three options answers those questions with real programs and real numbers.
               </p>
               <p>
                 You get a complete plan, in Word, written around your business: the need, the population, three goals,

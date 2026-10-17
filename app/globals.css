@@ -165,3 +165,12 @@ table.list td { border-bottom: 1px solid var(--line); padding: 10px; vertical-al
 .timeline li { padding: 0 0 14px 16px; position: relative; }
 .timeline li::before { content: ""; position: absolute; left: -6px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
 .timeline li b { font-family: var(--font-mono), monospace; font-size: .85rem; color: var(--accent); margin-right: 8px; }
+
+a.option { text-decoration: none; color: inherit; transition: border-color .15s, transform .15s, box-shadow .15s; }
+a.option:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(43,38,34,.08); }
+.option .more { margin-top: 14px; font-family: var(--font-mono), monospace; font-size: .85rem; color: var(--accent); }
+.closer .tagline { color: var(--ink-2); margin-bottom: 18px; }
+.back-link { display: inline-block; margin-top: 22px; font-family: var(--font-mono), monospace; font-size: .85rem; color: var(--ink-2); text-decoration: none; }
+.back-link:hover { color: var(--accent); }
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 16px; }

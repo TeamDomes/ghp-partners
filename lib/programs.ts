@@ -5,7 +5,7 @@
 // Every figure here is sourced (see SOURCES at the bottom);
 // update when GHP publishes new numbers.
 // ─────────────────────────────────────────────────────────────
-import { GUIDE, PLAN } from "./content";
+import { GUIDE, LANDING, PLAN, STATS } from "./content";
 
 export type ProgramId = "general" | "beyond_ged" | "justice";
 
@@ -18,6 +18,11 @@ export type Program = {
   tagline: string; // one line for cards
   cardBody: string;
   cardStat: { value: string; label: string };
+  closer: {
+    paras: string[];
+    stats: { value: string; label: string }[];
+    quotes: { text: string; who: string }[];
+  };
   purpose: string; // "...to {purpose}"
   uses: string; // what funds pay for
   plan: {
@@ -53,6 +58,25 @@ export const PROGRAMS: Record<ProgramId, Program> = {
     cardBody:
       "Unrestricted support lets GHP put resources where need is greatest: early learning, free after-school, Beyond GED, emergency assistance, and support for families affected by incarceration.",
     cardStat: { value: "$350K+", label: "in emergency assistance to Columbia County residents in 2025" },
+    closer: {
+      paras: [
+        "Unrestricted support is the most flexible gift a partner can make. It lets GHP respond when needs spike, as it did in November 2025, when it got groceries to 760+ residents within ten days of the SNAP lapse, and it sustains the staff, space, and partnerships every program depends on.",
+        "Your contribution supports the full continuum: free Promise Early Learning for children 0–5, free after-school with hot meals, enrichment, and transportation, Beyond GED for young adults, emergency and rent assistance for families in crisis, and support for families affected by incarceration.",
+        "GHP also convenes the people who serve Hudson’s kids. Its CO-HOST network brings together 24 youth-serving organizations each month, and its staff sit on the Hudson City School District’s Chronic Absenteeism Taskforce.",
+      ],
+      stats: [
+        { value: "31", label: "children enrolled in Promise Early Learning (2025)" },
+        { value: "31", label: "youth served at a time in after-school (2025)" },
+        { value: "$350K+", label: "emergency assistance to residents (2025)" },
+        { value: "24", label: "partner organizations in the CO-HOST network" },
+      ],
+      quotes: [
+        {
+          text: "It’s been wonderful to see how much confidence and independence he has gained… I’ve especially noticed growth in his social skills and willingness to try new things.",
+          who: "Parent of a Promise Early Learner, 2025",
+        },
+      ],
+    },
     purpose: "provide general operating support for GHP’s cradle-to-career programs in Hudson and Columbia County",
     uses:
       "Funds sustain the staff, space, and programs GHP families rely on, from early learning and after-school to Beyond GED, emergency assistance, and support for families affected by incarceration, directed where community need is greatest.",
@@ -162,6 +186,11 @@ export const PROGRAMS: Record<ProgramId, Program> = {
     cardBody:
       "Young people ages 16–24 who left school, often to work and support their families, get paid stipends, hot meals, GED instruction, and one-on-one help with jobs, IDs, court, and housing.",
     cardStat: { value: "0", label: "program completers have re-entered the justice system" },
+    closer: {
+      paras: LANDING.program,
+      stats: STATS,
+      quotes: LANDING.quotes,
+    },
     purpose: "fund the Beyond GED program, which serves Opportunity Youth ages 16 to 24 in Hudson and Columbia County",
     uses:
       "Funds support participant stipends, hot meals on study days, GED instruction and testing, internship and job placement, and wraparound services including identification, transportation, court support, and housing stability.",
@@ -188,6 +217,20 @@ export const PROGRAMS: Record<ProgramId, Program> = {
     cardBody:
       "GHP’s enhanced visiting program at the Columbia County Jail keeps children connected to incarcerated parents, and its court advocacy program helps justice-impacted residents navigate court and reentry.",
     cardStat: { value: "750+", label: "child-friendly jail visits for 90+ families since 2016" },
+    closer: {
+      paras: [
+        "When a parent goes to jail, a child can lose that relationship overnight. Since 2016, GHP has partnered with the Columbia County Sheriff to offer enhanced, child-friendly visits at the Columbia County Jail, now available six times a week in person, plus facilitated virtual visits for families facing distance or other barriers.",
+        "The work reaches beyond the jail. With the Hudson Police Department and the Osborne Association, GHP trains officers and providers to protect children at the moment of a parent’s arrest. Its work helped establish the jail’s Enhanced Child Visiting policy, and in 2025 GHP presented the model to administrators from another New York county jail interested in replicating it.",
+        "GHP’s Community Court Advocacy Program walks justice-impacted residents through court and reentry, with mentorship, emergency assistance, mindfulness coaching, Transformative Community Service, and connections to Beyond GED, delivered by staff with lived experience.",
+      ],
+      stats: [
+        { value: "750+", label: "enhanced visits since 2016" },
+        { value: "90+", label: "families served" },
+        { value: "6×", label: "in-person visit times each week (2025)" },
+        { value: "11", label: "youth and adults supported by court advocacy (2025)" },
+      ],
+      quotes: [],
+    },
     purpose:
       "support GHP’s programs for families impacted by incarceration, including the Greater Hudson Initiative for Children of Incarcerated Parents and the Community Court Advocacy Program",
     uses:
