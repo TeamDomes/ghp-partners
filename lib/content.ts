@@ -153,10 +153,16 @@ export const PROBLEM = {
     { n: 3, text: "Caitie Hilverman, \u201cBliss Towers, Then,\u201d citing City of Hudson records, 2026", url: "https://deadandlivingthings.substack.com/p/bliss-towers-then" },
     { n: 4, text: "Abigail Bliss, \u201cFault Lines: The Legacy of Urban Renewal in Hudson, NY,\u201d MIT, 2020", url: "https://dspace.mit.edu/entities/publication/cc53b0b4-ab8f-4f31-9116-867012ec1d00" },
   ],
-  furtherReading: {
-    text: "Andrea Elliott, \u201cWhen the Weed Wars Came to Warren Street,\u201d The New York Times, Sept. 26, 2026",
-    url: "https://www.nytimes.com/interactive/2026/09/26/nyregion/hudson-weed-wars.html",
-  },
+  furtherReading: [
+    {
+      text: "Andrea Elliott, \u201cWhen the Weed Wars Came to Warren Street,\u201d The New York Times, Sept. 26, 2026",
+      url: "https://www.nytimes.com/interactive/2026/09/26/nyregion/hudson-weed-wars.html",
+    },
+    {
+      text: "Abigail Bliss, \u201cFault Lines: The Legacy of Urban Renewal in Hudson, NY,\u201d MIT master\u2019s thesis, 2020",
+      url: "https://dspace.mit.edu/entities/publication/cc53b0b4-ab8f-4f31-9116-867012ec1d00",
+    },
+  ],
 };
 
 export const SOLUTION = {

@@ -140,7 +140,9 @@ export function overviewBlocks(programId?: string | null): Block[] {
       ],
     },
     { t: "sub", text: "Sources" },
-    ...[...PROBLEM.sources.map((x) => x.text), ...SOLUTION.sources.map((x) => x.text)].map((x) => ({ t: "bullet", text: x }) as Block),
+    ...[...PROBLEM.sources, ...SOLUTION.sources].map((x) => ({ t: "bullet", text: `${x.text}. ${x.url}` }) as Block),
+    { t: "sub", text: "Further reading" },
+    ...PROBLEM.furtherReading.map((x) => ({ t: "bullet", text: `${x.text}. ${x.url}` }) as Block),
   ];
   return B;
 }

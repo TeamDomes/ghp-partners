@@ -231,7 +231,12 @@ export default async function Home() {
                 <a href={s.url} target="_blank" rel="noreferrer">{s.text}</a>.{" "}
               </span>
             ))}
-            Further reading: <a href={PROBLEM.furtherReading.url} target="_blank" rel="noreferrer">{PROBLEM.furtherReading.text}</a>.
+            Further reading:{" "}
+            {PROBLEM.furtherReading.map((r, i) => (
+              <span key={r.url}>
+                {i ? "; " : ""}<a href={r.url} target="_blank" rel="noreferrer">{r.text}</a>
+              </span>
+            ))}.
           </p>
         </footer>
       </div>
