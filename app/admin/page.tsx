@@ -62,7 +62,7 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
                 <td><strong>{money(r.total_commitment)}</strong><br /><span style={{ color: "var(--ink-2)" }}>{money(r.amount_per_payment)} {FREQUENCIES[r.frequency]?.label.toLowerCase()} · {r.term_years}y</span><br /><span className="mono" style={{ fontSize: ".8rem" }}>Year 1 due: {money(depositAmount(r))}</span><br /><span className="pill">{getProgram(r.program).label}</span></td>
                 <td>{r.contact_name}<br /><a href={`mailto:${r.contact_email}`}>{r.contact_email}</a>{r.contact_phone ? <><br />{r.contact_phone}</> : null}</td>
                 <td><StatusSelect id={r.id} value={r.status} /></td>
-                <td><a href={`/api/plan/${r.id}`}>.docx</a><br /><a href={`/thanks?id=${r.id}`}>page</a></td>
+                <td><a href={`/api/plan/${r.id}?doc=plan`}>plan</a> · <a href={`/api/plan/${r.id}?doc=renewal`}>renewal</a><br /><a href={`/thanks?id=${r.id}`}>page</a></td>
               </tr>
             ))}
             {!rows.length && <tr><td colSpan={7} style={{ color: "var(--ink-2)", padding: 24 }}>No partners yet.</td></tr>}

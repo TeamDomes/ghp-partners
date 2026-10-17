@@ -153,7 +153,7 @@ export default async function Home() {
                 success. Each of the three options answers those questions with real programs and real numbers.
               </p>
               <p>
-                You get a complete plan, in Word, written around your business: the need, the population, three goals,
+                You get a complete Community Impact Plan, written around your business: the need, the population, three goals,
                 qualitative and quantitative measures, your financial commitment, and how GHP will report back.
               </p>
               <p>
@@ -207,7 +207,7 @@ export default async function Home() {
 
         <div className="cta">
           <h2>Ready to put your plan to work?</h2>
-          <p>About ten minutes to sign up. Your plan and renewal guide unlock once GHP receives your Year 1 contribution.</p>
+          <p>About ten minutes to sign up. Your plan and renewal instructions unlock once GHP receives your Year 1 contribution.</p>
           <Link className="btn" href="/pledge">Build my Community Impact Plan</Link>
         </div>
 

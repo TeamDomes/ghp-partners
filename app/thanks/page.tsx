@@ -42,10 +42,10 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
 
         <section style={{ marginTop: 40 }}>
           <span className="eyebrow">What unlocks</span>
-          <h2>Your plan + renewal portal guide</h2>
+          <h2>Your plan + renewal instructions</h2>
           <p style={{ color: "var(--ink-2)" }}>
-            A Community Impact Plan in Word, written around your business, plus a suggested response to each of these
-            Community Impact questions on the OCM renewal portal:
+            Two PDFs: your Community Impact Plan for your records, and OCM Renewal Instructions with a suggested response
+            to each of these Community Impact questions on the renewal application:
           </p>
           <ol style={{ paddingLeft: 20, color: "var(--ink)" }}>
             {guide.map((g, i) => <li key={i} style={{ marginBottom: 8 }}>{g.q}</li>)}
@@ -62,19 +62,24 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
       <span className="eyebrow">Thank you</span>
       <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Your plan is ready.</h1>
       <p style={{ fontSize: "1.1rem", color: "var(--ink-2)" }}>
-        Below are two things for your renewal: your Community Impact Plan as a Word document, and a guide to the
-        Community Impact Plan questions on the OCM renewal portal. Thank you for your contribution and your partnership with{" "}
+        Below are two documents for your renewal: your Community Impact Plan for your records, and step-by-step
+        instructions for the Community Impact section of the OCM renewal application. Thank you for your contribution and your partnership with{" "}
         {ORG.name}.
       </p>
 
       {pledge ? (
         <>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", margin: "24px 0 8px" }}>
-            <a className="btn" href={`/api/plan/${pledge.id}`}>Download plan + guide (.docx)</a>
+            <a className="btn" href={`/api/plan/${pledge.id}?doc=plan`}>Community Impact Plan (PDF)</a>
+            <a className="btn" href={`/api/plan/${pledge.id}?doc=renewal`}>OCM Renewal Instructions (PDF)</a>
             <a className="btn ghost" href={GUIDE.deckPath} download>GHP overview (PDF)</a>
             <a className="btn ghost" href={OCM_GUIDANCE.url} target="_blank" rel="noreferrer">OCM guidance (PDF)</a>
           </div>
-          <p style={{ color: "var(--ink-2)", fontSize: ".9rem" }}>Bookmark this page — you can come back to it anytime.</p>
+          <p style={{ color: "var(--ink-2)", fontSize: ".9rem" }}>
+            Your Community Impact Plan is for your records. The Renewal Instructions walk you through each Community Impact
+            question on the OCM renewal application. Need to edit the plan? <a href={`/api/plan/${pledge.id}?doc=word`}>Download a Word version</a>.
+            Bookmark this page — you can come back to it anytime.
+          </p>
           <p style={{ color: "var(--ink-2)", fontSize: ".85rem" }}>{TAX.line}{TAX.ein ? ` EIN ${TAX.ein}.` : ""} {TAX.advisor}</p>
 
           <section style={{ marginTop: 48 }}>

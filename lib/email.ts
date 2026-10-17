@@ -93,7 +93,7 @@ export async function notifyUnlocked(p: Pledge, origin: string) {
 <p>Hi ${esc(p.contact_name)},</p>
 <p>Thank you. ${esc(ORG.name)} has received your contribution, and your Community Impact Plan is ready.</p>
 <p><a href="${link}" style="display:inline-block;background:#9a3b1f;color:#fff8f2;padding:12px 22px;border-radius:999px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">View your plan</a></p>
-<p>On that page you can download your plan as a Word document and copy suggested responses for each Community Impact question on the OCM renewal application. Please review and adjust everything before you submit. Your business is responsible for its final submission.</p>
+<p>On that page you can download two PDFs: your Community Impact Plan for your records, and OCM Renewal Instructions with a suggested response for each Community Impact question on the renewal application. Please review and adjust everything before you submit. Your business is responsible for its final submission.</p>
 <p>A written acknowledgment of your contribution will follow for your records.</p>
 <p>With gratitude,<br/>${esc(ORG.name)}</p>`);
   await send(
