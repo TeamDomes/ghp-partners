@@ -166,7 +166,7 @@ export const SOLUTION = {
     "Greater Hudson Promise has been part of Hudson since 2011. That year it was one of fifteen communities in the country selected for a U.S. Department of Education Promise Neighborhood planning grant, the Obama Administration\u2019s initiative modeled on the Harlem Children\u2019s Zone. Catholic Charities led the original application in partnership with the Hudson City School District.",
     "Today GHP is an independent 501(c)(3), led from the start by Executive Director Joan Hunt, with a team that includes advocates who have lived experience of the systems families are navigating.",
     "Its home is 369 Warren Street, a renovated historic church in the heart of the city, where kids come after school for free homework help, hot meals, and enrichment, with transportation provided, and where young adults study for their GED.",
-    "GHP works cradle to career: early learning for babies and toddlers, after-school for school-age kids, Beyond GED for young adults, and emergency aid, guaranteed-income support, and court advocacy for families. Its annual budget has grown from about $138,000 in 2020 to $2.3 million in 2024.",
+    "GHP works cradle to career: early learning for babies and toddlers, after-school for school-age kids, Beyond GED for young adults, and emergency aid, guaranteed-income support, and court advocacy for families. Its annual budget has grown from about $138,000 in 2020 to $2.3 million in 2024. In 2025 alone, GHP distributed $350,170 in emergency assistance to Columbia County residents, helped divert 90 evictions, and brought out 400+ volunteers for community events.",
   ],
   timeline: [
     { year: "2011", text: "Selected for a federal Promise Neighborhood planning grant" },
@@ -174,16 +174,16 @@ export const SOLUTION = {
     { year: "2016", text: "Child-friendly visiting begins at the Columbia County Jail" },
     { year: "2020", text: "HudsonUP guaranteed income pilot launches" },
     { year: "2021", text: "Becomes an independent 501(c)(3)" },
-    { year: "2025", text: "$58,970 in emergency groceries during the SNAP lapse" },
+    { year: "2025", text: "$350,170 in emergency aid, including groceries for 760+ residents during the SNAP lapse" },
     { year: "2026", text: "Childcare Works launches to train new early educators" },
   ],
   stats: [
     { value: "Since 2011", label: "serving Hudson families" },
     { value: "$2.3M", label: "annual budget (2024)" },
-    { value: "760+", label: "residents received emergency grocery support, Nov. 2025" },
+    { value: "$350K+", label: "emergency assistance to Columbia County residents (2025)" },
     { value: "750+", label: "child-friendly jail visits for 90+ families since 2016" },
     { value: "33% \u2192 85.7%", label: "employment among HudsonUP\u2019s first cohort (independent research)" },
-    { value: "189", label: "air conditioners delivered to Hudson families, 2021\u201324" },
+    { value: "90", label: "evictions diverted through rent assistance (2025)" },
   ],
   optionsEyebrow: "Choose where your contribution goes",
   optionsTitle: "Three ways to partner",
@@ -193,7 +193,8 @@ export const SOLUTION = {
     { text: "IRS Form 990 data via ProPublica Nonprofit Explorer", url: "https://projects.propublica.org/nonprofits/organizations/850949720" },
     { text: "Jain Family Institute, HudsonUP Year 4 report (2025)", url: "https://jfiresearch.org/wp-content/uploads/2025/04/HudsonUP-Basic-Income-Pilot-Year-4-2025.pdf" },
     { text: "NYS DCJS, Enhanced Child Visiting profile (2025)", url: "https://knowledgebank.criminaljustice.ny.gov/system/files/documents/2025/09/enhanced-child-visiting-printable-090825_0.pdf" },
-    { text: "Greater Hudson Promise program pages and 2022 Annual Report", url: "https://greaterhudsonpromise.org/" },
+    { text: "Greater Hudson Promise 2025 and 2022 Annual Reports", url: "https://greaterhudsonpromise.org/reports" },
+    { text: "Greater Hudson Promise program pages", url: "https://greaterhudsonpromise.org/" },
   ],
 };
 
@@ -303,7 +304,8 @@ export const PLAN = {
       ],
       bullets: [
         "20 participants received DMV identification cards",
-        "30 or more driving lessons were scheduled",
+        "4 participants opened bank accounts",
+        "30+ professional driving lessons were scheduled and attended, in partnership with RIMS Driving School and the Spark of Hudson; 2 participants passed the permit exam and 2 passed the road test",
         "6 court supports were provided",
         "4 eviction prevention supports were provided",
         "3 participants were connected to mental health services",

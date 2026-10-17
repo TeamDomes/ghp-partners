@@ -52,7 +52,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
     tagline: "Fund the whole cradle-to-career continuum",
     cardBody:
       "Unrestricted support lets GHP put resources where need is greatest: early learning, free after-school, Beyond GED, emergency assistance, and support for families affected by incarceration.",
-    cardStat: { value: "760+", label: "residents received emergency grocery support during the Nov. 2025 SNAP lapse" },
+    cardStat: { value: "$350K+", label: "in emergency assistance to Columbia County residents in 2025" },
     purpose: "provide general operating support for GHP’s cradle-to-career programs in Hudson and Columbia County",
     uses:
       "Funds sustain the staff, space, and programs GHP families rely on, from early learning and after-school to Beyond GED, emergency assistance, and support for families affected by incarceration, directed where community need is greatest.",
@@ -72,7 +72,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
           title: "Strengthen Early Learning and School Success.",
           body: "Provide free, play-based early learning for children ages 0–5 and free after-school programming with homework help, daily reading, hot meals, and transportation, so children enter and stay in school ready to learn.",
           measure:
-            "Measured by the number of children served in early learning and after-school programs (2022: 20+ children daily in the Early Learning Program, 143+ children through the Traveling Early Learning Program, and 30+ students in after-school).",
+            "Measured by the number of children served in early learning and after-school programs (2022: 20+ children daily in the Early Learning Program and 143+ children through the Traveling Early Learning Program; 2025: up to 31 youth served at a time in after-school).",
         },
         {
           title: "Expand Pathways to Education and Employment.",
@@ -84,7 +84,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
           title: "Increase Family Stability and Reduce Justice-System Harm.",
           body: "Provide emergency assistance to families in crisis and keep children connected to incarcerated parents through enhanced, child-friendly jail visits.",
           measure:
-            "Measured by households and individuals receiving emergency support and dollars distributed (Nov. 2025: $58,970 in grocery support to 760+ residents; 2022: $76,000+ to 100+ households), and by families and visits served through enhanced visiting (90+ families and 750+ visits, August 2016–August 2025).",
+            "Measured by individuals receiving emergency support, evictions diverted, and dollars distributed (2025: $350,170 in emergency assistance; rent assistance reaching 482 individuals, including 220 children, and diverting 90 evictions; grocery relief for 760+ residents during the SNAP lapse), and by families and visits served through enhanced visiting (90+ families and 750+ visits, August 2016–August 2025).",
         },
       ],
       qualitative: [
@@ -97,29 +97,32 @@ export const PROGRAMS: Record<ProgramId, Program> = {
       quantSections: [
         {
           heading: "Early Childhood and Youth",
-          paras: ["In 2022:"],
+          paras: [],
           bullets: [
-            "20+ children attended the Early Learning Program daily",
-            "143+ children were reached through the Traveling Early Learning Program at 10+ sites countywide",
-            "30+ students enrolled in free after-school programming",
+            "20+ children attended the Early Learning Program daily (2022)",
+            "143+ children were reached through the Traveling Early Learning Program at 10+ sites countywide (2022)",
+            "Up to 31 youth served at a time in free after-school programming (2025)",
+            "Up to 123 youth and families transported in a single day to after-school and summer programs (2025)",
           ],
           after: "Tracking includes enrollment, daily attendance, and reading time, as every after-school scholar reads a minimum of twenty minutes per day.",
         },
         {
           heading: "Young Adults (Beyond GED)",
           paras: ["In 2025:"],
-          bullets: ["34 GED tests were taken", "6 participants earned their GED (11 since program inception)", "16 participants gained employment", "20 participants received DMV identification cards"],
+          bullets: ["34 GED tests were taken", "6 participants earned their GED (11 since program inception)", "16 participants gained employment", "20 participants received DMV identification cards", "4 participants opened bank accounts"],
         },
         {
           heading: "Family Stability",
           paras: [],
           bullets: [
-            "$58,970 in grocery support to 760+ residents during the November 2025 SNAP lapse",
+            "$350,170 in total emergency assistance provided directly to Columbia County residents in 2025",
+            "Rent assistance reaching 482 individuals (262 adults and 220 children), diverting 90 evictions (2025)",
+            "$28,600 in discretionary emergency support (utilities, car repairs, groceries) for 166 additional individuals (2025)",
+            "Grocery relief for 760+ residents during the November 2025 SNAP lapse, delivered in under ten days, with all eligible requests fulfilled",
             "189 air conditioners delivered to Hudson families, summers 2021–2024",
-            "$76,000+ in emergency assistance to 100+ households (235+ individuals) in 2022",
           ],
           after:
-            "GHP also helps administer HudsonUP, a guaranteed income pilot for 128 Hudson residents; independent research by the Jain Family Institute found employment among the first cohort rose from 33 percent to 85.7 percent.",
+            "GHP also helps administer HudsonUP, a guaranteed income pilot for 128 Hudson residents; $730,000 in guaranteed income reached City of Hudson residents in 2025, and independent research by the Jain Family Institute found employment among the first cohort rose from 33 percent to 85.7 percent.",
         },
         {
           heading: "Families Impacted by Incarceration",
@@ -192,7 +195,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
       need: [
         "The {{company}}/Greater Hudson Promise (GHP) partnership addresses the harm that arrest and incarceration, driven in large part by drug enforcement that fell hardest on Black and Latino New Yorkers, inflicts on children and families in the City of Hudson and Columbia County.",
         CONTEXT,
-        "When a parent is arrested or incarcerated, children can lose contact with a caregiver while their family absorbs new financial and emotional strain. Since August 2016, GHP’s Greater Hudson Initiative for Children of Incarcerated Parents (GHICIP) has partnered with the Columbia County Sheriff to offer enhanced, child-friendly visits at the Columbia County Jail, along with facilitated virtual visits. GHP’s work helped create the jail’s Enhanced Child Visiting policy. Through Safeguarding Children of Arrested Parents, GHP works with the Hudson Police Department and the Osborne Association to protect children at the moment of a parent’s arrest, and its Community Court Advocacy Program provides court navigation, direct service, and reentry support for justice-impacted residents, delivered by staff with lived experience.",
+        "When a parent is arrested or incarcerated, children can lose contact with a caregiver while their family absorbs new financial and emotional strain. Since August 2016, GHP’s Greater Hudson Initiative for Children of Incarcerated Parents (GHICIP) has partnered with the Columbia County Sheriff to offer enhanced, child-friendly visits at the Columbia County Jail, along with facilitated virtual visits. GHP’s work helped create the jail’s Enhanced Child Visiting policy. Through Safeguarding Children of Arrested Parents, GHP works with the Hudson Police Department and the Osborne Association to protect children at the moment of a parent’s arrest, and its Community Court Advocacy Program provides court navigation, direct service, and reentry support for justice-impacted residents, delivered by staff with lived experience. In 2025, in-person enhanced visits expanded to six times a week, the court advocacy program assisted eight justice-impacted youth and three adults, and GHP presented its model to administrators from another New York county jail seeking to replicate it.",
         ABOUT_GHP +
           " The {{company}}–GHP partnership will sustain and expand these services, keeping children connected to their parents, reducing the collateral harm of arrest and incarceration, and supporting justice-impacted adults as they rebuild stability.",
       ],
@@ -213,7 +216,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
         {
           title: "Support Justice-Impacted Adults Through Court and Reentry.",
           body: "Provide court navigation, direct service, and reentry support through GHP’s Community Court Advocacy Program, delivered by staff with lived experience.",
-          measure: "Measured by the number of individuals supported, court appearances accompanied, and referrals completed, with a baseline established in the first year of the partnership.",
+          measure: "Measured by the number of youth and adults supported and the services provided (2025: 8 justice-impacted youth and 3 adults assisted, with services including mentorship, emergency assistance, mindfulness coaching, Transformative Community Service, and Beyond GED enrollment).",
         },
       ],
       qualitative: [
@@ -228,18 +231,19 @@ export const PROGRAMS: Record<ProgramId, Program> = {
           heading: "Enhanced Visiting",
           paras: ["August 2016–August 2025:"],
           bullets: ["90+ families served", "750+ enhanced visits at the Columbia County Jail", "87 percent of visits held in person"],
-          after: "Tracking includes families enrolled, visits completed (in person and virtual), and family survey results.",
+          after: "In 2025, in-person enhanced visits expanded to six times a week, with virtual visits available for families facing distance barriers. Tracking includes families enrolled, visits completed (in person and virtual), and family survey results.",
         },
         {
           heading: "Training and Systems Change",
           paras: ["In 2022:"],
           bullets: ["25 Hudson Police Department officers trained", "16 providers from 6 organizations trained", "33 facilitated virtual visits in the program’s first months"],
-          after: "GHP’s work helped establish the Columbia County Jail’s Enhanced Child Visiting policy.",
+          after: "GHP’s work helped establish the Columbia County Jail’s Enhanced Child Visiting policy. In November 2025, GHP presented the model to administrators from another New York county jail and staff from several judicial districts seeking to replicate it.",
         },
         {
           heading: "Court Advocacy and Reentry",
-          paras: ["GHP will track individuals supported, court appearances accompanied, referrals made and completed, and reentry outcomes such as housing and employment."],
-          bullets: [],
+          paras: ["In 2025:"],
+          bullets: ["8 justice-impacted youth and 3 adults assisted", "Services included direct mentorship, emergency assistance, mindfulness coaching, Transformative Community Service, and Beyond GED enrollment"],
+          after: "GHP tracks individuals supported, services provided, referrals completed, and reentry outcomes such as housing and employment.",
         },
         {
           heading: "Overall Performance Indicators",
