@@ -125,12 +125,37 @@ export const ENGAGEMENTS = [
 // ─────────────────────────────────────────────────────────────
 // Landing page copy
 // ─────────────────────────────────────────────────────────────
+// "The problem" section. Every figure is sourced; update when new ACS data lands.
+export const PROBLEM = {
+  eyebrow: "The problem",
+  title: "Hudson\u2019s revival hasn\u2019t reached everyone",
+  stats: [
+    { value: "28.2%", label: "of Hudson residents live below the poverty line \u2014 more than double Columbia County\u2019s 12.1%", src: 1 },
+    { value: "$54,139", label: "median household income in Hudson, versus $81,528 in Columbia County and $85,974 statewide", src: 1 },
+    { value: "80%+", label: "of people arrested for marijuana possession in New York were Black or Latino", src: 2 },
+  ],
+  body: [
+    "Warren Street has galleries, restaurants and, now, dispensaries. A few blocks away, more than one in four Hudson residents lives in poverty.",
+    "For decades, cannabis prohibition was enforced hardest on Black and Latino New Yorkers. An arrest could mean a record, a lost job, or a lost place in school, and the effects passed down to the next generation. In Hudson, that legacy shows up in young people who leave school to work and support their families, and who are pulled into the justice system as a result.",
+    "New York\u2019s Community Impact Plan requirement exists to send the legal industry\u2019s resources back to the communities prohibition harmed most.",
+  ],
+  solutionEyebrow: "The solution",
+  sources: [
+    { n: 1, text: "U.S. Census Bureau, American Community Survey 2020\u20132024 5-year estimates (via Census QuickFacts and Census Reporter)", url: "https://censusreporter.org/profiles/16000US3635969-hudson-ny" },
+    { n: 2, text: "NYCLU, legislative memo on the Marihuana Regulation and Taxation Act, 2021", url: "https://www.nyclu.org/uploads/2021/03/2021-legislativememo-mrta.pdf" },
+  ],
+  furtherReading: {
+    text: "Andrea Elliott, \u201cWhen the Weed Wars Came to Warren Street,\u201d The New York Times, Sept. 26, 2026",
+    url: "https://www.nytimes.com/interactive/2026/09/26/nyregion/hudson-weed-wars.html",
+  },
+};
+
 export const LANDING = {
   eyebrow: "For New York cannabis licensees",
   headline: "Need a Community Impact Plan?",
   headline2: "We've Got You Covered",
   sub: "New York's Office of Cannabis Management asks every licensee to show a Community Impact Plan at renewal. Partner with Greater Hudson Promise and put your plan to work for young people in Hudson and Columbia County who were hurt most by the War on Drugs.",
-  aboutTitle: "About GHP",
+  aboutTitle: "Greater Hudson Promise",
   about: [
     "Greater Hudson Promise is a cradle-to-career organization serving young people ages 0 to 24 and beyond. Its mission is to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures.",
     "Across all GHP programs, 79 percent of participants are BIPOC.",

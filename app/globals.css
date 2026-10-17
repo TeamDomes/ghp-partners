@@ -141,3 +141,9 @@ table.list td { border-bottom: 1px solid var(--line); padding: 10px; vertical-al
 
 .btn { white-space: nowrap; }
 @media (max-width: 600px) { .nav a.brand[href="#partners"] { display: none; } }
+
+.stats.three { grid-template-columns: repeat(3, 1fr); margin-top: 20px; }
+@media (max-width: 760px) { .stats.three { grid-template-columns: 1fr; } }
+.problem .stat b { font-size: 2.2rem; }
+.stat sup { font-size: .7em; color: var(--accent); margin-left: 2px; }
+.sources { font-size: .8rem; }

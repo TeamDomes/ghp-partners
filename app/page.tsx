@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, RECOMMENDED, STATS, TAX, TIERS } from "@/lib/content";
+import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, PROBLEM, RECOMMENDED, STATS, TAX, TIERS } from "@/lib/content";
 import { getPartners } from "@/lib/partners";
 import { money } from "@/lib/types";
 
@@ -30,20 +30,28 @@ export default async function Home() {
           </div>
         </header>
 
-        <section className="section">
-          <div className="stats">
-            {STATS.map((s) => (
-              <div className="stat" key={s.label}>
+        <section className="section problem">
+          <span className="eyebrow">{PROBLEM.eyebrow}</span>
+          <h2>{PROBLEM.title}</h2>
+          <div className="stats three">
+            {PROBLEM.stats.map((s) => (
+              <div className="stat" key={s.value}>
                 <b>{s.value}</b>
-                <span>{s.label}</span>
+                <span>{s.label}<sup>{s.src}</sup></span>
               </div>
             ))}
+          </div>
+          <div className="narrow" style={{ marginTop: 28 }}>
+            {PROBLEM.body.map((t) => <p key={t}>{t}</p>)}
           </div>
         </section>
 
         <section className="section">
           <div className="cols">
-            <h2>{LANDING.aboutTitle}</h2>
+            <div>
+              <span className="eyebrow">{PROBLEM.solutionEyebrow}</span>
+              <h2>{LANDING.aboutTitle}</h2>
+            </div>
             <div>{LANDING.about.map((t) => <p key={t}>{t}</p>)}</div>
           </div>
         </section>
@@ -55,6 +63,18 @@ export default async function Home() {
               <h2>{LANDING.programTitle}</h2>
             </div>
             <div>{LANDING.program.map((t) => <p key={t}>{t}</p>)}</div>
+          </div>
+        </section>
+
+        <section className="section">
+          <span className="eyebrow">Beyond GED results</span>
+          <div className="stats">
+            {STATS.map((s) => (
+              <div className="stat" key={s.label}>
+                <b>{s.value}</b>
+                <span>{s.label}</span>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -152,6 +172,15 @@ export default async function Home() {
           <p>{ORG.name} · Hudson, NY · <a href={`mailto:${ORG.contactEmail}`}>{ORG.contactEmail}</a></p>
           <p>{TAX.line}{TAX.ein ? ` EIN ${TAX.ein}.` : ""} {TAX.advisor}</p>
           <p>{LANDING.disclaimer}</p>
+          <p className="sources">
+            Sources:{" "}
+            {PROBLEM.sources.map((s) => (
+              <span key={s.n}>
+                [{s.n}] <a href={s.url} target="_blank" rel="noreferrer">{s.text}</a>.{" "}
+              </span>
+            ))}
+            Further reading: <a href={PROBLEM.furtherReading.url} target="_blank" rel="noreferrer">{PROBLEM.furtherReading.text}</a>.
+          </p>
         </footer>
       </div>
     </main>
