@@ -180,11 +180,11 @@ export default async function Home() {
             <div className="tier">
               <span className="mono" style={{ fontSize: ".8rem", color: "var(--ink-2)" }}>Other</span>
               <b>Any amount</b>
-              <span style={{ fontSize: ".88rem", color: "var(--ink-2)" }}>from $250 a year</span>
+              <span style={{ fontSize: ".88rem", color: "var(--ink-2)" }}>from $500 a year</span>
             </div>
           </div>
           <p style={{ marginTop: 14, color: "var(--ink-2)", fontSize: ".93rem" }}>
-            {RECOMMENDED.line} Or choose any amount from $250 a year, paid annually, quarterly, or monthly.
+            {RECOMMENDED.line} Or choose any amount from $500 a year, paid annually.
           </p>
           <p style={{ color: "var(--ink-2)", fontSize: ".93rem" }}>{TAX.line}</p>
         </section>
