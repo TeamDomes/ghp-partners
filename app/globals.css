@@ -133,3 +133,5 @@ table.list td { border-bottom: 1px solid var(--line); padding: 10px; vertical-al
 .partner-list b { display: block; font-family: var(--font-display), serif; font-weight: 500; font-size: 1.2rem; }
 .partner-list span { font-family: var(--font-mono), monospace; font-size: .8rem; color: var(--ink-2); }
 .partner-empty { font-family: var(--font-display), serif; font-size: 1.3rem; margin-top: 18px; }
+
+.review-note { background: #fbefe8; border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; font-size: .93rem; margin: 8px 0 18px; }

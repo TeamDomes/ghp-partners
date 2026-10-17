@@ -37,6 +37,17 @@ export const TIERS = [
   { amount: 25000, name: "Cornerstone", recommended: false },
 ];
 
+// Tax language. Contributions are deductible "to the extent allowed by law" — the standard
+// phrasing; confirm with GHP's accountant. Add the EIN once Jeff confirms it.
+export const TAX = {
+  ein: "", // TODO: GHP's EIN, e.g. "12-3456789"
+  line: "Greater Hudson Promise is a registered 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent allowed by law, and GHP will send a written acknowledgment of each contribution for your tax records.",
+  advisor: "Please consult your tax advisor about how deductibility applies to your business.",
+};
+
+export const REVIEW_DISCLAIMER =
+  "The Community Impact Plan and renewal application responses provided here are a suggested draft for your review. Each licensee is solely responsible for reviewing, editing, and approving its own submission to the Office of Cannabis Management, and for the accuracy and completeness of everything it submits. Greater Hudson Promise and its volunteers do not provide legal or tax advice.";
+
 export const RECOMMENDED = {
   annual: 5000,
   years: 2,
@@ -141,7 +152,7 @@ export const LANDING = {
     { step: "Report", body: "GHP sends you an annual impact summary you can use for your next renewal." },
   ],
   disclaimer:
-    "This tool produces a draft. Each licensee is responsible for reviewing its plan and confirming it meets current OCM requirements. Nothing here is legal advice.",
+    "The plan and portal responses are a suggested draft. Each licensee is solely responsible for reviewing, editing, and approving its own submission to OCM. Nothing here is legal or tax advice.",
 };
 
 // ─────────────────────────────────────────────────────────────

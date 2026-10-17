@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DEPOSIT, GUIDE, OCM_GUIDANCE, ORG } from "@/lib/content";
+import { DEPOSIT, GUIDE, OCM_GUIDANCE, ORG, REVIEW_DISCLAIMER, TAX } from "@/lib/content";
 import { buildGuide } from "@/lib/guide";
 import { db } from "@/lib/supabase";
 import type { Pledge } from "@/lib/types";
@@ -37,6 +37,7 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
             Paying by check? Make it payable to {ORG.checkPayable}{ORG.mailingAddress ? `, ${ORG.mailingAddress}` : ""}, with &ldquo;{displayName(pledge)} – Community Impact Plan&rdquo; in the memo.
             GHP confirms deposits {DEPOSIT.turnaround}. Come back to this page — bookmark it — and your plan will be here.
           </p>
+          <p style={{ fontSize: ".85rem", color: "var(--ink-2)" }}>{TAX.line}{TAX.ein ? ` EIN ${TAX.ein}.` : ""} {TAX.advisor}</p>
         </div>
 
         <section style={{ marginTop: 40 }}>
@@ -74,11 +75,13 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
             <a className="btn ghost" href={OCM_GUIDANCE.url} target="_blank" rel="noreferrer">OCM guidance (PDF)</a>
           </div>
           <p style={{ color: "var(--ink-2)", fontSize: ".9rem" }}>Bookmark this page — you can come back to it anytime.</p>
+          <p style={{ color: "var(--ink-2)", fontSize: ".85rem" }}>{TAX.line}{TAX.ein ? ` EIN ${TAX.ein}.` : ""} {TAX.advisor}</p>
 
           <section style={{ marginTop: 48 }}>
             <span className="eyebrow">{GUIDE.title}</span>
             <h2>Your renewal portal responses</h2>
             <p style={{ color: "var(--ink-2)" }}>{GUIDE.intro}</p>
+            <div className="review-note"><strong>Please review before submitting.</strong> {REVIEW_DISCLAIMER}</div>
 
             {guide.map((item, i) => (
               <div className="guide-item" key={i}>

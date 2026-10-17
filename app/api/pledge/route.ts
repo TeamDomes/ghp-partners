@@ -58,7 +58,7 @@ export async function POST(req: Request) {
   if (!(annual >= 100 && annual <= 1_000_000)) return NextResponse.json({ error: "Enter a contribution amount of at least $100." }, { status: 400 });
   if (!(term >= 1 && term <= 5)) return NextResponse.json({ error: "Choose a term of 1–5 years." }, { status: 400 });
   if (row.start_date && !/^\d{4}-\d{2}-\d{2}$/.test(row.start_date)) row.start_date = null;
-  if (!b.agree) return NextResponse.json({ error: "Please confirm the acknowledgment." }, { status: 400 });
+  if (!b.agree || !b.review_ack) return NextResponse.json({ error: "Please check both acknowledgments." }, { status: 400 });
 
   row.total_commitment = Math.round(annual * term * 100) / 100;
 

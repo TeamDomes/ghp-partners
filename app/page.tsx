@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, RECOMMENDED, STATS, TIERS } from "@/lib/content";
+import { LANDING, OCM_GUIDANCE, ORG, PARTNERS_PAGE, RECOMMENDED, STATS, TAX, TIERS } from "@/lib/content";
 import { getPartners } from "@/lib/partners";
 import { money } from "@/lib/types";
 
@@ -119,6 +119,7 @@ export default async function Home() {
           <p style={{ marginTop: 14, color: "var(--ink-2)", fontSize: ".93rem" }}>
             {RECOMMENDED.line} Or choose your own amount, paid annually, quarterly, or monthly.
           </p>
+          <p style={{ color: "var(--ink-2)", fontSize: ".93rem" }}>{TAX.line}</p>
         </section>
 
         <section className="section" id="partners">
@@ -145,6 +146,7 @@ export default async function Home() {
 
         <footer className="footer">
           <p>{ORG.name} · Hudson, NY · <a href={`mailto:${ORG.contactEmail}`}>{ORG.contactEmail}</a></p>
+          <p>{TAX.line}{TAX.ein ? ` EIN ${TAX.ein}.` : ""} {TAX.advisor}</p>
           <p>{LANDING.disclaimer}</p>
         </footer>
       </div>

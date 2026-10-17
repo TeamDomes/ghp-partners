@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { ENGAGEMENTS, FREQUENCIES, LANDING, LICENSE_TYPES, RECOMMENDED, TIERS, type Frequency } from "@/lib/content";
+import { ENGAGEMENTS, FREQUENCIES, LICENSE_TYPES, RECOMMENDED, TAX, TIERS, type Frequency } from "@/lib/content";
 import { money } from "@/lib/types";
 
 type Form = Record<string, string>;
@@ -15,6 +15,7 @@ export default function Pledge() {
   const [eng, setEng] = useState<string[]>([]);
   const [agree, setAgree] = useState(false);
   const [listMe, setListMe] = useState(true);
+  const [reviewAck, setReviewAck] = useState(false);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
@@ -30,15 +31,15 @@ export default function Pledge() {
     () =>
       ["legal_name", "license_type", "license_number", "city", "county", "contact_name", "contact_email", "signer_name"].every(
         (k) => (f[k] || "").trim()
-      ) && perYear >= 100 && agree,
-    [f, perYear, agree]
+      ) && perYear >= 100 && agree && reviewAck,
+    [f, perYear, agree, reviewAck]
   );
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setErr("");
     if (!valid) {
-      setErr("Please complete the required fields (marked *) and confirm the acknowledgment.");
+      setErr("Please complete the required fields (marked *) and check both acknowledgments.");
       return;
     }
     setBusy(true);
@@ -46,7 +47,7 @@ export default function Pledge() {
       const res = await fetch("/api/pledge", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...f, annual_amount: perYear, engagements: eng, agree, list_publicly: listMe, social_equity: f.social_equity === "yes" }),
+        body: JSON.stringify({ ...f, annual_amount: perYear, engagements: eng, agree, review_ack: reviewAck, list_publicly: listMe, social_equity: f.social_equity === "yes" }),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Something went wrong.");
@@ -166,6 +167,7 @@ export default function Pledge() {
             <div style={{ fontSize: ".93rem", marginTop: 8 }}>
               <strong>Deposit to unlock your plan: {money((total || 0) / 2)}</strong> (50% of your total pledge)
             </div>
+            <div style={{ fontSize: ".85rem", color: "var(--ink-2)", marginTop: 8 }}>{TAX.line}</div>
           </div>
         </div>
 
@@ -195,6 +197,10 @@ export default function Pledge() {
             <label className="field"><span>Title</span><input type="text" value={f.signer_title || ""} onChange={set("signer_title")} /></label>
           </div>
           <label className="check">
+            <input type="checkbox" checked={reviewAck} onChange={(e) => setReviewAck(e.target.checked)} />
+            <span>I understand that the Community Impact Plan and renewal application responses GHP provides are a suggested draft for our review. Our business is solely responsible for reviewing, editing, and approving our own submission to the Office of Cannabis Management, and for the accuracy and completeness of everything we submit. GHP and its volunteers do not provide legal or tax advice.</span>
+          </label>
+          <label className="check">
             <input type="checkbox" checked={listMe} onChange={(e) => setListMe(e.target.checked)} />
             <span>List our business on GHP&apos;s Community Partners page once our deposit is received.</span>
           </label>
@@ -202,7 +208,7 @@ export default function Pledge() {
             <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
             <span>
               I&apos;m authorized to make this commitment on behalf of the business, and I understand GHP will follow up to
-              arrange contributions. My Community Impact Plan and renewal guide will be released once GHP receives a deposit of 50% of my total pledge. {LANDING.disclaimer}
+              arrange contributions. My Community Impact Plan and renewal guide will be released once GHP receives a deposit of 50% of my total pledge.
             </span>
           </label>
         </div>
