@@ -164,9 +164,9 @@ export const SOLUTION = {
   title: "Greater Hudson Promise",
   paras: [
     "Greater Hudson Promise has been part of Hudson since 2011. That year it was one of fifteen communities in the country selected for a U.S. Department of Education Promise Neighborhood planning grant, the Obama Administration\u2019s initiative modeled on the Harlem Children\u2019s Zone. Catholic Charities led the original application in partnership with the Hudson City School District.",
-    "Today GHP is an independent 501(c)(3), led from the start by Executive Director Joan Hunt, with a team that includes advocates who have lived experience of the systems families are navigating.",
-    "Its home is 369 Warren Street, a renovated historic church in the heart of the city, where kids come after school for free homework help, hot meals, and enrichment, with transportation provided, and where young adults study for their GED.",
-    "GHP works cradle to career: early learning for babies and toddlers, after-school for school-age kids, Beyond GED for young adults, and emergency aid, guaranteed-income support, and court advocacy for families. Its annual budget has grown from about $138,000 in 2020 to $2.3 million in 2024. In 2025 alone, GHP distributed $350,170 in emergency assistance to Columbia County residents, helped divert 90 evictions, and brought out 400+ volunteers for community events.",
+    "Today GHP is an independent 501(c)(3), led since its 2011 beginnings by Joan Hunt, now Executive Director, with a court advocacy team that includes staff with lived experience of the justice system.",
+    "Its home is a renovated space inside a historic church at 369 Warren Street, in the heart of the city, where kids come after school for free homework help, hot meals, and enrichment, with transportation provided, and where young adults study for their GED.",
+    "GHP works cradle to career: early learning for babies and toddlers, after-school for school-age kids, Beyond GED for young adults, and emergency aid, guaranteed-income support, and court advocacy for families. Its annual revenue has grown from about $138,000 in 2020 to $2.3 million in 2024. In 2025 alone, GHP distributed $350,170 in emergency assistance to Columbia County residents, helped divert 90 evictions, and brought out 400+ volunteers for community events.",
   ],
   timeline: [
     { year: "2011", text: "Selected for a federal Promise Neighborhood planning grant" },
@@ -180,10 +180,10 @@ export const SOLUTION = {
   ],
   stats: [
     { value: "Since 2011", label: "serving Hudson families" },
-    { value: "$2.3M", label: "annual budget (2024)" },
+    { value: "$2.3M", label: "annual revenue (2024)" },
     { value: "$350K+", label: "emergency assistance to Columbia County residents (2025)" },
     { value: "750+", label: "child-friendly jail visits for 90+ families since 2016" },
-    { value: "33% \u2192 85.7%", label: "employment among HudsonUP\u2019s first cohort (independent research)" },
+    { value: "128", label: "Hudson residents in the HudsonUP guaranteed income pilot GHP helps run" },
     { value: "90", label: "evictions diverted through rent assistance (2025)" },
   ],
   optionsEyebrow: "Choose where your contribution goes",

@@ -66,7 +66,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
       ],
       stats: [
         { value: "31", label: "children enrolled in Promise Early Learning (2025)" },
-        { value: "31", label: "youth served at a time in after-school (2025)" },
+        { value: "20", label: "Opportunity Youth enrolled in Beyond GED (2025)" },
         { value: "$350K+", label: "emergency assistance to residents (2025)" },
         { value: "24", label: "partner organizations in the CO-HOST network" },
       ],
@@ -96,7 +96,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
           title: "Strengthen Early Learning and School Success.",
           body: "Provide free, play-based early learning for children ages 0–5 and free after-school programming with homework help, daily reading, hot meals, and transportation, so children enter and stay in school ready to learn.",
           measure:
-            "Measured by the number of children served in early learning and after-school programs (2025: 31 children from 30 families enrolled in Promise Early Learning and up to 31 youth served at a time in after-school; 2022: 143+ children reached through the Traveling Early Learning Program).",
+            "Measured by the number of children served in early learning and after-school programs (2025: 31 children enrolled in Promise Early Learning, serving 30 families; 2022: 30+ students enrolled in after-school and 143+ children reached through the Traveling Early Learning Program).",
         },
         {
           title: "Expand Pathways to Education and Employment.",
@@ -112,8 +112,8 @@ export const PROGRAMS: Record<ProgramId, Program> = {
         },
       ],
       qualitative: [
-        "Qualitative success will be measured through participant and family feedback, interviews, and stories that show growth in stability, confidence, and connection. GHP staff, several with lived experience of the systems families are navigating, build trusted, individualized relationships with participants across programs.",
-        "Participants describe the difference this makes. A Beyond GED student called the program “one of the best decisions I’ve made for my future,” and a parent said, “It’s been heaven sent for my child, and without this program I am not sure where my son would be.” Families in GHP’s enhanced jail visiting program reported improved parent behavior and reduced anxiety among children in surveys.",
+        "Qualitative success will be measured through participant and family feedback, interviews, and stories that show growth in stability, confidence, and connection. GHP staff build trusted, individualized relationships with participants across programs, and its court advocacy team includes staff with lived experience of the justice system.",
+        "Participants describe the difference this makes. A Beyond GED student called the program “one of the best decisions I’ve made for my future,” and a parent said, “It’s been heaven sent for my child, and without this program I am not sure where my son would be.” In surveys from GHP’s enhanced jail visiting program, incarcerated parents reported improved behavior and fewer disciplinary issues, and children reported reduced anxiety about their parent’s well-being.",
         "A parent of a Promise Early Learner wrote in 2025: \u201cIt\u2019s been wonderful to see how much confidence and independence he has gained\u2026 I\u2019ve especially noticed growth in his social skills and willingness to try new things.\u201d",
         "These qualitative measures, gathered through surveys, interviews, and ongoing staff contact, show not only whether programs are reaching families, but whether families feel more stable, supported, and hopeful about their future.",
       ],
@@ -124,12 +124,11 @@ export const PROGRAMS: Record<ProgramId, Program> = {
           heading: "Early Childhood and Youth",
           paras: [],
           bullets: [
-            "31 children from 30 families enrolled in free Promise Early Learning, now in its fourth year (2025)",
-            "143+ children were reached through the Traveling Early Learning Program at 10+ sites countywide (2022)",
-            "Up to 31 youth served at a time in free after-school programming (2025)",
-            "Up to 123 youth and families transported in a single day to after-school and summer programs (2025)",
+            "31 children enrolled in free Promise Early Learning, serving 30 families, in the program’s fourth year (2025)",
+            "143+ children were reached through the Traveling Early Learning Program (2022)",
+            "30+ students enrolled in free after-school programming (2022)",
           ],
-          after: "GHP also convenes CO-HOST, a network of 24 youth-serving partner organizations that met monthly in 2025 and provided free professional development to 36 youth workers. Tracking includes enrollment, daily attendance, and reading time, as every after-school scholar reads a minimum of twenty minutes per day.",
+          after: "GHP also convenes CO-HOST, a network of 24 youth-serving partner organizations that met monthly in 2025; its 2025 retreat provided free professional development to 36 people from youth-serving organizations. Tracking includes enrollment, daily attendance, and reading time, as every after-school scholar reads a minimum of twenty minutes per day.",
         },
         {
           heading: "Young Adults (Beyond GED)",
@@ -144,10 +143,10 @@ export const PROGRAMS: Record<ProgramId, Program> = {
             "Rent assistance reaching 482 individuals (262 adults and 220 children), diverting 90 evictions (2025)",
             "$28,600 in discretionary emergency support (utilities, car repairs, groceries) for 166 additional individuals (2025)",
             "Grocery relief for 760+ residents during the November 2025 SNAP lapse, delivered in under ten days, with all eligible requests fulfilled",
-            "189 air conditioners delivered to Hudson families, summers 2021–2024",
+            "189 air conditioners delivered to residents of the Hudson City School District, summers 2021–2024",
           ],
           after:
-            "GHP also helps administer HudsonUP, a guaranteed income pilot for 128 Hudson residents; $730,000 in guaranteed income reached City of Hudson residents in 2025, and independent research by the Jain Family Institute found employment among the first cohort rose from 33 percent to 85.7 percent.",
+            "GHP also helps administer HudsonUP, a guaranteed income pilot for 128 Hudson residents. In independent research by the Jain Family Institute, employment among the pilot’s first cohort rose from 33 percent at enrollment to as high as 85.7 percent, and stood at 66.7 percent in the most recent survey reported.",
         },
         {
           heading: "Families Impacted by Incarceration",
@@ -219,9 +218,9 @@ export const PROGRAMS: Record<ProgramId, Program> = {
     cardStat: { value: "750+", label: "child-friendly jail visits for 90+ families since 2016" },
     closer: {
       paras: [
-        "When a parent goes to jail, a child can lose that relationship overnight. Since 2016, GHP has partnered with the Columbia County Sheriff to offer enhanced, child-friendly visits at the Columbia County Jail, now available six times a week in person, plus facilitated virtual visits for families facing distance or other barriers.",
-        "The work reaches beyond the jail. With the Hudson Police Department and the Osborne Association, GHP trains officers and providers to protect children at the moment of a parent’s arrest. Its work helped establish the jail’s Enhanced Child Visiting policy, and in 2025 GHP presented the model to administrators from another New York county jail interested in replicating it.",
-        "GHP’s Community Court Advocacy Program walks justice-impacted residents through court and reentry, with mentorship, emergency assistance, mindfulness coaching, Transformative Community Service, and connections to Beyond GED, delivered by staff with lived experience.",
+        "When a parent goes to jail, a child can lose that relationship overnight. Since August 2016, the Columbia County Jail has offered full-contact, child-friendly enhanced visits, launched by the Greater Hudson Initiative for Children of Incarcerated Parents with the Columbia County Sheriff’s Office and GHP. GHP staff facilitate the visits, now offered six times a week in person, along with free one-hour virtual visits for families facing distance or other barriers.",
+        "The work reaches beyond the jail. Through Safeguarding Children of Arrested Parents, GHP partnered with the Mayor’s Office, the Hudson Police Department, and the Osborne Association to train officers in trauma-informed, child-sensitive arrest practices. The program helped introduce an Enhanced Child Visiting policy at the jail, and in 2025 GHP presented it to administrators from another New York county jail seeking to learn about and potentially replicate it.",
+        "GHP’s Community Court Advocacy Program supports justice-impacted residents through court and reentry. In 2025 it assisted eight youth and three adults with services including mentorship, emergency assistance, mindfulness coaching, Transformative Community Service, and Beyond GED enrollment. Its team includes staff with lived experience of the justice system.",
       ],
       stats: [
         { value: "750+", label: "enhanced visits since 2016" },
@@ -232,19 +231,19 @@ export const PROGRAMS: Record<ProgramId, Program> = {
       quotes: [],
     },
     purpose:
-      "support GHP’s programs for families impacted by incarceration, including the Greater Hudson Initiative for Children of Incarcerated Parents and the Community Court Advocacy Program",
+      "support GHP’s programs for families impacted by incarceration, including its work with the Greater Hudson Initiative for Children of Incarcerated Parents and its Community Court Advocacy Program",
     uses:
-      "Funds support enhanced, child-friendly visits at the Columbia County Jail, facilitated virtual visits, training for police and providers on protecting children at a parent’s arrest, and court navigation and reentry support for justice-impacted residents.",
+      "Funds support enhanced, child-friendly visits at the Columbia County Jail, facilitated virtual visits, training for police and providers on protecting children at a parent’s arrest, and court and reentry support for justice-impacted residents.",
     plan: {
       need: [
         "The {{company}}/Greater Hudson Promise (GHP) partnership addresses the harm that arrest and incarceration, driven in large part by drug enforcement that fell hardest on Black and Latino New Yorkers, inflicts on children and families in the City of Hudson and Columbia County.",
         CONTEXT,
-        "When a parent is arrested or incarcerated, children can lose contact with a caregiver while their family absorbs new financial and emotional strain. Since August 2016, GHP’s Greater Hudson Initiative for Children of Incarcerated Parents (GHICIP) has partnered with the Columbia County Sheriff to offer enhanced, child-friendly visits at the Columbia County Jail, along with facilitated virtual visits. GHP’s work helped create the jail’s Enhanced Child Visiting policy. Through Safeguarding Children of Arrested Parents, GHP works with the Hudson Police Department and the Osborne Association to protect children at the moment of a parent’s arrest, and its Community Court Advocacy Program provides court navigation, direct service, and reentry support for justice-impacted residents, delivered by staff with lived experience. In 2025, in-person enhanced visits expanded to six times a week, the court advocacy program assisted eight justice-impacted youth and three adults, and GHP presented its model to administrators from another New York county jail seeking to replicate it.",
+        "When a parent is arrested or incarcerated, children can lose contact with a caregiver while their family absorbs new financial and emotional strain. Since August 2016, the Columbia County Jail has offered full-contact, child-friendly enhanced visits, launched by the Greater Hudson Initiative for Children of Incarcerated Parents (GHICIP) with the Columbia County Sheriff’s Office and GHP; GHP staff facilitate the visits, and in August 2022 GHP added facilitated virtual visits. The program helped introduce an Enhanced Child Visiting policy at the jail. Through Safeguarding Children of Arrested Parents, GHP partnered with the Mayor’s Office, the Hudson Police Department, and the Osborne Association to train officers in trauma-informed, child-sensitive arrest practices, and its Community Court Advocacy Program provides direct service, assistance, and advocacy for justice-impacted residents, with a team that includes staff with lived experience. In 2025, in-person enhanced visits expanded to six times a week, the court advocacy program assisted eight justice-impacted youth and three adults, and GHP presented the visiting program to administrators from another New York county jail seeking to learn about and potentially replicate it.",
         ABOUT_GHP +
           " The {{company}}–GHP partnership will sustain and expand these services, keeping children connected to their parents, reducing the collateral harm of arrest and incarceration, and supporting justice-impacted adults as they rebuild stability.",
       ],
       who: [
-        "The targeted population is children and families of incarcerated and justice-involved parents in the City of Hudson and Columbia County, and adults navigating the court system and reentry. These families have been disproportionately impacted by drug enforcement, poverty, and systemic oppression. GHP’s mission is to build an equitable community by providing opportunities and support to individuals and families affected by systemic oppression and failures. Across all GHP programs, 79 percent of participants are BIPOC.",
+        "The targeted population is children and families of incarcerated and justice-involved parents in the City of Hudson and Columbia County, and youth and adults navigating the court system and reentry. These families have been disproportionately impacted by drug enforcement, poverty, and systemic oppression. GHP’s mission is to build an equitable community by providing opportunities and support to individuals and families affected by systemic oppression and failures. Across all GHP programs, 79 percent of participants are BIPOC.",
       ],
       goals: [
         {
@@ -255,17 +254,17 @@ export const PROGRAMS: Record<ProgramId, Program> = {
         {
           title: "Protect Children at the Point of a Parent’s Arrest.",
           body: "Train law enforcement and service providers in practices that reduce trauma for children when a parent is arrested, in partnership with the Hudson Police Department and the Osborne Association.",
-          measure: "Measured by the number of officers and providers trained (2022: 25 Hudson Police Department officers and 16 providers from 6 organizations).",
+          measure: "Measured by the number of officers and providers trained (2022: 25 Hudson Police Department officers, plus 16 individuals from 6 youth-serving organizations).",
         },
         {
-          title: "Support Justice-Impacted Adults Through Court and Reentry.",
-          body: "Provide court navigation, direct service, and reentry support through GHP’s Community Court Advocacy Program, delivered by staff with lived experience.",
+          title: "Support Justice-Impacted Youth and Adults Through Court and Reentry.",
+          body: "Provide direct service, assistance, and advocacy for justice-impacted residents navigating court and reentry through GHP’s Community Court Advocacy Program, whose team includes staff with lived experience.",
           measure: "Measured by the number of youth and adults supported and the services provided (2025: 8 justice-impacted youth and 3 adults assisted, with services including mentorship, emergency assistance, mindfulness coaching, Transformative Community Service, and Beyond GED enrollment).",
         },
       ],
       qualitative: [
         "Qualitative success will be measured through family surveys, participant interviews, and feedback from partners including the Columbia County Sheriff’s Office and the Hudson Police Department.",
-        "Families participating in enhanced visiting have reported improved parent behavior and reduced anxiety among children. GHP’s advocates, several with lived experience of the justice system, build trusted relationships that help participants navigate court and reentry with dignity.",
+        "In program surveys, incarcerated parents participating in enhanced visiting reported improved behavior and fewer disciplinary issues, and children reported reduced anxiety about their parent’s well-being and feeling more connected to their incarcerated parent. GHP’s court advocacy team, which includes staff with lived experience of the justice system, builds trusted relationships that help participants navigate court and reentry with dignity.",
         "These measures, together with ongoing staff contact, show whether children remain connected to their parents and whether justice-impacted adults are gaining stability.",
       ],
       quantIntro:
@@ -280,8 +279,8 @@ export const PROGRAMS: Record<ProgramId, Program> = {
         {
           heading: "Training and Systems Change",
           paras: ["In 2022:"],
-          bullets: ["25 Hudson Police Department officers trained", "16 providers from 6 organizations trained", "33 facilitated virtual visits in the program’s first months"],
-          after: "GHP’s work helped establish the Columbia County Jail’s Enhanced Child Visiting policy. In November 2025, GHP presented the model to administrators from another New York county jail and staff from several judicial districts seeking to replicate it.",
+          bullets: ["25 Hudson Police Department officers completed a full-day training in trauma-informed, child-sensitive arrest practices", "16 individuals from 6 youth-serving organizations completed the training", "33 facilitated virtual visits after the August 2022 pilot launch"],
+          after: "The program helped introduce an Enhanced Child Visiting policy at the Columbia County Jail. In November 2025, GHP presented the program to administrators from another New York county jail and staff from several judicial districts seeking to learn about and potentially replicate it.",
         },
         {
           heading: "Court Advocacy and Reentry",
