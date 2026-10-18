@@ -30,7 +30,7 @@ h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); }
 h3 { font-size: 1.25rem; }
 p { margin: 0 0 1em; }
 .mono { font-family: var(--font-mono), "Courier New", monospace; letter-spacing: .02em; }
-.eyebrow { font-family: var(--font-mono), monospace; font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 1rem; display: block; }
+.eyebrow { font-family: var(--font-mono), monospace; font-size: clamp(1.05rem, 2vw, 1.3rem); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 1rem; display: block; }
 .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
 .narrow { max-width: 760px; }
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
