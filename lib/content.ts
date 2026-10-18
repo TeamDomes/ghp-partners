@@ -217,7 +217,7 @@ export const LANDING = {
   eyebrow: "For New York cannabis licensees",
   headline: "Need a Community Impact Plan?",
   headline2: "We've Got You Covered",
-  sub: "New York's Office of Cannabis Management asks every licensee to show a Community Impact Plan at renewal. Partner with Greater Hudson Promise and put your plan to work for young people in Hudson and Columbia County who were hurt by the War on Drugs.",
+  sub: "New York's Office of Cannabis Management asks every licensee to show a Community Impact Plan at renewal. Partner with Greater Hudson Promise and put your plan to work for young people in Hudson and Columbia County living with the legacy of the War on Drugs.",
   aboutTitle: "Greater Hudson Promise",
   about: [
     "Greater Hudson Promise is a cradle-to-career organization serving young people ages 0 to 24 and beyond. Its mission is to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures.",
