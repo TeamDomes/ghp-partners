@@ -10,7 +10,7 @@ export const ORG = {
   program: "Beyond GED",
   contactEmail: "info@greaterhudsonpromise.org",
   website: "https://greaterhudsonpromise.org/",
-  donateUrl: "https://greaterhudsonpromise.networkforgood.com/projects/207361-greater-hudson-promise-neighborhood",
+  donateUrl: "https://greaterhudsonpromise.networkforgood.com/projects/308139-cannapromise",
   checkPayable: "Greater Hudson Promise Neighborhood, Inc.", // legal name per IRS; confirm with Jeff
   mailingAddress: "369 Warren Street, Hudson, NY 12534", // confirm checks go here
 };
