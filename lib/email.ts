@@ -4,7 +4,7 @@ import { DEPOSIT, ORG, TAX } from "./content";
 import { getProgram } from "./programs";
 
 // Emails are sent through Resend when RESEND_API_KEY and NOTIFY_EMAIL_FROM are set.
-// REPLY_TO_EMAIL: where licensees' replies go (falls back to GHP's general inbox).
+// REPLY_TO_EMAIL: where licensees' replies go (falls back to GHPN's general inbox).
 // NOTIFY_EMAIL_TO: private, comma-separated list that gets new-pledge alerts.
 
 const replyTo = () => process.env.REPLY_TO_EMAIL || ORG.contactEmail;
@@ -34,7 +34,7 @@ ${body}
 <hr style="border:none;border-top:1px solid #ddd1c1;margin:28px 0 14px"/>
 <p style="font-size:13px;color:#6b5f55;font-family:Arial,sans-serif">
 Questions? Just reply to this email, or write to <a href="mailto:${esc(replyTo())}">${esc(replyTo())}</a>.<br/>
-${esc(ORG.name)} · 369 Warren Street, Hudson, NY 12534<br/>
+${esc(ORG.name)} · ${esc(ORG.mailingAddress)}<br/>
 ${esc(TAX.line)}${TAX.ein ? ` EIN ${esc(TAX.ein)}.` : ""}
 </p></div>`;
 }
@@ -59,7 +59,7 @@ export async function notifyNewPledge(p: Pledge) {
     {
       to: to.split(",").map((s) => s.trim()).filter(Boolean),
       reply_to: p.contact_email,
-      subject: `New GHP partner: ${name} (${money(p.total_commitment)})`,
+      subject: `New GHPN partner: ${name} (${money(p.total_commitment)})`,
       html,
     },
     "Admin alert"
@@ -77,11 +77,11 @@ export async function notifyPledgeReceived(p: Pledge, origin: string) {
 Pay online: <a href="${esc(ORG.donateUrl)}">${esc(ORG.donateUrl)}</a><br/>
 Or mail a check payable to ${esc(ORG.checkPayable)}, ${esc(ORG.mailingAddress)}, with &ldquo;${esc(displayName(p))} – Community Impact Plan&rdquo; in the memo.</p>
 ${p.term_years > 1 ? `<p>Your Year 2 contribution of ${money(due)} will be due on the one-year anniversary.</p>` : ""}
-<p>Once GHP confirms your payment (${esc(DEPOSIT.turnaround)}), your Community Impact Plan and suggested responses for the OCM renewal application will be ready here. Please save this link:</p>
+<p>Once GHPN confirms your payment (${esc(DEPOSIT.turnaround)}), your Community Impact Plan and suggested responses for the OCM renewal application will be ready here. Please save this link:</p>
 <p><a href="${link}">${link}</a></p>
 <p>With gratitude,<br/>${esc(ORG.name)}</p>`);
   await send(
-    { to: [p.contact_email], reply_to: replyTo(), subject: "Thank you for your pledge to Greater Hudson Promise", html },
+    { to: [p.contact_email], reply_to: replyTo(), subject: "Thank you for your pledge to Greater Hudson Promise Neighborhood", html },
     "Pledge received"
   );
 }

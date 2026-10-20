@@ -201,7 +201,7 @@ export async function buildPlanDocx(pl: Pledge): Promise<Buffer> {
   });
 
   const doc = new Document({
-    creator: "GHP Community Impact Partners",
+    creator: "GHPN Community Impact Partners",
     title: `Community Impact Plan — ${company}`,
     numbering: {
       config: [

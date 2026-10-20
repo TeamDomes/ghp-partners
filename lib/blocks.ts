@@ -110,7 +110,7 @@ export function guideBlocks(pl: Pledge): Block[] {
   return B;
 }
 
-// Program overview: GHP background (same for everyone) + the option the licensee chose.
+// Program overview: GHPN background (same for everyone) + the option the licensee chose.
 export function overviewBlocks(programId?: string | null): Block[] {
   const prog = getProgram(programId);
   const B: Block[] = [
@@ -119,7 +119,7 @@ export function overviewBlocks(programId?: string | null): Block[] {
     { t: "h", text: "Why Hudson" },
     { t: "stats", items: PROBLEM.stats },
     ...PROBLEM.body.map((x) => (typeof x === "string" ? { t: "p", text: x } : { t: "quote", text: x.quote, who: x.who }) as Block),
-    { t: "h", text: "About Greater Hudson Promise" },
+    { t: "h", text: "About Greater Hudson Promise Neighborhood" },
     ...SOLUTION.paras.map((x) => ({ t: "p", text: x }) as Block),
     { t: "stats", items: SOLUTION.stats },
     { t: "sub", text: "Milestones" },

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Partner with GHP — Community Impact Plans for NY Cannabis Licensees",
+  title: "Partner with GHPN — Community Impact Plans for NY Cannabis Licensees",
   description:
-    "Build your OCM Community Impact Plan in partnership with Greater Hudson Promise in Hudson, NY.",
+    "Build your OCM Community Impact Plan in partnership with Greater Hudson Promise Neighborhood in Hudson, NY.",
   // Keep the site out of search engines while outreach is direct. Delete this line to allow indexing.
   robots: { index: false, follow: false },
 };

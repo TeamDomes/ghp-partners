@@ -70,7 +70,7 @@ export function buildGuide(p: Pledge): GuideItem[] {
     {
       q: "Do you have any written agreements with your partners related to your community impact plan?",
       answer: "No",
-      note: "Change to Yes if you have a signed partnership letter or agreement with GHP.",
+      note: "Change to Yes if you have a signed partnership letter or agreement with GHPN.",
     },
     {
       q: "What types of activities do you plan to implement in order to address the needs of the target population?",
@@ -92,7 +92,7 @@ export function buildGuide(p: Pledge): GuideItem[] {
       q: "What is your estimated 2-year budget for the community impact plan?",
       answer: "",
       note:
-        "Your contribution to GHP belongs under Donations and sponsorships." +
+        "Your contribution to GHPN belongs under Donations and sponsorships." +
         (p.term_years > 2 ? ` This shows two years of your ${p.term_years}-year commitment.` : p.term_years < 2 ? " This reflects your one-year commitment." : ""),
       sub: [
         ["Personnel", 0],
@@ -113,12 +113,12 @@ export function buildGuide(p: Pledge): GuideItem[] {
     {
       q: "How often do you plan to collect these metrics?",
       answer: GUIDE.metricsFrequency,
-      note: "GHP tracks participant progress weekly and will share an impact summary with you.",
+      note: "GHPN tracks participant progress weekly and will share an impact summary with you.",
     },
     {
       q: "Please upload any additional relevant information.",
-      answer: "GHP Overview (PDF)",
-      note: "Download the GHP overview and upload it here.",
+      answer: "GHPN Overview (PDF)",
+      note: "Download the GHPN overview and upload it here.",
     },
   ];
 }

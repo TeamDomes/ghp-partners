@@ -74,11 +74,11 @@ export default function Pledge() {
   return (
     <main className="wrap narrow" style={{ paddingBottom: 72 }}>
       <nav className="nav">
-        <Link className="brand" href="/">← GHP · Community Impact Partners</Link>
+        <Link className="brand" href="/">← GHPN · Community Impact Partners</Link>
       </nav>
 
       <span className="eyebrow">Build your plan</span>
-      <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Partner with GHP</h1>
+      <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Partner with GHPN</h1>
       <p style={{ color: "var(--ink-2)", marginBottom: 32 }}>
         Fill this out once. Sign your pledge, pay your Year 1 contribution, and your Community Impact Plan and renewal portal guide unlock.
       </p>
@@ -108,7 +108,7 @@ export default function Pledge() {
             />
           ) : (
             <>
-              <p className="hint">The OCM license lookup is temporarily unavailable. Enter your details below and GHP will verify your license.</p>
+              <p className="hint">The OCM license lookup is temporarily unavailable. Enter your details below and GHPN will verify your license.</p>
               <div className="grid2">
                 <label className="field"><span>Legal business name {req}</span><input type="text" value={f.legal_name || ""} onChange={set("legal_name")} /></label>
                 <label className="field"><span>OCM license number {req}</span><input type="text" value={f.license_number || ""} onChange={set("license_number")} /></label>
@@ -166,7 +166,7 @@ export default function Pledge() {
 
         <div className="form-card">
           <h2>Your commitment</h2>
-          <p className="hint">Annual contribution to GHP&apos;s Beyond GED program. {RECOMMENDED.line}</p>
+          <p className="hint">Annual contribution to GHPN&apos;s Beyond GED program. {RECOMMENDED.line}</p>
           <div className="choice-grid">
             {TIERS.map((t) => (
               <label key={t.amount} className={`choice ${tier === t.amount ? "on" : ""}`}>
@@ -238,17 +238,17 @@ export default function Pledge() {
           </div>
           <label className="check">
             <input type="checkbox" checked={reviewAck} onChange={(e) => setReviewAck(e.target.checked)} />
-            <span>I understand that the Community Impact Plan and renewal application responses GHP provides are a suggested draft for our review. Our business is solely responsible for reviewing, editing, and approving our own submission to the Office of Cannabis Management, and for the accuracy and completeness of everything we submit. GHP and its volunteers do not provide legal or tax advice.</span>
+            <span>I understand that the Community Impact Plan and renewal application responses GHPN provides are a suggested draft for our review. Our business is solely responsible for reviewing, editing, and approving our own submission to the Office of Cannabis Management, and for the accuracy and completeness of everything we submit. GHPN and its volunteers do not provide legal or tax advice.</span>
           </label>
           <label className="check">
             <input type="checkbox" checked={listMe} onChange={(e) => setListMe(e.target.checked)} />
-            <span>List our business on GHP&apos;s Community Partners page once our deposit is received.</span>
+            <span>List our business on GHPN&apos;s Community Partners page once our deposit is received.</span>
           </label>
           <label className="check">
             <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
             <span>
-              I&apos;m authorized to make this commitment on behalf of the business, and I understand GHP will follow up to
-              arrange contributions. My Community Impact Plan and renewal guide will be released once GHP receives our Year 1 contribution, and any Year 2 contribution is due on the one-year anniversary.
+              I&apos;m authorized to make this commitment on behalf of the business, and I understand GHPN will follow up to
+              arrange contributions. My Community Impact Plan and renewal guide will be released once GHPN receives our Year 1 contribution, and any Year 2 contribution is due on the one-year anniversary.
             </span>
           </label>
         </div>

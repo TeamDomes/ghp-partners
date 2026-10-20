@@ -26,7 +26,7 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
         <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Thank you, {displayName(pledge)}.</h1>
         <p style={{ fontSize: "1.1rem", color: "var(--ink-2)" }}>
           Your signed pledge of {money(Number(pledge.total_commitment))} to {ORG.name} is on file. Your Community Impact
-          Plan and renewal application guide unlock as soon as GHP receives your Year 1 contribution.
+          Plan and renewal application guide unlock as soon as GHPN receives your Year 1 contribution.
         </p>
 
         <div className="form-card" style={{ marginTop: 28 }}>
@@ -35,7 +35,7 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
           <a className="btn" href={ORG.donateUrl} target="_blank" rel="noreferrer">Pay online</a>
           <p style={{ marginTop: 16, fontSize: ".93rem", color: "var(--ink-2)" }}>
             Paying by check? Make it payable to {ORG.checkPayable}{ORG.mailingAddress ? `, ${ORG.mailingAddress}` : ""}, with &ldquo;{displayName(pledge)} – Community Impact Plan&rdquo; in the memo.
-            GHP confirms payments {DEPOSIT.turnaround}.{pledge.term_years > 1 ? ` Your Year 2 contribution of ${money(dep)} is due on the one-year anniversary.` : ""} Come back to this page — bookmark it — and your plan will be here.
+            GHPN confirms payments {DEPOSIT.turnaround}.{pledge.term_years > 1 ? ` Your Year 2 contribution of ${money(dep)} is due on the one-year anniversary.` : ""} Come back to this page — bookmark it — and your plan will be here.
           </p>
           <p style={{ fontSize: ".85rem", color: "var(--ink-2)" }}>{TAX.line}{TAX.ein ? ` EIN ${TAX.ein}.` : ""} {TAX.advisor}</p>
         </div>
@@ -72,7 +72,7 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", margin: "24px 0 8px" }}>
             <a className="btn" href={`/api/plan/${pledge.id}?doc=plan`}>Community Impact Plan (PDF)</a>
             <a className="btn" href={`/api/plan/${pledge.id}?doc=renewal`}>OCM Renewal Instructions (PDF)</a>
-            <a className="btn ghost" href={`/api/plan/${pledge.id}?doc=overview`}>GHP program overview (PDF)</a>
+            <a className="btn ghost" href={`/api/plan/${pledge.id}?doc=overview`}>GHPN program overview (PDF)</a>
             {pledge.program === "beyond_ged" && (
               <a className="btn ghost" href={GUIDE.deckPath} download>Beyond GED deck (PDF)</a>
             )}

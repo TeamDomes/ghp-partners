@@ -29,7 +29,7 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   }
 
   if (!isUnlocked(pl) && !isAdmin())
-    return new Response("This plan unlocks once Greater Hudson Promise confirms your Year 1 contribution.", { status: 403 });
+    return new Response("This plan unlocks once Greater Hudson Promise Neighborhood confirms your Year 1 contribution.", { status: 403 });
 
   const safe = displayName(pl).replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "");
   const headers = (type: string, name: string) => ({

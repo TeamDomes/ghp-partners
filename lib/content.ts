@@ -5,20 +5,20 @@
 // ─────────────────────────────────────────────────────────────
 
 export const ORG = {
-  name: "Greater Hudson Promise",
-  short: "GHP",
+  name: "Greater Hudson Promise Neighborhood",
+  short: "GHPN",
   program: "Beyond GED",
-  contactEmail: "info@greaterhudsonpromise.org",
+  contactEmail: "jeff@greaterhudsonpromise.org",
   website: "https://greaterhudsonpromise.org/",
-  donateUrl: "https://greaterhudsonpromise.networkforgood.com/projects/308139-cannapromise",
+  donateUrl: "https://greaterhudsonpromise.networkforgood.com/projects/207361-greater-hudson-promise-neighborhood",
   checkPayable: "Greater Hudson Promise Neighborhood, Inc.", // legal name per IRS; confirm with Jeff
-  mailingAddress: "369 Warren Street, Hudson, NY 12534", // confirm checks go here
+  mailingAddress: "364 Warren Street, Hudson, NY 12534", // per GHPN edits Oct 2026; confirm checks go here
 };
 
-// Plan + guide unlock once GHP confirms the Year 1 contribution.
+// Plan + guide unlock once GHPN confirms the Year 1 contribution.
 export const DEPOSIT = {
   share: 0.5,
-  turnaround: "within 2 business days", // how fast GHP confirms and unlocks — TODO confirm with Jeff
+  turnaround: "within 2 business days", // how fast GHPN confirms and unlocks — TODO confirm with Jeff
 };
 
 // Headline stats shown on the landing page.
@@ -26,7 +26,7 @@ export const STATS = [
   { value: "11", label: "students have earned their GED since launch" },
   { value: "16", label: "participants gained employment in 2025" },
   { value: "0", label: "completers have re-entered the justice system" },
-  { value: "20", label: "Opportunity Youth enrolled in 2025" },
+  { value: "25", label: "Opportunity Youth enrolled in 2025/2026" },
 ];
 
 // Preset annual contribution levels (dollars per year).
@@ -38,15 +38,15 @@ export const TIERS = [
 ];
 
 // Tax language. Contributions are deductible "to the extent allowed by law" — the standard
-// phrasing; confirm with GHP's accountant. Add the EIN once Jeff confirms it.
+// phrasing; confirm with GHPN's accountant. Add the EIN once Jeff confirms it.
 export const TAX = {
   ein: "85-0949720", // per IRS/ProPublica
-  line: "Greater Hudson Promise is a registered 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent allowed by law, and GHP will send a written acknowledgment of each contribution for your tax records.",
+  line: "Greater Hudson Promise Neighborhood is a registered 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent allowed by law, and GHPN will send a written acknowledgment of each contribution for your tax records.",
   advisor: "Please consult your tax advisor about how deductibility applies to your business.",
 };
 
 export const REVIEW_DISCLAIMER =
-  "The Community Impact Plan and renewal application responses provided here are a suggested draft for your review. Each licensee is solely responsible for reviewing, editing, and approving its own submission to the Office of Cannabis Management, and for the accuracy and completeness of everything it submits. Greater Hudson Promise and its volunteers do not provide legal or tax advice.";
+  "The Community Impact Plan and renewal application responses provided here are a suggested draft for your review. Each licensee is solely responsible for reviewing, editing, and approving its own submission to the Office of Cannabis Management, and for the accuracy and completeness of everything it submits. Greater Hudson Promise Neighborhood and its volunteers do not provide legal or tax advice.";
 
 export const RECOMMENDED = {
   annual: 5000,
@@ -62,7 +62,7 @@ export const OCM_GUIDANCE = {
 export const PARTNERS_PAGE = {
   eyebrow: "Community Partners",
   title: "Pledged Licensees",
-  sub: "These New York cannabis businesses are investing in Hudson and Columbia County families through their Community Impact Plans with Greater Hudson Promise.",
+  sub: "These New York cannabis businesses are investing in Hudson and Columbia County families through their Community Impact Plans with Greater Hudson Promise Neighborhood.",
   empty: "Our first Community Partners are signing on now. Yours could be the first name here.",
   cta: "Join them",
 };
@@ -92,20 +92,20 @@ export const LICENSE_TYPES = [
 export const ENGAGEMENTS = [
   {
     id: "awareness",
-    label: "Share GHP program information with customers and staff",
-    plan: "{{company}} will display information about GHP's programs and refer eligible young adults and families to GHP.",
+    label: "Share GHPN program information with customers and staff",
+    plan: "{{company}} will display information about GHPN's programs and refer eligible young adults and families to GHPN.",
     programs: ["general", "beyond_ged", "justice"],
   },
   {
     id: "roundup",
-    label: "In-store round-up / donation prompt for GHP",
-    plan: "{{company}} will offer customers an optional round-up or donation prompt at checkout, with all proceeds directed to GHP.",
+    label: "In-store round-up / donation prompt for GHPN",
+    plan: "{{company}} will offer customers an optional round-up or donation prompt at checkout, with all proceeds directed to GHPN.",
     programs: ["general", "beyond_ged", "justice"],
   },
   {
     id: "volunteer",
     label: "Staff volunteer hours (tutoring, mock interviews, events)",
-    plan: "{{company}} staff will contribute volunteer hours to GHP, including mock interviews, résumé support, and event assistance.",
+    plan: "{{company}} staff will contribute volunteer hours to GHPN, including mock interviews, résumé support, and event assistance.",
     programs: ["general", "beyond_ged", "justice"],
   },
   {
@@ -175,29 +175,30 @@ export const PROBLEM = {
 
 export const SOLUTION = {
   eyebrow: "The solution",
-  title: "Greater Hudson Promise",
+  title: "Greater Hudson Promise Neighborhood",
   paras: [
-    "Greater Hudson Promise has been part of Hudson since 2011. That year it was one of fifteen communities in the country selected for a U.S. Department of Education Promise Neighborhood planning grant, the Obama Administration\u2019s initiative modeled on the Harlem Children\u2019s Zone. Catholic Charities led the original application in partnership with the Hudson City School District.",
-    "Today GHP is an independent 501(c)(3), led since its 2011 beginnings by Joan Hunt, now Executive Director, with a court advocacy team that includes staff with lived experience of the justice system.",
-    "Its home is a renovated space inside a historic church at 369 Warren Street, in the heart of the city, where kids come after school for free homework help, hot meals, and enrichment, with transportation provided, and where young adults study for their GED.",
-    "GHP works cradle to career: early learning for babies and toddlers, after-school for school-age kids, Beyond GED for young adults, and emergency aid, guaranteed-income support, and court advocacy for families. Its annual revenue has grown from about $138,000 in 2020 to $2.3 million in 2024. In 2025 alone, GHP distributed $350,170 in emergency assistance to Columbia County residents, helped divert 90 evictions, and brought out 400+ volunteers for community events.",
+    "Greater Hudson Promise Neighborhood has been part of Hudson since 2011. That year it was one of fifteen communities in the country selected for a U.S. Department of Education Promise Neighborhoods planning grant, the Obama Administration\u2019s initiative modeled on the Harlem Children\u2019s Zone. Today GHPN is an independent 501(c)(3), led since its 2011 beginnings by Joan Hunt, now Executive Director, with a team that includes staff with lived experience and represents the community it serves.",
+    "Its home is a renovated historic building in the heart of the city, where children and adults take part in daily programming or seek individual support. 364 Warren Street, which operated as a jail and courthouse from 1805 to 1835, now serves, fittingly, as a community hub and headquarters for programs that provide opportunities and support to families and individuals impacted by systemic oppression and failures.",
+    "GHPN offers a pipeline of free programming from cradle through career: early learning for babies and toddlers, after-school for school-age kids, Beyond GED for young adults, and emergency aid, guaranteed-income support, and support for individuals and families impacted by the criminal legal system. Since 2020, GHPN has expanded its programs and significantly increased its reach, and its annual revenue has grown from about $138,000 in 2020 to $2.3 million in 2024. In 2025 alone, GHPN distributed $350,170 in emergency assistance to Columbia County residents, helped divert 90 evictions, administered $730,000 in guaranteed income to City of Hudson residents through the HudsonUP pilot, and hosted community-building events in the City of Hudson with 400+ attendees.",
   ],
   timeline: [
     { year: "2011", text: "Selected for a federal Promise Neighborhood planning grant" },
-    { year: "2015", text: "After-school program opens" },
-    { year: "2016", text: "Child-friendly visiting begins at the Columbia County Jail" },
-    { year: "2020", text: "HudsonUP guaranteed income pilot launches" },
-    { year: "2021", text: "Becomes an independent 501(c)(3)" },
-    { year: "2022", text: "Beyond GED launches for Opportunity Youth" },
-    { year: "2025", text: "$350,170 in emergency aid, including groceries for 760+ residents during the SNAP lapse" },
+    { year: "2014", text: "After-school program opens" },
+    { year: "2015", text: "Greater Hudson Initiative for Children of Incarcerated Parents (GHICIP) launches" },
+    { year: "2016", text: "Enhanced Child Visit Program launches full-contact, child-friendly visiting at the Columbia County Jail" },
+    { year: "2020", text: "HudsonUP guaranteed income pilot launches (first of three cohorts)" },
+    { year: "2020", text: "Becomes an independent 501(c)(3)" },
+    { year: "2021", text: "Promise Early Learning launches for children ages 0\u20135" },
+    { year: "2022", text: "Beyond GED launches for Opportunity Youth ages 16\u201324" },
+    { year: "2025", text: "County-wide guaranteed income pilot launches for single caregivers of children under 6; $350,170 in emergency aid, including groceries for 760+ residents during the SNAP lapse" },
     { year: "2026", text: "Childcare Works launches to train new early educators" },
   ],
   stats: [
     { value: "Since 2011", label: "serving Hudson families" },
     { value: "$2.3M", label: "annual revenue (2024)" },
     { value: "$350K+", label: "emergency assistance to Columbia County residents (2025)" },
-    { value: "750+", label: "child-friendly jail visits for 90+ families since 2016" },
-    { value: "128", label: "Hudson residents in the HudsonUP guaranteed income pilot GHP helps run" },
+    { value: "800+", label: "child-friendly jail visits for 90+ families since 2016" },
+    { value: "128", label: "Hudson residents in the HudsonUP guaranteed income pilot GHPN helps run" },
     { value: "90", label: "evictions diverted through rent assistance (2025)" },
   ],
   optionsEyebrow: "Choose where your contribution goes",
@@ -208,8 +209,8 @@ export const SOLUTION = {
     { text: "IRS Form 990 data via ProPublica Nonprofit Explorer", url: "https://projects.propublica.org/nonprofits/organizations/850949720" },
     { text: "Jain Family Institute, HudsonUP Year 4 report (2025)", url: "https://jfiresearch.org/wp-content/uploads/2025/04/HudsonUP-Basic-Income-Pilot-Year-4-2025.pdf" },
     { text: "NYS DCJS, Enhanced Child Visiting profile (2025)", url: "https://knowledgebank.criminaljustice.ny.gov/system/files/documents/2025/09/enhanced-child-visiting-printable-090825_0.pdf" },
-    { text: "Greater Hudson Promise 2025 and 2022 Annual Reports", url: "https://greaterhudsonpromise.org/reports" },
-    { text: "Greater Hudson Promise program pages", url: "https://greaterhudsonpromise.org/" },
+    { text: "Greater Hudson Promise Neighborhood 2025 and 2022 Annual Reports", url: "https://greaterhudsonpromise.org/reports" },
+    { text: "Greater Hudson Promise Neighborhood program pages", url: "https://greaterhudsonpromise.org/" },
   ],
 };
 
@@ -217,11 +218,11 @@ export const LANDING = {
   eyebrow: "For New York cannabis licensees",
   headline: "Need a Community Impact Plan?",
   headline2: "We've Got You Covered",
-  sub: "New York's Office of Cannabis Management asks every licensee to show a Community Impact Plan at renewal. Partner with Greater Hudson Promise and put your plan to work for young people in Hudson and Columbia County living with the legacy of the War on Drugs.",
-  aboutTitle: "Greater Hudson Promise",
+  sub: "New York's Office of Cannabis Management asks every licensee to show a Community Impact Plan at renewal. Partner with Greater Hudson Promise Neighborhood and put your plan to work for children and families in Hudson and Columbia County living with the impact of the War on Drugs.",
+  aboutTitle: "Greater Hudson Promise Neighborhood",
   about: [
-    "Greater Hudson Promise is a cradle-to-career organization serving young people ages 0 to 24 and beyond. Its mission is to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures.",
-    "Across all GHP programs, 79 percent of participants are BIPOC.",
+    "Greater Hudson Promise Neighborhood is a cradle-to-career organization serving young people ages 0 to 24 and beyond. Its mission is to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures.",
+    "Across all GHPN programs, 79 percent of participants are BIPOC.",
   ],
   programTitle: "Beyond GED",
   program: [
@@ -235,12 +236,12 @@ export const LANDING = {
   ],
   howTitle: "Four steps to your plan",
   how: [
-    { step: "Choose your focus", body: "General support for GHP, Beyond GED, or Families Impacted by Incarceration.", href: "#options" },
-    { step: "Sign your pledge", body: "We recommend $5,000 a year for two years. The form takes about ten minutes.", href: "/pledge" },
+    { step: "Choose your focus", body: "General support for GHPN, Beyond GED, or Families Impacted by Incarceration.", href: "#options" },
+    { step: "Sign your pledge", body: "We recommend at least $5,000 a year for two years. The form takes about ten minutes.", href: "/pledge" },
     { step: "Pay Year 1", body: "Pay your first year's contribution online or by check. Year 2 is due on the anniversary.", href: "" },
     { step: "Receive your plan", body: "A complete Community Impact Plan, plus suggested responses to every Community Impact question on the OCM renewal application, ready for your review.", href: "" },
   ],
-  reportNote: "Each year, GHP sends partners an impact summary to support their next renewal.",
+  reportNote: "Each year, GHPN sends partners an impact summary to support their next renewal.",
   disclaimer:
     "The plan and portal responses are a suggested draft. Each licensee is solely responsible for reviewing, editing, and approving its own submission to OCM. Nothing here is legal or tax advice.",
 };
@@ -251,15 +252,15 @@ export const LANDING = {
 export const PLAN = {
   needQ: "What problem or need does your community impact plan seek to address? Please include any relevant data.",
   need: [
-    "The {{company}}/Greater Hudson Promise (GHP) partnership addresses the urgent challenge facing Opportunity Youth in the city of Hudson, NY and Columbia County. Many of the families served have been disproportionately affected by the War on Drugs and its long-term economic and social consequences, contributing to school disengagement, economic instability, and higher rates of justice system involvement among young people of color.",
-    "The partnership centers on GHP's Education and Professional Development work, specifically the Beyond GED program. Beyond GED was created in 2022 in direct response to young adults in Hudson who were increasingly interacting with the justice system and facing incarceration after dropping out of school. Through interviews with the program's first cohort, young people identified poverty as the primary driver of school withdrawal, often leaving school to work and support themselves or their families. Their feedback shaped the program to address real barriers with wraparound support.",
+    "The {{company}}/Greater Hudson Promise Neighborhood (GHPN) partnership addresses the urgent challenge facing Opportunity Youth in the city of Hudson, NY and Columbia County. Many of the families served have been disproportionately affected by the War on Drugs and its long-term economic and social consequences, contributing to school disengagement, economic instability, and higher rates of justice system involvement among young people of color.",
+    "The partnership centers on GHPN's Education and Professional Development work, specifically the Beyond GED program. Beyond GED was created in 2022 in direct response to young adults in Hudson who were increasingly interacting with the justice system and facing incarceration after dropping out of school. Through interviews with the program's first cohort, young people identified poverty as the primary driver of school withdrawal, often leaving school to work and support themselves or their families. Their feedback shaped the program to address real barriers with wraparound support.",
     "The need is clear. Young people without a high school credential face reduced lifetime earnings, higher unemployment rates, and greater risk of justice system involvement. Beyond GED fills a critical gap for youth who have already left the traditional school system and require an alternative, supportive route to completion.",
     "Many participants facing serious felony charges were able to avoid prison and instead transition into higher education or employment. Since participation, none have re-entered the justice system. These outcomes demonstrate the power of combining academic instruction with financial assistance, professional development, vocational exploration, college support, and practical resources.",
-    "Since launching in 2022, Beyond GED has served over 23 young people. Within six weeks of the first cohort enrolling, 100 percent completed their GEDs. The {{company}}–GHP partnership is uniquely positioned to deepen and expand this impact by increasing enrollment of Opportunity Youth across Columbia County, providing a safe learning and workforce development environment, expanding career-connected training opportunities, reducing justice system involvement, and strengthening long-term economic mobility for young adults living in poverty. At its core, this partnership addresses educational and economic disconnection among Opportunity Youth who have been failed by traditional systems. By providing a structured pathway to high school equivalency, career development, and ongoing support, {{company}} and GHP can interrupt cycles of poverty and justice involvement while building a stronger, more equitable workforce pipeline for Columbia County.",
+    "Since launching in 2022, Beyond GED has served over 23 young people. Within six weeks of the first cohort enrolling, 100 percent completed their GEDs. The {{company}}–GHPN partnership is uniquely positioned to deepen and expand this impact by increasing enrollment of Opportunity Youth across Columbia County, providing a safe learning and workforce development environment, expanding career-connected training opportunities, reducing justice system involvement, and strengthening long-term economic mobility for young adults living in poverty. At its core, this partnership addresses educational and economic disconnection among Opportunity Youth who have been failed by traditional systems. By providing a structured pathway to high school equivalency, career development, and ongoing support, {{company}} and GHPN can interrupt cycles of poverty and justice involvement while building a stronger, more equitable workforce pipeline for Columbia County.",
   ],
   whoQ: "Who are the communities and individuals disproportionately impacted you intend to target?",
   who: [
-    "The targeted population are young people ages 16 to 24 who are not enrolled in school and not working, many of whom have been disproportionately impacted by poverty, systemic oppression, and justice system involvement. GHP is a cradle-to-career organization serving young people ages 0 to 24 and beyond, with a mission to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures. Beyond GED serves Opportunity Youth within the Hudson City School District and, with expanded support, throughout Columbia County. Across all GHP programs, 79 percent of participants are BIPOC. In Beyond GED, 100 percent of enrolled students are students of color and all are living below the poverty line, reflecting the disproportionate impact of educational and economic inequities locally.",
+    "The targeted population are young people ages 16 to 24 who are not enrolled in school and not working, many of whom have been disproportionately impacted by poverty, systemic oppression, and justice system involvement. GHPN is a cradle-to-career organization serving young people ages 0 to 24 and beyond, with a mission to build an equitable community by providing opportunities and support to individuals and families impacted by systemic failures. Beyond GED serves Opportunity Youth within the Hudson City School District and, with expanded support, throughout Columbia County. Across all GHPN programs, 79 percent of participants are BIPOC. In Beyond GED, 100 percent of enrolled students are students of color and all are living below the poverty line, reflecting the disproportionate impact of educational and economic inequities locally.",
   ],
   goals: [
     {
@@ -353,7 +354,7 @@ export const PLAN = {
     },
   ],
   reporting:
-    "GHP will provide {{company}} with an annual impact summary covering the metrics above, along with acknowledgment of contributions received. {{company}} will retain these records, together with proof of each contribution, to document plan implementation at license renewal.",
+    "GHPN will provide {{company}} with an annual impact summary covering the metrics above, along with acknowledgment of contributions received. {{company}} will retain these records, together with proof of each contribution, to document plan implementation at license renewal.",
 };
 
 export function fill(text: string, company: string) {
@@ -367,13 +368,13 @@ export function fill(text: string, company: string) {
 export const GUIDE = {
   title: "Renewal Application Guide",
   intro:
-    "Your OCM renewal application includes a Community Impact Plan section with the questions below. We\u2019ve drafted suggested responses based on your partnership with Greater Hudson Promise. Review each one, adjust anything that doesn\u2019t reflect your business, and paste it into the portal yourself.",
+    "Your OCM renewal application includes a Community Impact Plan section with the questions below. We\u2019ve drafted suggested responses based on your partnership with Greater Hudson Promise Neighborhood. Review each one, adjust anything that doesn\u2019t reflect your business, and paste it into the portal yourself.",
   region: "Capital",
   zips: "Primarily 12534 (City of Hudson), expanding throughout Columbia County.",
   reach: "25-50",
   research: "Community conversations",
   researchNote:
-    "Select the options that are true for your business. Beyond GED was designed from interviews with its first cohort of participants, and GHP can walk you through that research.",
+    "Select the options that are true for your business. Beyond GED was designed from interviews with its first cohort of participants, and GHPN can walk you through that research.",
   activities: [
     "job placement",
     "job skills services",

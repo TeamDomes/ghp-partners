@@ -12,8 +12,8 @@ export default async function Home() {
     <main>
       <div className="wrap">
         <nav className="nav">
-          <span className="brand">GHP · Community Impact Partners</span>
-          <a href={ORG.website} target="_blank" rel="noreferrer" className="brand nav-ghp" style={{ marginLeft: "auto", marginRight: 16 }}>Visit GHP ↗</a>
+          <span className="brand">GHPN · Community Impact Partners</span>
+          <a href={ORG.website} target="_blank" rel="noreferrer" className="brand nav-ghp" style={{ marginLeft: "auto", marginRight: 16 }}>Visit GHPN ↗</a>
           <a href="#partners" className="brand" style={{ marginRight: 16 }}>Partners</a>
           <Link className="btn small" href="/pledge">Build my plan</Link>
         </nav>
@@ -40,7 +40,7 @@ export default async function Home() {
             <p className="steps-note">{LANDING.reportNote}</p>
           </div>
           <div className="actions">
-            <Link className="btn" href="/pledge">Partner with GHP</Link>
+            <Link className="btn" href="/pledge">Partner with GHPN</Link>
             <a className="btn ghost" href="#options">See the options</a>
           </div>
         </header>
@@ -114,7 +114,7 @@ export default async function Home() {
               );
             })}
           </div>
-          <Link className="btn" href="/pledge" style={{ marginTop: 22 }}>Partner with GHP</Link>
+          <Link className="btn" href="/pledge" style={{ marginTop: 22 }}>Partner with GHPN</Link>
         </section>
 
         {PROGRAM_ORDER.map((id) => {
@@ -167,7 +167,7 @@ export default async function Home() {
               </p>
               <p>
                 You get a complete Community Impact Plan, written around your business: the need, the population, three goals,
-                qualitative and quantitative measures, your financial commitment, and how GHP will report back.
+                qualitative and quantitative measures, your financial commitment, and how GHPN will report back.
               </p>
               <p>
                 You also get a renewal application guide: suggested responses to each Community Impact question on the
@@ -220,7 +220,7 @@ export default async function Home() {
 
         <div className="cta">
           <h2>Ready to put your plan to work?</h2>
-          <p>About ten minutes to sign up. Your plan and renewal instructions unlock once GHP receives your Year 1 contribution.</p>
+          <p>About ten minutes to sign up. Your plan and renewal instructions unlock once GHPN receives your Year 1 contribution.</p>
           <Link className="btn" href="/pledge">Build my Community Impact Plan</Link>
         </div>
 
