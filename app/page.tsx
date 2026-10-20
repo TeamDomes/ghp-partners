@@ -12,7 +12,7 @@ export default async function Home() {
     <main>
       <div className="wrap">
         <nav className="nav">
-          <span className="brand">GHPN · Community Impact Partners</span>
+          <a className="brand-logo" href="/"><img src="/ghpn-logo.png" alt="Greater Hudson Promise Neighborhood" /><span>Community Impact Partners</span></a>
           <a href={ORG.website} target="_blank" rel="noreferrer" className="brand nav-ghp" style={{ marginLeft: "auto", marginRight: 16 }}>Visit GHPN ↗</a>
           <a href="#partners" className="brand" style={{ marginRight: 16 }}>Partners</a>
           <Link className="btn small" href="/pledge">Build my plan</Link>

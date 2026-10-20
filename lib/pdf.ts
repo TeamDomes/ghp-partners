@@ -2,12 +2,14 @@
 import { PDFDocument, PDFFont, PDFPage, StandardFonts, rgb } from "pdf-lib";
 import type { Block } from "./blocks";
 import { ORG } from "./content";
+import { LOGO_PNG_BASE64 } from "./logo";
 
 const INK = rgb(0.17, 0.15, 0.13);
 const MUTED = rgb(0.42, 0.37, 0.33);
-const ACCENT = rgb(0.6, 0.23, 0.12);
+const ACCENT = rgb(0, 0.231, 0.443); // GHPN navy #003B71
+const RED = rgb(0.765, 0.227, 0.196); // GHPN red #C33A32
 const LINE = rgb(0.87, 0.82, 0.76);
-const TINT = rgb(0.98, 0.94, 0.91);
+const TINT = rgb(1, 0.961, 0.851); // light GHPN yellow
 
 const W = 612, H = 792, M = 64, CW = W - M * 2;
 
@@ -33,7 +35,10 @@ export async function renderPdf(blocks: Block[], title: string, footer: string):
     serifB: await doc.embedFont(StandardFonts.TimesRomanBold),
   };
 
+  const logo = await doc.embedPng(Buffer.from(LOGO_PNG_BASE64, "base64"));
   let page: PDFPage = doc.addPage([W, H]);
+  const LOGO_W = 58;
+  page.drawImage(logo, { x: W - M - LOGO_W, y: H - M - LOGO_W * (logo.height / logo.width) + 8, width: LOGO_W, height: LOGO_W * (logo.height / logo.width) });
   let y = H - M;
 
   const newPage = () => { page = doc.addPage([W, H]); y = H - M; };
@@ -77,10 +82,10 @@ export async function renderPdf(blocks: Block[], title: string, footer: string):
   for (const b of blocks) {
     switch (b.t) {
       case "title":
-        text(b.text, { font: F.serif, size: 26, lh: 30, after: 2 });
+        text(b.text, { font: F.serif, size: 26, lh: 30, after: 2, width: CW - 70 });
         break;
       case "subtitle":
-        text(b.text, { size: 10.5, color: MUTED, after: 14 });
+        text(b.text, { size: 10.5, color: MUTED, after: 14, width: CW - 70 });
         page.drawLine({ start: { x: M, y }, end: { x: W - M, y }, thickness: 0.8, color: LINE });
         y -= 14;
         break;
@@ -164,7 +169,7 @@ export async function renderPdf(blocks: Block[], title: string, footer: string):
           row.forEach((it, i) => {
             const x = M + i * (cw + gap);
             page.drawRectangle({ x, y: y - h, width: cw, height: h, color: TINT });
-            page.drawText(safe(it.value), { x: x + 10, y: y - 30, size: 20, font: F.serif, color: ACCENT });
+            page.drawText(safe(it.value), { x: x + 10, y: y - 30, size: 20, font: F.serif, color: RED });
             wrapped[i].forEach((ln, j) => page.drawText(ln, { x: x + 10, y: y - 46 - j * 11, size: 8.5, font: F.body, color: INK }));
           });
           y -= h + gap;

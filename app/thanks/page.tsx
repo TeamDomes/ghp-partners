@@ -21,7 +21,8 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
   if (pledge && !isUnlocked(pledge)) {
     const dep = depositAmount(pledge);
     return (
-      <main className="wrap narrow" style={{ paddingTop: 56, paddingBottom: 72 }}>
+      <main className="wrap narrow" style={{ paddingTop: 32, paddingBottom: 72 }}>
+        <a href="/" style={{ display: "inline-block", marginBottom: 24 }}><img src="/ghpn-logo.png" alt="Greater Hudson Promise Neighborhood" style={{ width: 72, height: "auto" }} /></a>
         <span className="eyebrow">Pledge received</span>
         <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Thank you, {displayName(pledge)}.</h1>
         <p style={{ fontSize: "1.1rem", color: "var(--ink-2)" }}>
@@ -58,7 +59,8 @@ export default async function Thanks({ searchParams }: { searchParams: { id?: st
   }
 
   return (
-    <main className="wrap narrow" style={{ paddingTop: 56, paddingBottom: 72 }}>
+    <main className="wrap narrow" style={{ paddingTop: 32, paddingBottom: 72 }}>
+        <a href="/" style={{ display: "inline-block", marginBottom: 24 }}><img src="/ghpn-logo.png" alt="Greater Hudson Promise Neighborhood" style={{ width: 72, height: "auto" }} /></a>
       <span className="eyebrow">Thank you</span>
       <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>Your plan is ready.</h1>
       <p style={{ fontSize: "1.1rem", color: "var(--ink-2)" }}>

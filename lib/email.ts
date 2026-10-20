@@ -28,8 +28,9 @@ async function send(payload: Record<string, unknown>, label: string) {
   }
 }
 
-function wrap(body: string) {
+function wrap(body: string, origin?: string) {
   return `<div style="font-family:Georgia,serif;font-size:16px;line-height:1.55;color:#2b2622;max-width:560px">
+${origin ? `<img src="${origin}/ghpn-logo.png" alt="Greater Hudson Promise Neighborhood" width="80" style="display:block;margin:0 0 18px" />` : ""}
 ${body}
 <hr style="border:none;border-top:1px solid #ddd1c1;margin:28px 0 14px"/>
 <p style="font-size:13px;color:#6b5f55;font-family:Arial,sans-serif">
@@ -79,7 +80,7 @@ Or mail a check payable to ${esc(ORG.checkPayable)}, ${esc(ORG.mailingAddress)},
 ${p.term_years > 1 ? `<p>Your Year 2 contribution of ${money(due)} will be due on the one-year anniversary.</p>` : ""}
 <p>Once GHPN confirms your payment (${esc(DEPOSIT.turnaround)}), your Community Impact Plan and suggested responses for the OCM renewal application will be ready here. Please save this link:</p>
 <p><a href="${link}">${link}</a></p>
-<p>With gratitude,<br/>${esc(ORG.name)}</p>`);
+<p>With gratitude,<br/>${esc(ORG.name)}</p>`, origin);
   await send(
     { to: [p.contact_email], reply_to: replyTo(), subject: "Thank you for your pledge to Greater Hudson Promise Neighborhood", html },
     "Pledge received"
@@ -92,10 +93,10 @@ export async function notifyUnlocked(p: Pledge, origin: string) {
   const html = wrap(`
 <p>Hi ${esc(p.contact_name)},</p>
 <p>Thank you. ${esc(ORG.name)} has received your contribution, and your Community Impact Plan is ready.</p>
-<p><a href="${link}" style="display:inline-block;background:#9a3b1f;color:#fff8f2;padding:12px 22px;border-radius:999px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">View your plan</a></p>
+<p><a href="${link}" style="display:inline-block;background:#003B71;color:#ffffff;padding:12px 22px;border-radius:999px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">View your plan</a></p>
 <p>On that page you can download two PDFs: your Community Impact Plan for your records, and OCM Renewal Instructions with a suggested response for each Community Impact question on the renewal application. Please review and adjust everything before you submit. Your business is responsible for its final submission.</p>
 <p>A written acknowledgment of your contribution will follow for your records.</p>
-<p>With gratitude,<br/>${esc(ORG.name)}</p>`);
+<p>With gratitude,<br/>${esc(ORG.name)}</p>`, origin);
   await send(
     { to: [p.contact_email], reply_to: replyTo(), subject: "Your Community Impact Plan is ready", html },
     "Plan ready"

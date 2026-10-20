@@ -74,7 +74,7 @@ export default function Pledge() {
   return (
     <main className="wrap narrow" style={{ paddingBottom: 72 }}>
       <nav className="nav">
-        <Link className="brand" href="/">← GHPN · Community Impact Partners</Link>
+        <Link className="brand-logo" href="/"><img src="/ghpn-logo.png" alt="Greater Hudson Promise Neighborhood" /><span>← Community Impact Partners</span></Link>
       </nav>
 
       <span className="eyebrow">Build your plan</span>
