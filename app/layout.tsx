@@ -13,6 +13,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* GHPN brand font: Museo Slab (Adobe Fonts web project) */}
+        <link rel="stylesheet" href="https://use.typekit.net/pax0yvp.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
