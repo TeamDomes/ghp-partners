@@ -59,6 +59,11 @@ export const OCM_GUIDANCE = {
   url: "https://cannabis.ny.gov/system/files/documents/2026/03/3.27.26-community-impact-plan-guidance.pdf",
 };
 
+// Partners who joined outside the online form. Shown right after the first online partner (Domes).
+export const MANUAL_PARTNERS: { name: string; city: string }[] = [
+  { name: "Aphrodite Pre-Rolls", city: "Columbia County" }, // Love and Beauty Holdings, LLC · OCM-PROC-24-000232
+];
+
 export const PARTNERS_PAGE = {
   eyebrow: "Community Partners",
   title: "Pledged Licensees",
