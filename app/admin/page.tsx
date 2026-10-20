@@ -38,7 +38,10 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
           <span className="eyebrow">Admin</span>
           <h1 style={{ fontSize: "2.2rem" }}>Partner dashboard</h1>
         </div>
-        <a className="btn ghost small" href="/api/admin/export">Export CSV</a>
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          <a className="btn ghost small" href="/one-pagers/GHPN-Licensee-One-Pager-General.html" target="_blank" rel="noreferrer">One-pager ↗</a>
+          <a className="btn ghost small" href="/api/admin/export">Export CSV</a>
+        </div>
       </div>
 
       <div className="stats" style={{ margin: "24px 0 36px" }}>
