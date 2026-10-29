@@ -54,21 +54,21 @@ export const PROGRAMS: Record<ProgramId, Program> = {
   general: {
     id: "general",
     label: "General support for GHPN",
-    tagline: "Fund the whole cradle-to-career continuum",
+    tagline: "Support the whole cradle-to-career continuum",
     cardBody:
       "Unrestricted support lets GHPN put resources where need is greatest, including early learning, free after-school, Beyond GED, emergency assistance, and support for families affected by incarceration.",
     cardStat: { value: "$350K+", label: "in emergency assistance to Columbia County residents in 2025" },
     closer: {
       paras: [
         "Unrestricted support is the most flexible gift a partner can make. It lets GHPN respond when needs spike, as it did in November 2025, when it got groceries to 760+ residents within ten days of the SNAP lapse, and it sustains the staff, space, and partnerships every program depends on.",
-        "Your contribution supports the full continuum: free Promise Early Learning for children 0–5, free after-school with hot meals, enrichment, and transportation, Beyond GED for young adults, emergency and rent assistance for families in crisis, and support for families affected by incarceration.",
-        "GHPN also convenes the people who serve Hudson’s kids. Its CO-HOST network brings together 24 youth-serving organizations each month, and its staff sit on the Hudson City School District’s Chronic Absenteeism Taskforce.",
+        "Your contribution supports the full continuum: free Promise Early Learning for children 0–5, free after-school enrichment and transportation, Beyond GED tutoring, job placement, and driver’s licenses for young adults, rent assistance, direct cash transfers, and court and systems advocacy for families.",
+        "GHPN also convenes more than 40 partner organizations every month to support children, individuals, and families across Hudson and Columbia County, and its staff sit on the Hudson City School District’s Chronic Absenteeism Taskforce.",
       ],
       stats: [
         { value: "31", label: "children enrolled in Promise Early Learning (2025)" },
         { value: "20", label: "Opportunity Youth enrolled in Beyond GED (2025)" },
         { value: "$350K+", label: "emergency assistance to residents (2025)" },
-        { value: "24", label: "partner organizations in the CO-HOST network" },
+        { value: "40+", label: "partner organizations GHPN convenes monthly" },
       ],
       quotes: [
         {
@@ -85,7 +85,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
         "The {{company}}/Greater Hudson Promise Neighborhood (GHPN) partnership addresses the deep and persistent economic disparities facing children and families in the City of Hudson and Columbia County, disparities rooted in decades of state and federal policy, including urban renewal and the enforcement of cannabis prohibition, that fell hardest on Black and Latino residents.",
         CONTEXT,
         ABOUT_GHP +
-          " Its programs include free early learning for children ages 0–5, a countywide early literacy network, free after-school programming with hot meals and transportation, the Beyond GED program for Opportunity Youth ages 16–24, emergency assistance for families in crisis, enhanced visiting for children of incarcerated parents at the Columbia County Jail, and court advocacy for justice-impacted residents.",
+          " Its programs include free early learning for children ages 0–5, a countywide early literacy network, free after-school enrichment and transportation, the Beyond GED program (tutoring, job placement, and driver’s licenses) for Opportunity Youth ages 16–24, rent assistance and direct cash transfers for families, enhanced visiting for children of incarcerated parents at the Columbia County Jail, and court and systems advocacy for justice-impacted residents. GHPN also convenes more than 40 partner organizations monthly to support children, individuals, and families across Hudson and Columbia County.",
         "General operating support allows GHPN to direct resources where community need is greatest and to sustain the staff, space, and programs that families rely on at every stage of life. By investing in the full continuum rather than a single program, the {{company}}–GHPN partnership helps break cycles of poverty and justice involvement that span generations.",
       ],
       who: [
@@ -100,9 +100,9 @@ export const PROGRAMS: Record<ProgramId, Program> = {
         },
         {
           title: "Expand Pathways to Education and Employment.",
-          body: "Through Beyond GED, help Opportunity Youth ages 16–24 earn a high school equivalency credential and move into employment, training, or college, with stipends, meals, and individualized support.",
+          body: "Through Beyond GED, help Opportunity Youth ages 16–24 earn a high school equivalency credential and move into employment, training, or college, with tutoring, stipends, job placement, driver’s license support, and individualized support.",
           measure:
-            "Measured by GED credentials earned and participants gaining employment (2025: 6 GEDs earned and 16 participants employed; 11 GEDs earned since program inception).",
+            "Measured by GED credentials earned and participants gaining employment (2025: 6 GEDs earned and 16 participants employed; 12 GEDs earned since program inception).",
         },
         {
           title: "Increase Family Stability and Reduce Justice-System Harm.",
@@ -133,7 +133,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
         {
           heading: "Young Adults (Beyond GED)",
           paras: ["In 2025:"],
-          bullets: ["20 Opportunity Youth enrolled", "34 GED tests were taken", "6 participants earned their GED (11 since program inception)", "16 participants gained employment", "20 participants received DMV identification cards", "4 participants opened bank accounts"],
+          bullets: ["20 Opportunity Youth enrolled", "34 GED tests were taken", "6 participants earned their GED (12 since program inception)", "16 participants gained employment", "20 participants received DMV identification cards", "4 participants opened bank accounts"],
         },
         {
           heading: "Family Stability",
@@ -146,7 +146,7 @@ export const PROGRAMS: Record<ProgramId, Program> = {
             "189 air conditioners delivered to residents of the Hudson City School District, summers 2021–2024",
           ],
           after:
-            "GHPN also helps administer HudsonUP, a guaranteed income pilot for 128 Hudson residents. In independent research by the Jain Family Institute, employment among the pilot’s first cohort rose from 33 percent at enrollment to as high as 85.7 percent, and stood at 66.7 percent in the most recent survey reported.",
+            "GHPN also runs HudsonUP, a guaranteed income pilot providing direct cash transfers to 128 Hudson residents. In independent research by the Jain Family Institute, employment among the pilot’s first cohort rose from 33 percent at enrollment to as high as 85.7 percent, and stood at 66.7 percent in the most recent survey reported.",
         },
         {
           heading: "Families Impacted by Incarceration",
@@ -183,14 +183,14 @@ export const PROGRAMS: Record<ProgramId, Program> = {
     label: "Beyond GED",
     tagline: "Paid GED and career pathways for Opportunity Youth",
     cardBody:
-      "Young people ages 16–24 who left school, often to work and support their families, get paid stipends, hot meals, GED instruction, and one-on-one help with jobs, IDs, court, and housing.",
+      "Young people ages 16–24 who left school, often to work and support their families, get paid stipends, hot meals, GED tutoring, job placement, driver’s license support, and one-on-one help with IDs, court, and housing.",
     cardStat: { value: "0", label: "program completers have re-entered the justice system" },
     closer: {
       paras: LANDING.program,
       stats: STATS,
       quotes: LANDING.quotes,
     },
-    purpose: "fund the Beyond GED program, which serves Opportunity Youth ages 16 to 24 in Hudson and Columbia County",
+    purpose: "support the Beyond GED program, which serves Opportunity Youth ages 16 to 24 in Hudson and Columbia County",
     uses:
       "Funds support participant stipends, hot meals on study days, GED instruction and testing, internship and job placement, and wraparound services including identification, transportation, court support, and housing stability.",
     plan: {

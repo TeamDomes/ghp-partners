@@ -23,7 +23,7 @@ export const DEPOSIT = {
 
 // Headline stats shown on the landing page.
 export const STATS = [
-  { value: "11", label: "students have earned their GED since launch" },
+  { value: "12", label: "students have earned their GED since launch" },
   { value: "16", label: "participants gained employment in 2025" },
   { value: "0", label: "completers have re-entered the justice system" },
   { value: "25", label: "Opportunity Youth enrolled in 2025/2026" },
@@ -203,7 +203,7 @@ export const SOLUTION = {
     { value: "$2.3M", label: "annual revenue (2024)" },
     { value: "$350K+", label: "emergency assistance to Columbia County residents (2025)" },
     { value: "800+", label: "child-friendly jail visits for 90+ families since 2016" },
-    { value: "128", label: "Hudson residents in the HudsonUP guaranteed income pilot GHPN helps run" },
+    { value: "128", label: "Hudson residents served in the HudsonUP pilot run by GHPN" },
     { value: "90", label: "evictions diverted through rent assistance (2025)" },
   ],
   optionsEyebrow: "Choose where your contribution goes",
@@ -271,7 +271,7 @@ export const PLAN = {
     {
       title: "Increase Educational Attainment.",
       body: "Support Opportunity Youth in earning their high school equivalency credential (GED), providing a critical foundation for long-term success. The program aims to improve graduation outcomes for youth who have disengaged from traditional school systems.",
-      measure: "Measured by GED tests taken and GED credentials earned annually and cumulatively (2025: 34 GED tests taken, 6 GEDs earned; 11 GEDs earned since program inception).",
+      measure: "Measured by GED tests taken and GED credentials earned annually and cumulatively (2025: 34 GED tests taken, 6 GEDs earned; 12 GEDs earned since program inception).",
     },
     {
       title: "Strengthen Workforce and Career Pathways.",
@@ -308,7 +308,7 @@ export const PLAN = {
         "20 Opportunity Youth were enrolled",
         "34 GED tests were taken",
         "6 participants earned their GED in 2025",
-        "11 participants have earned their GED since program inception",
+        "12 participants have earned their GED since program inception",
       ],
       after:
         "Tracking includes number of participants enrolled, number of GED tests scheduled and completed, subject test pass rates, and total GED credentials earned annually and cumulatively. Progress toward completion is monitored weekly through attendance, testing benchmarks, and individualized academic plans.",
